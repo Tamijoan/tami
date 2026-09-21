@@ -1,0 +1,283 @@
+    <!DOCTYPE html>
+    <html lang="de">
+    <head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+      <title>About Tami — Tami Mönnig</title>
+      <meta name="description" content="Über Tami Mönnig: Steuerrechtlerin, Krypto-Expertin, Speakerin und digitale Nomadin." />
+      <style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--black:#050505;--white:#f5f3ef;--muted:rgba(245,243,239,.55);--line:rgba(245,243,239,.17);--cream:#e9e3d9;--ink:#111;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter',Arial,sans-serif}
+body{background:var(--black);color:var(--white);font-family:var(--sans);font-weight:300}
+a{color:inherit;text-decoration:none}.site-nav{height:94px;padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+.brand{font-family:var(--serif);font-size:1.8rem}.nav-links{display:flex;gap:2rem}.nav-links a{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.hero{min-height:78vh;padding:6rem 4vw 4rem;display:grid;grid-template-columns:.78fr 1.22fr;gap:4vw;align-items:end;border-bottom:1px solid var(--line)}
+.kicker,.index{font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(245,243,239,.35)}
+.hero h1{font:300 clamp(5rem,10vw,11rem)/.77 var(--serif);letter-spacing:-.06em}.hero h1 em{font-weight:300}
+.hero-copy{max-width:560px;margin-left:auto}.hero-copy p{font-size:1.05rem;line-height:1.6;color:var(--muted)}
+.story{padding:7rem 4vw;display:grid;grid-template-columns:.9fr 1.1fr;gap:5vw;border-bottom:1px solid var(--line)}
+.story-title h2,.today h2{font:300 clamp(3.4rem,6vw,7rem)/.86 var(--serif);letter-spacing:-.045em;margin-top:1.3rem}
+.story-copy{padding-top:3rem}.story-copy p{max-width:700px;font-size:.95rem;line-height:1.75;color:var(--muted);margin-bottom:1.3rem}
+.gallery{padding:0 4vw 7rem;display:grid;grid-template-columns:1.15fr .7fr .7fr;gap:1.2rem;align-items:end}
+.photo{position:relative;overflow:hidden;background:#181818;border:1px solid var(--line)}
+.photo img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(25%)}.photo.big{height:620px}.photo.small{height:390px}
+.photo-label{position:absolute;left:1rem;right:1rem;bottom:1rem;display:flex;justify-content:space-between;font-size:.55rem;letter-spacing:.17em;text-transform:uppercase}
+.photo-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:rgba(245,243,239,.22);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase}
+.editorial-break{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:4rem 4vw;overflow:hidden}
+.editorial-break div{font:300 clamp(5rem,11vw,13rem)/.7 var(--serif);letter-spacing:-.065em;white-space:nowrap}
+.editorial-break em{font-weight:300}
+.today{padding:7rem 4vw}.today-head{display:grid;grid-template-columns:.7fr 1.3fr;gap:5vw;margin-bottom:4rem}.today-head p{max-width:600px;color:var(--muted);line-height:1.7;padding-top:2.5rem}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.card{min-height:430px;border:1px solid var(--line);border-radius:999px 999px 2rem 2rem;padding:3rem 2rem 2rem;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+.card:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.035),transparent 45%);pointer-events:none}
+.card .num{position:absolute;top:2rem;left:50%;transform:translateX(-50%);font-size:.55rem;letter-spacing:.18em;color:rgba(245,243,239,.35)}
+.card h3{font:300 2.5rem/1 var(--serif);margin-bottom:1rem}.card p{font-size:.78rem;line-height:1.65;color:var(--muted)}
+.quote{
+  background:var(--black);
+  color:var(--white);
+  padding:7rem 4vw 8rem;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line)
+}
+.quote:before{
+  content:"";
+  display:block;
+  width:100%;
+  height:1px;
+  background:rgba(245,243,239,.14);
+  margin-bottom:3rem
+}
+.quote blockquote{
+  max-width:1200px;
+  font:300 clamp(3.2rem,5.6vw,6.4rem)/.94 var(--serif);
+  letter-spacing:-.04em;
+  color:rgba(245,243,239,.86)
+}
+.quote cite{
+  display:block;
+  margin-top:2.2rem;
+  font:400 .58rem var(--sans);
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:rgba(245,243,239,.42)
+}
+.wordmark{padding:4rem 1rem 2rem;text-align:center;overflow:hidden}.wordmark span{display:inline-block;font:300 clamp(7rem,16vw,22rem)/.75 var(--serif);letter-spacing:-.06em;white-space:nowrap;color:rgba(245,243,239,.13)}
+.site-footer{padding:1.2rem 2.5rem 2rem;display:flex;justify-content:space-between;border-top:1px solid var(--line);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,243,239,.35)}.footer-links{display:flex;gap:1rem}
+@media(max-width:850px){.site-nav{padding:0 1.2rem}.nav-links{display:none}.hero,.story,.today-head{grid-template-columns:1fr}.hero{min-height:auto;padding:5rem 1.2rem 3rem}.story,.today,.quote{padding:4rem 1.2rem}.gallery{padding:0 1.2rem 4rem;grid-template-columns:1fr 1fr}.photo.big{grid-column:1/-1;height:500px}.photo.small{height:320px}.editorial-break{padding:3rem 1.2rem}.cards{grid-template-columns:1fr}.card{min-height:380px}.site-footer{padding:1.5rem 1.2rem;flex-direction:column;gap:1rem}}
+</style>
+    
+<style id="three-size-type-system">
+:root{
+  --type-display: clamp(3.4rem, 6vw, 7rem);
+  --type-body: .95rem;
+  --type-meta: .6rem;
+}
+
+/* SIZE 1 — Display: every editorial/headline element */
+h1, h2, h3,
+.hero h1,
+.story-title h2,
+.today h2,
+.editorial-break div,
+.card h3,
+.quote blockquote,
+.wordmark span{
+  font-size:var(--type-display) !important;
+}
+
+/* SIZE 2 — Body copy */
+p,
+.hero-copy p,
+.story-copy p,
+.today-head p,
+.card p{
+  font-size:var(--type-body) !important;
+}
+
+/* SIZE 3 — Navigation, labels, numbers, captions, attribution */
+.site-nav,
+.brand,
+.nav-links a,
+.kicker,
+.index,
+.photo-label,
+.card .num,
+.quote cite,
+.site-footer,
+.footer-links{
+  font-size:var(--type-meta) !important;
+}
+
+@media(max-width:850px){
+  :root{
+    --type-display: clamp(3rem, 12vw, 5rem);
+    --type-body: .95rem;
+    --type-meta: .6rem;
+  }
+}
+</style>
+
+
+<style id="about-hero-background">
+.hero{
+  position:relative;
+  isolation:isolate;
+  background:
+    linear-gradient(rgba(0,0,0,.38), rgba(0,0,0,.58)),
+    url('Tami_about_header.png') center / cover no-repeat;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(0,0,0,.18),rgba(0,0,0,.04) 48%,rgba(0,0,0,.18));
+  z-index:-1;
+  pointer-events:none;
+}
+.hero > *{
+  position:relative;
+  z-index:1;
+}
+</style>
+
+
+<style id="about-depth-glows">
+/* Subtle editorial depth — decorative light fields */
+.depth-section{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+}
+.depth-section > *{
+  position:relative;
+  z-index:1;
+}
+.depth-section::before,
+.depth-section::after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:0;
+  filter:blur(68px);
+  opacity:.92;
+}
+
+/* Warm burgundy light, mostly outside the canvas */
+.depth-warm::before{
+  width:720px;
+  height:720px;
+  right:-220px;
+  top:4%;
+  background:radial-gradient(circle,
+    rgba(126,49,88,.55) 0%,
+    rgba(89,35,97,.34) 38%,
+    rgba(5,5,5,0) 72%);
+}
+.depth-warm::after{
+  width:520px;
+  height:520px;
+  left:-220px;
+  bottom:-180px;
+  background:radial-gradient(circle,
+    rgba(115,58,68,.34) 0%,
+    rgba(67,31,74,.22) 42%,
+    rgba(5,5,5,0) 73%);
+}
+
+/* Cooler, quieter violet light for the editorial statement area */
+.depth-violet::before{
+  width:760px;
+  height:560px;
+  left:32%;
+  top:-300px;
+  background:radial-gradient(ellipse,
+    rgba(72,38,91,.46) 0%,
+    rgba(116,47,78,.29) 43%,
+    rgba(5,5,5,0) 74%);
+}
+.depth-violet::after{
+  width:560px;
+  height:560px;
+  right:-220px;
+  bottom:-270px;
+  background:radial-gradient(circle,
+    rgba(132,65,76,.36) 0%,
+    rgba(73,37,89,.21) 44%,
+    rgba(5,5,5,0) 73%);
+}
+
+@media(max-width:850px){
+  .depth-section::before,
+  .depth-section::after{filter:blur(58px);opacity:.74}
+  .depth-warm::before{width:520px;height:520px;right:-340px}
+  .depth-violet::before{width:500px;height:420px;left:15%;top:-240px}
+}
+</style>
+
+</head>
+    <body>
+      <nav class="site-nav">
+        <a class="brand" href="index.html">Tami Mönnig</a>
+        <div class="nav-links">
+          <a href="about.html">About</a>
+          <a href="https://www.krypto-steuern.net/">Krypto</a>
+          <a href="speaking.html">Speaking</a>
+          <a href="international.html">International</a>
+          <a href="astrologie.html">Astrology × Finance</a>
+        </div>
+      </nav>
+      
+<main>
+<!-- HERO BACKGROUND IMAGE: Tami_about_header.png -->
+<section class="hero">
+  <div><p class="kicker">About Tami — 01</p><h1>Keine<br><em>Schablone.</em></h1></div>
+  <div class="hero-copy"><p>Steuerrechtlerin, Krypto-Expertin, Speakerin und digitale Nomadin. Passt in keine Schublade – und wollte da ehrlich gesagt auch nie rein.</p></div>
+</section>
+
+<section class="story depth-section depth-warm">
+  <div class="story-title"><span class="index">01 — Der Weg</span><h2>Vom durchgeplanten Job zum <em>eigenen Weg.</em></h2></div>
+  <div class="story-copy">
+    <p>Ich komme aus dem klassischen deutschen Steuerrecht. Mein Weg war vorgezeichnet, sicher und absolut berechenbar. Aber genau da lag das Problem: Ich wollte mein Leben nicht einfach nur bis zur Rente verwalten. Ich habe mir gedacht: <em>Das kann es doch jetzt nicht gewesen sein.</em></p>
+    <p>2023 habe ich den Schnitt gemacht, gekündigt und bin nach Brasilien geflogen. Ohne fertigen Masterplan, aber mit dem festen Entschluss, es selbst anzupacken. Meinen allerersten bezahlten Auftrag in der Selbstständigkeit habe ich in Peru erledigt – in einem Dorf ohne fließend Wasser, in einer halben Ruine, wo der Hund durchs Bild lief, aber zum Glück das Internet funktionierte.</p>
+    <p>Zwei Jahre später sitze ich einen Monat lang auf einem Schiff von den USA nach Australien und arbeite von unterwegs für Mandanten weltweit. Dazwischen liegen hunderte Krypto-Fälle, Vorträge, Veröffentlichungen in Fachverlagen und verdammt viel harte Arbeit. Das ist mir nicht einfach so zugeflogen – ich habe es mir Schritt für Schritt aufgebaut.</p>
+  </div>
+</section>
+
+<section class="gallery">
+  <figure class="photo big"><div class="photo-placeholder">Portrait / Travel Image</div><figcaption class="photo-label"><span>Brazil</span><span>2023 — 01</span></figcaption></figure>
+  <figure class="photo small"><div class="photo-placeholder">Peru Image</div><figcaption class="photo-label"><span>Peru</span><span>02</span></figcaption></figure>
+  <figure class="photo small"><div class="photo-placeholder">Cruise Image</div><figcaption class="photo-label"><span>USA → Australia</span><span>03</span></figcaption></figure>
+</section>
+
+<section class="editorial-break depth-section depth-violet"><div>FINANCE. <em>FREEDOM.</em> PERSPECTIVE.</div></section>
+
+<section class="today depth-section depth-warm">
+  <div class="today-head">
+    <div><span class="index">02 — Heute</span><h2>Welten verbinden, statt sie zu <em>trennen.</em></h2></div>
+    <p>Heute verbinde ich Welten, die für viele auf den ersten Blick gar nicht zusammenpassen: trockene Paragrafen und komplexe Krypto-Transaktionen. Fachliche Tiefe und ein freies, mobiles Leben. Nüchterne Analyse und intuitive Entscheidungen.</p>
+  </div>
+  <div class="cards">
+    <article class="card"><span class="num">01</span><h3>Krypto &amp; Steuern</h3><p>Strategie, Beratung und Community. Damit Krypto-Investoren und Unternehmer ihre Transaktionen und Steuern von Anfang an rechtssicher im Griff haben.</p></article>
+    <article class="card"><span class="num">02</span><h3>International</h3><p>Unternehmens- und Vermögensstrukturen für Gründer und Investoren, deren Leben und Business nicht an einer Landesgrenze aufhören.</p></article>
+    <article class="card"><span class="num">03</span><h3>Speaking</h3><p>Vorträge, Panels und Fortbildungen. Komplexe Krypto- und Steuer-Themen klar erklärt – für Fachpublikum, Unternehmen und Investoren.</p></article>
+  </div>
+</section>
+
+<section class="quote"><blockquote>„Ich wusste beim Start nicht genau, wo die Reise hingeht. Aber ich wusste zu 100 %, dass das alte, sichere Leben nicht mehr meine Antwort war.“<cite>— Tami Mönnig</cite></blockquote></section>
+<section class="wordmark"><span>TAMI JOAN</span></section>
+</main>
+      <footer class="site-footer">
+        <div>&copy; 2026 Tami Mönnig. All rights reserved.</div>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/tami-moennig/">LinkedIn</a>
+          <a href="https://www.instagram.com/tami.moennig/">Instagram</a>
+          <a href="index.html">Home</a>
+        </div>
+      </footer>
+    </body>
+    </html>

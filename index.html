@@ -1,565 +1,1754 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
 
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
 
   <title>Tami Mönnig</title>
-  <meta name="description" content="Tami Mönnig — Krypto-Steuern, internationale Strukturen, Speaking, digitales Nomadentum und Astrology × Finance." />
+
+  <meta
+    name="description"
+    content="Tami Mönnig — Krypto-Steuern, internationale Strukturen, Speaking, digitales Nomadentum und Astrology × Finance."
+  />
+
   <style>
-    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     :root {
-      --black:#000; --card:#080808; --white:#f7f6f4;
-      --serif:'Cormorant Garamond',Georgia,serif;
-      --sans:'Inter',system-ui,sans-serif;
-      --transition:.75s cubic-bezier(.25,1,.3,1);
-    }
-    html,body{background:var(--black);color:var(--white);font-family:var(--sans);font-weight:300;overflow-x:hidden}
-    .gallery-wrapper{display:flex;padding:2rem 1.5rem;height:100vh;min-height:720px;width:100vw}
-    .cards{display:flex;width:100%;height:100%;gap:1rem}
-    .card{position:relative;flex:1;border-radius:4.5rem;overflow:hidden;cursor:pointer;background:var(--card);transition:flex var(--transition),transform var(--transition)}
-    .cards:has(.card:hover) .card{flex:.5}
-    .cards:has(.card:hover) .card:hover{flex:2.8}
-    .cards:has(.card:hover) .card:not(:hover) .card-content{opacity:.2}
-    .card-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(100%) brightness(.28);transition:filter var(--transition),transform var(--transition);transform:scale(1.05);z-index:1}
-    .card:hover .card-bg{filter:grayscale(100%) brightness(.4);transform:scale(1)}
-    .card-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;z-index:2;transition:opacity var(--transition)}
-    .card:hover .card-video{opacity:.45}
-    .card-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:3.2rem;z-index:3;transition:opacity var(--transition)}
-    .card-number{font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.5rem}
-    .card-title{font-family:var(--serif);font-size:clamp(1.8rem,2.4vw,3rem);font-weight:300;line-height:1.05;letter-spacing:-.01em;white-space:nowrap}
-    .card-title em{font-style:italic}
-    .card-expanded{opacity:0;transform:translateY(15px);transition:opacity .4s ease .2s,transform .4s ease .2s;pointer-events:none;max-height:0;overflow:hidden}
-    .card:hover .card-expanded{opacity:1;transform:translateY(0);pointer-events:auto;max-height:420px;margin-top:1.2rem}
-    .card-desc{font-size:.79rem;line-height:1.65;color:rgba(255,255,255,.58);max-width:360px;margin-bottom:1.3rem}
-    .card-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.4rem}
-    .tag{font-size:.53rem;letter-spacing:.14em;text-transform:uppercase;border:.5px solid rgba(255,255,255,.15);padding:.35rem .8rem;color:rgba(255,255,255,.48);border-radius:20px}
-    .card-cta{display:inline-flex;align-items:center;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--white);text-decoration:none;border-bottom:.5px solid rgba(255,255,255,.3);padding-bottom:.2rem}
-    #card-about .card-bg{background-image:url('about-tami.png')}
-    #card-crypto .card-bg{background-image:url('crypto.png')}
-    #card-speaking .card-bg{background-image:url('speaking.png')}
-    #card-international .card-bg{background-image:url('international.png')}
-    #card-astrology .card-bg{background-image:url('astrology.png')}
-    .brand-wordmark{width:100%;padding:2.75rem 1rem 2rem;background:var(--black);overflow:visible;display:flex;justify-content:center;align-items:center}
-    .brand-wordmark span{display:inline-block;font-family:var(--serif);font-size:clamp(7rem,16vw,22rem);font-weight:300;line-height:.82;letter-spacing:-.055em;white-space:nowrap;text-align:center;color:rgba(247,246,244,.16);text-transform:uppercase;transform-origin:center center;will-change:transform}
-    .site-footer{display:flex;justify-content:space-between;gap:1rem;padding:1rem 2.5rem 2rem;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3)}
-    .footer-links{display:flex;gap:1rem;flex-wrap:wrap}
-    .footer-links a{color:inherit;text-decoration:none}
+      --black: #000;
+      --card: #080808;
+      --white: #f7f6f4;
 
-    .resources-section{width:100%;padding:7rem 2rem 8rem;border-top:1px solid rgba(247,246,244,.12);border-bottom:1px solid rgba(247,246,244,.12)}
-    .resources-head{display:grid;grid-template-columns:1.35fr .65fr;gap:4rem;align-items:end;margin-bottom:4rem}
-    .resources-eyebrow{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(247,246,244,.3);margin-bottom:1.2rem}
-    .resources-head h2{font-family:var(--serif);font-size:clamp(4rem,7.4vw,8.5rem);font-weight:300;line-height:.78;letter-spacing:-.055em}
-    .resources-intro{max-width:390px;color:rgba(247,246,244,.55);font-size:.9rem;line-height:1.65;padding-bottom:.5rem}
-    .resource-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
-    .resource-card{min-height:430px;padding:2rem;border:1px solid rgba(247,246,244,.13);border-radius:2.5rem;display:flex;flex-direction:column;justify-content:space-between;background:rgba(247,246,244,.018)}
-    .resource-meta{font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,246,244,.3)}
-    .resource-card h3{font-family:var(--serif);font-size:clamp(2rem,3vw,3.5rem);font-weight:300;line-height:.95;letter-spacing:-.025em;margin-bottom:1rem}
-    .resource-card p{color:rgba(247,246,244,.52);font-size:.8rem;line-height:1.65;max-width:420px}
-    .resource-bottom{display:flex;justify-content:space-between;align-items:end;gap:1rem;border-top:1px solid rgba(247,246,244,.1);padding-top:1.25rem}
-    .resource-price{font-family:var(--serif);font-size:1.5rem;color:rgba(247,246,244,.8)}
-    .resource-link{color:var(--white);text-decoration:none;font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;border-bottom:1px solid rgba(247,246,244,.3);padding-bottom:.2rem}
-    .resource-link.muted{color:rgba(247,246,244,.28);border:0}
-    .resource-card-placeholder{opacity:.62}
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
 
-
-    .proof-section{
-      width:100%;
-      padding:4.5rem 2rem 5rem;
-      border-top:1px solid rgba(247,246,244,.12);
-      border-bottom:1px solid rgba(247,246,244,.12);
-    }
-    .proof-eyebrow{
-      font-size:.6rem;
-      letter-spacing:.22em;
-      text-transform:uppercase;
-      color:rgba(247,246,244,.32);
-      margin-bottom:2rem;
-    }
-    .logo-row{
-      display:grid;
-      grid-template-columns:repeat(6,minmax(0,1fr));
-      gap:1rem;
-      align-items:center;
-    }
-    .logo-item{
-      min-height:92px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      border-top:1px solid rgba(247,246,244,.1);
-      border-bottom:1px solid rgba(247,246,244,.1);
-      font-family:var(--serif);
-      font-size:clamp(1rem,1.7vw,1.5rem);
-      letter-spacing:.02em;
-      color:rgba(247,246,244,.46);
-      text-align:center;
-      padding:1rem .5rem;
-    }
-    .community-cta{
-      margin-top:1rem;
-      border:1px solid rgba(247,246,244,.13);
-      border-radius:2.5rem;
-      padding:2.3rem;
-      display:grid;
-      grid-template-columns:1.25fr .75fr;
-      gap:2rem;
-      align-items:end;
-      background:rgba(247,246,244,.02);
-    }
-    .community-cta .resources-eyebrow{margin-bottom:1rem}
-    .community-cta h3{
-      font-family:var(--serif);
-      font-size:clamp(2.5rem,4.5vw,5rem);
-      font-weight:300;
-      line-height:.9;
-      letter-spacing:-.035em;
-      margin-bottom:1rem;
-    }
-    .community-cta p{
-      color:rgba(247,246,244,.55);
-      max-width:680px;
-      font-size:.85rem;
-      line-height:1.65;
-    }
-    .community-action{
-      display:flex;
-      justify-content:flex-end;
-      align-items:flex-end;
-    }
-    .community-button{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-width:180px;
-      min-height:52px;
-      border:1px solid rgba(247,246,244,.22);
-      border-radius:999px;
-      text-decoration:none;
-      color:var(--white);
-      font-size:.6rem;
-      letter-spacing:.15em;
-      text-transform:uppercase;
-      padding:0 1.4rem;
-      transition:background .2s ease,color .2s ease;
-    }
-    .community-button:hover{
-      background:var(--white);
-      color:#000;
+      --transition: .75s cubic-bezier(.25, 1, .3, 1);
     }
 
-    @media(max-width:768px){
-      .proof-section{padding:3.5rem 1rem 4rem}
-      .logo-row{grid-template-columns:repeat(2,minmax(0,1fr))}
-      .community-cta{grid-template-columns:1fr;padding:1.7rem}
-      .community-action{justify-content:flex-start}
+    html,
+    body {
+      background: var(--black);
+      color: var(--white);
 
-      .resources-section{padding:5rem 1rem}
-      .resources-head{grid-template-columns:1fr;gap:1.5rem;margin-bottom:2.5rem}
-      .resource-grid{grid-template-columns:1fr}
-      .resource-card{min-height:360px}
+      font-family: var(--sans);
+      font-weight: 300;
 
-      .gallery-wrapper{padding:1.5rem 1rem 1rem;height:auto}
-      .cards{flex-direction:column;height:auto;gap:1.5rem}
-      .card,.cards:has(.card:hover) .card{flex:none!important;height:65vh;border-radius:2.5rem}
-      .cards:has(.card:hover) .card-content{opacity:1!important}
-      .card-content{padding:2rem}
-      .card-expanded{opacity:1;transform:none;pointer-events:auto;max-height:none;margin-top:1rem}
-      .card-video{opacity:.28!important}
-      .brand-wordmark{padding:2.25rem .75rem 1.75rem}
-      .brand-wordmark span{font-size:clamp(4.5rem,18vw,8rem);line-height:.82}
-      .site-footer{flex-direction:column;padding:2rem 1rem}
+      overflow-x: hidden;
     }
-  
-    /* Card hover: keep titles anchored — no vertical drop-in */
-    .card-title{
-      transform:none !important;
-      translate:none !important;
-      top:auto;
-      transition:opacity .25s ease, color .25s ease !important;
-    }
-    .card:hover .card-title,
-    .card:focus-within .card-title{
-      transform:none !important;
-      translate:none !important;
+
+    a {
+      color: inherit;
     }
 
 
-    /* Stable card layout: title never moves when hover content appears */
-    .card-content{
-      position:absolute;
-      inset:0;
-      display:block !important;
-      padding:3.2rem;
+    /* ─────────────────────────────
+       MAIN CARD GALLERY
+    ───────────────────────────── */
+
+    .gallery-wrapper {
+      display: flex;
+
+      width: 100vw;
+      height: 100vh;
+      min-height: 720px;
+
+      padding: 2rem 1.5rem;
     }
 
-    .card-number{
-      position:absolute;
-      left:3.2rem;
-      bottom:8.3rem;
-      margin:0;
-      z-index:4;
+    .cards {
+      display: flex;
+
+      width: 100%;
+      height: 100%;
+
+      gap: 1rem;
     }
 
-    .card-title{
-      position:absolute !important;
-      left:3.2rem;
-      bottom:3.2rem;
-      margin:0;
-      z-index:4;
-      transform:none !important;
-      transition:opacity .25s ease !important;
+    .card {
+      position: relative;
+
+      flex: 1;
+
+      border-radius: 4.5rem;
+
+      overflow: hidden;
+
+      cursor: pointer;
+
+      background: var(--card);
+
+      transition:
+        flex var(--transition),
+        transform var(--transition);
     }
 
-    .card-expanded{
-      position:absolute;
-      left:3.2rem;
-      right:3.2rem;
-      bottom:10.2rem;
-      opacity:0;
-      transform:translateY(10px);
-      max-height:none !important;
-      overflow:visible !important;
-      pointer-events:none;
-      margin:0 !important;
-      transition:opacity .3s ease, transform .3s ease;
-      z-index:3;
+    .cards:has(.card:hover) .card {
+      flex: .5;
     }
 
-    .card:hover .card-expanded,
-    .card:focus-within .card-expanded{
-      opacity:1;
-      transform:translateY(0);
-      pointer-events:auto;
-      margin:0 !important;
+    .cards:has(.card:hover) .card:hover {
+      flex: 2.8;
     }
 
-    @media(max-width:768px){
-      .card-content{display:block !important;padding:2rem}
-      .card-number{left:2rem;bottom:auto;top:2rem}
-      .card-title{left:2rem;bottom:2rem}
-      .card-expanded{
-        left:2rem;
-        right:2rem;
-        bottom:9rem;
-        opacity:1;
-        transform:none;
-        pointer-events:auto;
-      }
+    .cards:has(.card:hover)
+    .card:not(:hover)
+    .card-content {
+      opacity: .2;
     }
 
 
-    /* Final card hierarchy: bottom-aligned cluster, title first */
-    .card-title{
-      position:absolute !important;
-      left:3.2rem !important;
-      right:3.2rem !important;
-      bottom:11.6rem !important;
-      top:auto !important;
-      margin:0 !important;
-    }
-    .card-number{
-      position:absolute !important;
-      left:3.2rem !important;
-      bottom:8.7rem !important;
-      top:auto !important;
-      margin:0 !important;
-    }
-    .card-expanded{
-      position:absolute !important;
-      left:3.2rem !important;
-      right:3.2rem !important;
-      bottom:3.2rem !important;
-      top:auto !important;
-      margin:0 !important;
+    /* ─────────────────────────────
+       CARD IMAGES
+    ───────────────────────────── */
+
+    .card-bg {
+      position: absolute;
+      inset: 0;
+
+      background-size: cover;
+      background-position: center;
+
+      filter:
+        grayscale(100%)
+        brightness(.28);
+
+      transform: scale(1.05);
+
+      transition:
+        filter var(--transition),
+        transform var(--transition);
+
+      z-index: 1;
     }
 
-    @media(max-width:768px){
-      .card-title{
-        left:2rem !important;
-        right:2rem !important;
-        bottom:11rem !important;
-        top:auto !important;
-      }
-      .card-number{
-        left:2rem !important;
-        bottom:8.2rem !important;
-        top:auto !important;
-      }
-      .card-expanded{
-        left:2rem !important;
-        right:2rem !important;
-        bottom:2rem !important;
-        top:auto !important;
-      }
+    .card:hover .card-bg {
+      filter:
+        grayscale(100%)
+        brightness(.42);
+
+      transform: scale(1);
     }
 
 
-    /* Refined hover layout: compact bottom cluster, no overlap */
-    .card-content{
-      position:absolute !important;
-      inset:0 !important;
-      padding:0 !important;
+    /* IMAGE FILES */
+
+    #card-about .card-bg {
+      background-image:
+        url('about-tami.png');
     }
 
-    .card-title{
-      position:absolute !important;
-      left:2.4rem !important;
-      right:2.4rem !important;
-      bottom:19rem !important;
-      top:auto !important;
-      margin:0 !important;
-      line-height:.92 !important;
-      z-index:5;
+    #card-crypto .card-bg {
+      background-image:
+        url('crypto.png');
     }
 
-    .card-number{
-      position:absolute !important;
-      left:2.4rem !important;
-      bottom:16.5rem !important;
-      top:auto !important;
-      margin:0 !important;
-      z-index:5;
+    #card-speaking .card-bg {
+      background-image:
+        url('speaking.png');
     }
 
-    .card-expanded{
-      position:absolute !important;
-      left:2.4rem !important;
-      right:2.4rem !important;
-      bottom:2.4rem !important;
-      top:auto !important;
-      height:12.2rem !important;
-      max-height:12.2rem !important;
-      margin:0 !important;
-      display:flex !important;
-      flex-direction:column;
-      justify-content:flex-start;
-      gap:.85rem;
-      opacity:0;
-      transform:translateY(8px);
-      overflow:hidden !important;
-      pointer-events:none;
-      transition:opacity .28s ease, transform .28s ease !important;
-      z-index:4;
+    #card-international .card-bg {
+      background-image:
+        url('international.png');
+    }
+
+    #card-astrology .card-bg {
+      background-image:
+        url('astrology.png');
+    }
+
+
+    /* ─────────────────────────────
+       CARD CONTENT
+    ───────────────────────────── */
+
+    .card-content {
+      position: absolute;
+      inset: 0;
+
+      z-index: 3;
+
+      transition: opacity var(--transition);
+    }
+
+    .card-title {
+      position: absolute;
+
+      left: 2.4rem;
+      right: 2.4rem;
+
+      bottom: 19rem;
+
+      font-family: var(--serif);
+
+      font-size:
+        clamp(1.8rem, 2.4vw, 3rem);
+
+      font-weight: 300;
+
+      line-height: .92;
+
+      letter-spacing: -.01em;
+
+      white-space: normal;
+
+      z-index: 5;
+    }
+
+    .card-title em {
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .card-number {
+      position: absolute;
+
+      left: 2.4rem;
+
+      bottom: 16.5rem;
+
+      font-size: .65rem;
+
+      letter-spacing: .25em;
+
+      text-transform: uppercase;
+
+      color:
+        rgba(255, 255, 255, .4);
+
+      z-index: 5;
+    }
+
+
+    /* ─────────────────────────────
+       CARD HOVER CONTENT
+    ───────────────────────────── */
+
+    .card-expanded {
+      position: absolute;
+
+      left: 2.4rem;
+      right: 2.4rem;
+
+      bottom: 2.4rem;
+
+      height: 12.2rem;
+      max-height: 12.2rem;
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: .85rem;
+
+      opacity: 0;
+
+      transform: translateY(8px);
+
+      overflow: hidden;
+
+      pointer-events: none;
+
+      transition:
+        opacity .28s ease,
+        transform .28s ease;
+
+      z-index: 4;
     }
 
     .card:hover .card-expanded,
-    .card:focus-within .card-expanded{
-      opacity:1;
-      transform:translateY(0);
-      pointer-events:auto;
+    .card:focus-within .card-expanded {
+      opacity: 1;
+
+      transform: translateY(0);
+
+      pointer-events: auto;
     }
 
-    .card-expanded p{
-      margin:0 !important;
-      line-height:1.5 !important;
-      max-width:100%;
+    .card-desc {
+      max-width: 360px;
+
+      margin: 0;
+
+      font-size: .79rem;
+
+      line-height: 1.5;
+
+      color:
+        rgba(255, 255, 255, .58);
     }
 
-    .card-expanded .tags{
-      margin:0 !important;
-      display:flex;
-      flex-wrap:wrap;
-      gap:.55rem;
+    .card-tags {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: .55rem;
+
+      margin: 0;
     }
 
-    .card-expanded .card-link{
-      margin-top:auto !important;
-      align-self:flex-start;
+    .tag {
+      padding:
+        .35rem .8rem;
+
+      border:
+        .5px solid
+        rgba(255, 255, 255, .15);
+
+      border-radius: 20px;
+
+      font-size: .53rem;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+
+      color:
+        rgba(255, 255, 255, .48);
     }
 
-    /* On narrow cards, keep the title readable instead of forcing one line */
-    .card-title{
-      white-space:normal !important;
-      overflow-wrap:normal;
+    .card-cta {
+      display: inline-flex;
+
+      align-self: flex-start;
+
+      margin-top: auto;
+
+      padding-bottom: .2rem;
+
+      border-bottom:
+        .5px solid
+        rgba(255, 255, 255, .3);
+
+      font-size: .6rem;
+
+      letter-spacing: .2em;
+
+      text-transform: uppercase;
+
+      color: var(--white);
+
+      text-decoration: none;
     }
 
-    @media(max-width:768px){
-      .card-title{
-        left:2rem !important;
-        right:2rem !important;
-        bottom:18rem !important;
+
+    /* ─────────────────────────────
+       BEKANNT AUS
+    ───────────────────────────── */
+
+    .proof-section {
+      width: 100%;
+
+      padding:
+        4.5rem 2rem
+        5rem;
+
+      border-top:
+        1px solid
+        rgba(247, 246, 244, .12);
+
+      border-bottom:
+        1px solid
+        rgba(247, 246, 244, .12);
+    }
+
+    .proof-eyebrow {
+      margin-bottom: 2rem;
+
+      font-size: .6rem;
+
+      letter-spacing: .22em;
+
+      text-transform: uppercase;
+
+      color:
+        rgba(247, 246, 244, .32);
+    }
+
+    .logo-row {
+      display: grid;
+
+      grid-template-columns:
+        repeat(6, minmax(0, 1fr));
+
+      gap: 1.5rem;
+
+      align-items: center;
+    }
+
+    .logo-item {
+      min-height: 110px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 1.25rem;
+
+      border-top:
+        1px solid
+        rgba(247, 246, 244, .1);
+
+      border-bottom:
+        1px solid
+        rgba(247, 246, 244, .1);
+    }
+
+    .logo-item img {
+      display: block;
+
+      width: 100%;
+
+      max-width: 150px;
+      max-height: 70px;
+
+      object-fit: contain;
+
+      opacity: .68;
+
+      filter:
+        grayscale(100%)
+        brightness(1.45);
+
+      transition:
+        opacity .25s ease,
+        filter .25s ease,
+        transform .25s ease;
+    }
+
+    .logo-item:hover img {
+      opacity: 1;
+
+      filter:
+        grayscale(0%)
+        brightness(1);
+
+      transform: scale(1.04);
+    }
+
+
+    /* ─────────────────────────────
+       RESOURCES
+    ───────────────────────────── */
+
+    .resources-section {
+      width: 100%;
+
+      padding:
+        7rem 2rem
+        8rem;
+
+      border-bottom:
+        1px solid
+        rgba(247, 246, 244, .12);
+    }
+
+    .resources-head {
+      display: grid;
+
+      grid-template-columns:
+        1.35fr .65fr;
+
+      gap: 4rem;
+
+      align-items: end;
+
+      margin-bottom: 4rem;
+    }
+
+    .resources-eyebrow {
+      margin-bottom: 1.2rem;
+
+      font-size: .6rem;
+
+      letter-spacing: .22em;
+
+      text-transform: uppercase;
+
+      color:
+        rgba(247, 246, 244, .3);
+    }
+
+    .resources-head h2 {
+      font-family: var(--serif);
+
+      font-size:
+        clamp(4rem, 7.4vw, 8.5rem);
+
+      font-weight: 300;
+
+      line-height: .78;
+
+      letter-spacing: -.055em;
+    }
+
+    .resources-head h2 em {
+      font-weight: 300;
+    }
+
+    .resources-intro {
+      max-width: 390px;
+
+      padding-bottom: .5rem;
+
+      font-size: .9rem;
+
+      line-height: 1.65;
+
+      color:
+        rgba(247, 246, 244, .55);
+    }
+
+    .resource-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+      gap: 1rem;
+    }
+
+    .resource-card {
+      min-height: 430px;
+
+      padding: 2rem;
+
+      border:
+        1px solid
+        rgba(247, 246, 244, .13);
+
+      border-radius: 2.5rem;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content:
+        space-between;
+
+      background:
+        rgba(247, 246, 244, .018);
+    }
+
+    .resource-meta {
+      font-size: .56rem;
+
+      letter-spacing: .18em;
+
+      text-transform: uppercase;
+
+      color:
+        rgba(247, 246, 244, .3);
+    }
+
+    .resource-card h3 {
+      margin-bottom: 1rem;
+
+      font-family: var(--serif);
+
+      font-size:
+        clamp(2rem, 3vw, 3.5rem);
+
+      font-weight: 300;
+
+      line-height: .95;
+
+      letter-spacing: -.025em;
+    }
+
+    .resource-card p {
+      max-width: 420px;
+
+      font-size: .8rem;
+
+      line-height: 1.65;
+
+      color:
+        rgba(247, 246, 244, .52);
+    }
+
+    .resource-bottom {
+      display: flex;
+
+      justify-content:
+        space-between;
+
+      align-items: end;
+
+      gap: 1rem;
+
+      padding-top: 1.25rem;
+
+      border-top:
+        1px solid
+        rgba(247, 246, 244, .1);
+    }
+
+    .resource-price {
+      font-family: var(--serif);
+
+      font-size: 1.5rem;
+
+      color:
+        rgba(247, 246, 244, .8);
+    }
+
+    .resource-link {
+      padding-bottom: .2rem;
+
+      border-bottom:
+        1px solid
+        rgba(247, 246, 244, .3);
+
+      font-size: .58rem;
+
+      letter-spacing: .15em;
+
+      text-transform: uppercase;
+
+      color: var(--white);
+
+      text-decoration: none;
+    }
+
+    .resource-link.muted {
+      border: 0;
+
+      color:
+        rgba(247, 246, 244, .28);
+    }
+
+    .resource-card-placeholder {
+      opacity: .62;
+    }
+
+
+    /* ─────────────────────────────
+       COMMUNITY
+    ───────────────────────────── */
+
+    .community-cta {
+      margin:
+        1rem 2rem
+        6rem;
+
+      padding: 2.3rem;
+
+      display: grid;
+
+      grid-template-columns:
+        1.25fr .75fr;
+
+      gap: 2rem;
+
+      align-items: end;
+
+      border:
+        1px solid
+        rgba(247, 246, 244, .13);
+
+      border-radius: 2.5rem;
+
+      background:
+        rgba(247, 246, 244, .02);
+    }
+
+    .community-cta h3 {
+      margin-bottom: 1rem;
+
+      font-family: var(--serif);
+
+      font-size:
+        clamp(2.5rem, 4.5vw, 5rem);
+
+      font-weight: 300;
+
+      line-height: .9;
+
+      letter-spacing: -.035em;
+    }
+
+    .community-cta h3 em {
+      font-weight: 300;
+    }
+
+    .community-cta p {
+      max-width: 680px;
+
+      font-size: .85rem;
+
+      line-height: 1.65;
+
+      color:
+        rgba(247, 246, 244, .55);
+    }
+
+    .community-action {
+      display: flex;
+
+      justify-content: flex-end;
+
+      align-items: flex-end;
+    }
+
+    .community-button {
+      min-width: 180px;
+      min-height: 52px;
+
+      padding:
+        0 1.4rem;
+
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border:
+        1px solid
+        rgba(247, 246, 244, .22);
+
+      border-radius: 999px;
+
+      font-size: .6rem;
+
+      letter-spacing: .15em;
+
+      text-transform: uppercase;
+
+      color: var(--white);
+
+      text-decoration: none;
+
+      transition:
+        background .2s ease,
+        color .2s ease;
+    }
+
+    .community-button:hover {
+      background: var(--white);
+      color: #000;
+    }
+
+
+    /* ─────────────────────────────
+       TAMI JOAN WORDMARK
+    ───────────────────────────── */
+
+    .brand-wordmark {
+      width: 100%;
+
+      padding:
+        2.75rem 1rem
+        2rem;
+
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+
+      background: var(--black);
+
+      overflow: visible;
+    }
+
+    .brand-wordmark span {
+      display: inline-block;
+
+      font-family: var(--serif);
+
+      font-size:
+        clamp(7rem, 16vw, 22rem);
+
+      font-weight: 300;
+
+      line-height: .82;
+
+      letter-spacing: -.055em;
+
+      white-space: nowrap;
+
+      text-align: center;
+
+      text-transform: uppercase;
+
+      color:
+        rgba(247, 246, 244, .16);
+
+      transform-origin:
+        center center;
+
+      will-change: transform;
+    }
+
+
+    /* ─────────────────────────────
+       FOOTER
+    ───────────────────────────── */
+
+    .site-footer {
+      display: flex;
+
+      justify-content:
+        space-between;
+
+      gap: 1rem;
+
+      padding:
+        1rem 2.5rem
+        2rem;
+
+      font-size: .63rem;
+
+      letter-spacing: .1em;
+
+      text-transform: uppercase;
+
+      color:
+        rgba(255, 255, 255, .3);
+    }
+
+    .footer-links {
+      display: flex;
+
+      gap: 1rem;
+
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    /* ─────────────────────────────
+       MOBILE
+    ───────────────────────────── */
+
+    @media (max-width: 768px) {
+
+      .gallery-wrapper {
+        height: auto;
+
+        padding:
+          1.5rem 1rem
+          1rem;
       }
-      .card-number{
-        left:2rem !important;
-        bottom:15.5rem !important;
+
+      .cards {
+        flex-direction: column;
+
+        height: auto;
+
+        gap: 1.5rem;
       }
-      .card-expanded{
-        left:2rem !important;
-        right:2rem !important;
-        bottom:2rem !important;
-        height:11.8rem !important;
-        max-height:11.8rem !important;
-        opacity:1;
-        transform:none;
-        pointer-events:auto;
+
+      .card,
+      .cards:has(.card:hover) .card {
+        flex: none !important;
+
+        height: 65vh;
+
+        border-radius: 2.5rem;
       }
+
+      .cards:has(.card:hover)
+      .card-content {
+        opacity: 1 !important;
+      }
+
+      .card-title {
+        left: 2rem;
+        right: 2rem;
+
+        bottom: 18rem;
+      }
+
+      .card-number {
+        left: 2rem;
+
+        bottom: 15.5rem;
+      }
+
+      .card-expanded {
+        left: 2rem;
+        right: 2rem;
+
+        bottom: 2rem;
+
+        height: 11.8rem;
+        max-height: 11.8rem;
+
+        opacity: 1;
+
+        transform: none;
+
+        pointer-events: auto;
+      }
+
+
+      /* LOGOS */
+
+      .proof-section {
+        padding:
+          3.5rem 1rem
+          4rem;
+      }
+
+      .logo-row {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+
+        gap: 1rem;
+      }
+
+      .logo-item {
+        min-height: 90px;
+
+        padding: 1rem;
+      }
+
+      .logo-item img {
+        max-width: 130px;
+        max-height: 60px;
+      }
+
+
+      /* RESOURCES */
+
+      .resources-section {
+        padding:
+          5rem 1rem;
+      }
+
+      .resources-head {
+        grid-template-columns: 1fr;
+
+        gap: 1.5rem;
+
+        margin-bottom: 2.5rem;
+      }
+
+      .resource-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .resource-card {
+        min-height: 360px;
+      }
+
+
+      /* COMMUNITY */
+
+      .community-cta {
+        margin:
+          1rem 1rem
+          4rem;
+
+        grid-template-columns: 1fr;
+
+        padding: 1.7rem;
+      }
+
+      .community-action {
+        justify-content:
+          flex-start;
+      }
+
+
+      /* WORDMARK */
+
+      .brand-wordmark {
+        padding:
+          2.25rem .75rem
+          1.75rem;
+      }
+
+      .brand-wordmark span {
+        font-size:
+          clamp(4.5rem, 18vw, 8rem);
+
+        line-height: .82;
+      }
+
+
+      /* FOOTER */
+
+      .site-footer {
+        flex-direction: column;
+
+        padding: 2rem 1rem;
+      }
+
     }
 
-</style>
+  </style>
 </head>
+
+
 <body>
+
+
+  <!-- ─────────────────────────────
+       MAIN CARDS
+  ───────────────────────────── -->
+
   <div class="gallery-wrapper">
+
     <div class="cards">
-      <div class="card" id="card-about">
+
+
+      <!-- 01 ABOUT -->
+
+      <div
+        class="card"
+        id="card-about"
+      >
+
         <div class="card-bg"></div>
-        <video class="card-video" src="https://assets.mixkit.co/videos/preview/mixkit-woman-posing-in-neon-light-42312-large.mp4" loop muted playsinline></video>
+
         <div class="card-content">
-          <p class="card-number">01</p>
-          <h2 class="card-title">About<br><em>Tami.</em></h2>
+
+          <p class="card-number">
+            01
+          </p>
+
+          <h2 class="card-title">
+            About<br>
+            <em>Tami.</em>
+          </h2>
+
           <div class="card-expanded">
-            <p class="card-desc">Vom sicheren, durchgeplanten Steuerrecht in Deutschland raus in die internationale Selbstständigkeit. Ich verbinde Krypto-Steuern, baue Unternehmen und lebe zwischen verschiedenen Ländern. Ohne starre Schablonen. Sondern genauso dynamisch wie die echte Welt.</p>
-            <div class="card-tags"><span class="tag">Personal Brand</span><span class="tag">Digital Nomad</span><span class="tag">Entrepreneurship</span></div>
-            <a href="about.html" class="card-cta">Meine Geschichte →</a>
+
+            <p class="card-desc">
+              Vom sicheren, durchgeplanten Steuerrecht in Deutschland
+              raus in die internationale Selbstständigkeit.
+              Ich verbinde Krypto-Steuern, baue Unternehmen und lebe
+              zwischen verschiedenen Ländern.
+              Ohne starre Schablonen.
+              Sondern genauso dynamisch wie die echte Welt.
+            </p>
+
+            <div class="card-tags">
+
+              <span class="tag">
+                Personal Brand
+              </span>
+
+              <span class="tag">
+                Digital Nomad
+              </span>
+
+              <span class="tag">
+                Entrepreneurship
+              </span>
+
+            </div>
+
+            <a
+              href="about.html"
+              class="card-cta"
+            >
+              Meine Geschichte →
+            </a>
+
           </div>
+
         </div>
+
       </div>
 
-      <div class="card" id="card-crypto">
+
+      <!-- 02 KRYPTO -->
+
+      <div
+        class="card"
+        id="card-crypto"
+      >
+
         <div class="card-bg"></div>
-        <video class="card-video" src="https://assets.mixkit.co/videos/preview/mixkit-modern-architecture-with-a-blue-sky-43187-large.mp4" loop muted playsinline></video>
+
         <div class="card-content">
-          <p class="card-number">02</p>
-          <h2 class="card-title">Krypto<br><em>Steuern.</em></h2>
+
+          <p class="card-number">
+            02
+          </p>
+
+          <h2 class="card-title">
+            Krypto<br>
+            <em>Steuern.</em>
+          </h2>
+
           <div class="card-expanded">
-            <p class="card-desc">Steuerrecht trifft Krypto-Realität. Egal ob Beratung, Community, Guides, Webinare oder klarer Fach-Content – hier gibt es echten Klartext für Investoren, Unternehmer und Fachleute, die bei Krypto und Steuern lieber Klarheit als böse Überraschungen haben.</p>
-            <div class="card-tags"><span class="tag">Krypto-Steuern</span><span class="tag">DAC8</span><span class="tag">International</span></div>
-            <a href="https://www.krypto-steuern.net/" class="card-cta">Zur Website →</a>
+
+            <p class="card-desc">
+              Steuerrecht trifft Krypto-Realität.
+              Egal ob Beratung, Community, Guides, Webinare
+              oder klarer Fach-Content – hier gibt es echten
+              Klartext für Investoren, Unternehmer und Fachleute,
+              die bei Krypto und Steuern lieber Klarheit als
+              böse Überraschungen haben.
+            </p>
+
+            <div class="card-tags">
+
+              <span class="tag">
+                Krypto-Steuern
+              </span>
+
+              <span class="tag">
+                Sparring
+              </span>
+
+              <span class="tag">
+                Regulierung
+              </span>
+
+            </div>
+
+            <a
+              href="https://www.krypto-steuern.net/"
+              class="card-cta"
+            >
+              Zur Website →
+            </a>
+
           </div>
+
         </div>
+
       </div>
 
-      <div class="card" id="card-speaking">
+
+      <!-- 03 SPEAKING -->
+
+      <div
+        class="card"
+        id="card-speaking"
+      >
+
         <div class="card-bg"></div>
-        <video class="card-video" src="https://assets.mixkit.co/videos/preview/mixkit-rotating-tech-device-pod-41566-large.mp4" loop muted playsinline></video>
+
         <div class="card-content">
-          <p class="card-number">03</p>
-          <h2 class="card-title">Speaking &<br><em>Teaching.</em></h2>
+
+          <p class="card-number">
+            03
+          </p>
+
+          <h2 class="card-title">
+            Speaking &amp;<br>
+            <em>Teaching.</em>
+          </h2>
+
           <div class="card-expanded">
-            <p class="card-desc">Vorträge, Panels und Tacheles auf der Bühne. Ich übersetze komplexe Krypto- und Steuer-Themen so, dass sie jeder versteht – von Fachpublikum und Anwälten bis hin zu Investoren und Studierenden.</p>
-            <div class="card-tags"><span class="tag">Speakerin</span><span class="tag">Dozentin</span><span class="tag">Panelistin</span></div>
-            <a href="speaking.html" class="card-cta">Speaking ansehen →</a>
+
+            <p class="card-desc">
+              Vorträge, Panels und Tacheles auf der Bühne.
+              Ich übersetze komplexe Krypto- und Steuer-Themen so,
+              dass sie jeder versteht – von Fachpublikum und Anwälten
+              bis hin zu Investoren und Studierenden.
+            </p>
+
+            <div class="card-tags">
+
+              <span class="tag">
+                Speakerin
+              </span>
+
+              <span class="tag">
+                Dozentin
+              </span>
+
+              <span class="tag">
+                Panelistin
+              </span>
+
+            </div>
+
+            <a
+              href="speaking.html"
+              class="card-cta"
+            >
+              Speaking ansehen →
+            </a>
+
           </div>
+
         </div>
+
       </div>
 
-      <div class="card" id="card-international">
+
+      <!-- 04 INTERNATIONAL -->
+
+      <div
+        class="card"
+        id="card-international"
+      >
+
         <div class="card-bg"></div>
-        <video class="card-video" src="https://assets.mixkit.co/videos/preview/mixkit-extreme-close-up-of-womans-lips-blinking-43112-large.mp4" loop muted playsinline></video>
+
         <div class="card-content">
-          <p class="card-number">04</p>
-          <h2 class="card-title">International<br><em>Structures.</em></h2>
+
+          <p class="card-number">
+            04
+          </p>
+
+          <h2 class="card-title">
+            International<br>
+            <em>Structures.</em>
+          </h2>
+
           <div class="card-expanded">
-            <p class="card-desc">Für Unternehmer und Investoren, deren Leben nicht an der Landesgrenze aufhört. Internationale Strukturen – pragmatisch, durchdacht und auf deine echte Lebensrealität angepasst. Gemeinsam mit Daniel Reuter.</p>
-            <div class="card-tags"><span class="tag">Cross-Border</span><span class="tag">Structures</span><span class="tag">Strategy</span></div>
-            <a href="international.html" class="card-cta">Mehr erfahren →</a>
+
+            <p class="card-desc">
+              Für Unternehmer und Investoren, deren Leben nicht
+              an der Landesgrenze aufhört.
+              Internationale Strukturen – pragmatisch,
+              durchdacht und auf deine echte Lebensrealität angepasst.
+              Gemeinsam mit Daniel Reuter.
+            </p>
+
+            <div class="card-tags">
+
+              <span class="tag">
+                Cross-Border
+              </span>
+
+              <span class="tag">
+                Structures
+              </span>
+
+              <span class="tag">
+                Strategy
+              </span>
+
+            </div>
+
+            <a
+              href="international.html"
+              class="card-cta"
+            >
+              Mehr erfahren →
+            </a>
+
           </div>
+
         </div>
+
       </div>
 
-      <div class="card" id="card-astrology">
+
+      <!-- 05 ASTROLOGY -->
+
+      <div
+        class="card"
+        id="card-astrology"
+      >
+
         <div class="card-bg"></div>
-        <video class="card-video" src="https://assets.mixkit.co/videos/preview/mixkit-headlights-of-a-car-parked-underground-42791-large.mp4" loop muted playsinline></video>
+
         <div class="card-content">
-          <p class="card-number">05</p>
-          <h2 class="card-title">Astrology ×<br><em>Finance.</em></h2>
+
+          <p class="card-number">
+            05
+          </p>
+
+          <h2 class="card-title">
+            Astrology ×<br>
+            <em>Finance.</em>
+          </h2>
+
           <div class="card-expanded">
-            <p class="card-desc">Money. Career. Business. Through a different lens. Astrologie als frische, ehrliche Perspektive auf deine finanziellen und unternehmerischen Entscheidungen. Kein Hokuspokus, sondern ein scharfer Blick auf Muster, Entscheidungsverhalten und blinde Flecken.</p>
-            <div class="card-tags"><span class="tag">Money</span><span class="tag">Career</span><span class="tag">Business</span></div>
-            <a href="astrologie.html" class="card-cta">Andere Perspektive →</a>
+
+            <p class="card-desc">
+              Money. Career. Business. Through a different lens.
+              Astrologie als frische, ehrliche Perspektive auf deine
+              finanziellen und unternehmerischen Entscheidungen.
+              Kein Hokuspokus, sondern ein scharfer Blick auf Muster,
+              Entscheidungsverhalten und blinde Flecken.
+            </p>
+
+            <div class="card-tags">
+
+              <span class="tag">
+                Money
+              </span>
+
+              <span class="tag">
+                Career
+              </span>
+
+              <span class="tag">
+                Business
+              </span>
+
+            </div>
+
+            <a
+              href="astrologie.html"
+              class="card-cta"
+            >
+              Andere Perspektive →
+            </a>
+
           </div>
+
         </div>
+
       </div>
+
+
     </div>
+
   </div>
 
 
+  <!-- ─────────────────────────────
+       BEKANNT AUS
+  ───────────────────────────── -->
 
   <section class="proof-section">
-    <p class="proof-eyebrow">Bekannt aus</p>
+
+    <p class="proof-eyebrow">
+      Bekannt aus
+    </p>
+
+
     <div class="logo-row">
-      <div class="logo-item">OECD</div>
-      <div class="logo-item">Deloitte</div>
-      <div class="logo-item">BTC-ECHO</div>
-      <div class="logo-item">Universität Malta</div>
-      <div class="logo-item">HTW Berlin</div>
-      <div class="logo-item">World Venture Forum</div>
+
+
+      <!-- 01 OECD -->
+
+      <div class="logo-item">
+
+        <img
+          src="logo-oecd.png"
+          alt="OECD"
+        />
+
+      </div>
+
+
+      <!-- 02 UNIVERSITÄT MALTA -->
+
+      <div class="logo-item">
+
+        <img
+          src="logo-uni-malta.png"
+          alt="Universität Malta"
+        />
+
+      </div>
+
+
+      <!-- 03 DELOITTE -->
+
+      <div class="logo-item">
+
+        <img
+          src="logo-deloitte.png"
+          alt="Deloitte"
+        />
+
+      </div>
+
+
+      <!-- 04 BITCOIN VERSTEHEN -->
+
+      <div class="logo-item">
+
+        <img
+          src="logo-bitcoin-verstehen.png"
+          alt="Bitcoin verstehen"
+        />
+
+      </div>
+
+
+      <!-- 05 DIE KRYPTOLOGEN -->
+
+      <div class="logo-item">
+
+        <img
+          src="logo-die-kryptologen.png"
+          alt="Die Kryptologen"
+        />
+
+      </div>
+
+
+      <!-- 06 VIENNA BLOCKCHAIN WEEK -->
+
+      <div class="logo-item">
+
+        <img
+          src="logo-vienna-blockchain-week.png"
+          alt="Vienna Blockchain Week"
+        />
+
+      </div>
+
+
     </div>
+
   </section>
 
-  <section class="resources-section" id="resources">
+
+  <!-- ─────────────────────────────
+       RESOURCES
+  ───────────────────────────── -->
+
+  <section
+    class="resources-section"
+    id="resources"
+  >
+
     <div class="resources-head">
-      <div><p class="resources-eyebrow">Selected Resources</p><h2>KNOWLEDGE,<br><em>MADE USEFUL.</em></h2></div>
-      <p class="resources-intro">Guides für Krypto-Investoren, die nicht erst Steuerrecht studieren wollen.</p>
+
+      <div>
+
+        <p class="resources-eyebrow">
+          Selected Resources
+        </p>
+
+        <h2>
+          KNOWLEDGE,<br>
+          <em>MADE USEFUL.</em>
+        </h2>
+
+      </div>
+
+
+      <p class="resources-intro">
+        Guides für Krypto-Investoren,
+        die nicht erst Steuerrecht studieren wollen.
+      </p>
+
     </div>
+
+
     <div class="resource-grid">
+
+
+      <!-- GUIDE 01 -->
+
       <article class="resource-card">
-        <div class="resource-meta">Guide 01</div>
-        <div><h3>DAC8 & neue Regulierungen</h3><p>Was sich seit 2026 verändert hat, welche Pflichten relevant werden und was Krypto-Investoren jetzt im Blick behalten sollten.</p></div>
-        <div class="resource-bottom"><span class="resource-price">20 €</span><a href="#" class="resource-link">Get the Guide →</a></div>
+
+        <div class="resource-meta">
+          Guide 01
+        </div>
+
+        <div>
+
+          <h3>
+            DAC8 &amp;
+            neue Regulierungen
+          </h3>
+
+          <p>
+            Was sich seit 2026 verändert hat,
+            welche Pflichten relevant werden
+            und was Krypto-Investoren jetzt
+            im Blick behalten sollten.
+          </p>
+
+        </div>
+
+
+        <div class="resource-bottom">
+
+          <span class="resource-price">
+            20 €
+          </span>
+
+          <a
+            href="https://krypto-steuern.net/index.php/dac8-guide/"
+            class="resource-link"
+          >
+            Get the Guide →
+          </a>
+
+        </div>
+
       </article>
+
+
+      <!-- GUIDE 02 -->
+
       <article class="resource-card">
-        <div class="resource-meta">Guide 02</div>
-        <div><h3>Krypto-Steuer Guide</h3><p>Ein kompakter Einstieg in die wichtigsten steuerlichen Themen rund um Kryptowährungen — verständlich, praktisch und strukturiert.</p></div>
-        <div class="resource-bottom"><span class="resource-price">Preis ergänzen</span><a href="#" class="resource-link">Get the Guide →</a></div>
+
+        <div class="resource-meta">
+          Guide 02
+        </div>
+
+        <div>
+
+          <h3>
+            Krypto-Steuer Guide
+          </h3>
+
+          <p>
+            Ein kompakter Einstieg in die wichtigsten
+            steuerlichen Themen rund um Kryptowährungen –
+            verständlich, praktisch und strukturiert.
+          </p>
+
+        </div>
+
+
+        <div class="resource-bottom">
+
+          <span class="resource-price">
+            Free
+          </span>
+
+          <a
+            href="https://krypto-steuern.net/index.php/freebie/"
+            class="resource-link"
+          >
+            Get the Guide →
+          </a>
+
+        </div>
+
       </article>
-      <article class="resource-card resource-card-placeholder">
-        <div class="resource-meta">Coming next</div>
-        <div><h3>More knowledge.<br>Less noise.</h3><p>Weitere Guides, Analysen und kompakte Ressourcen zu Krypto, Steuern und internationalen Themen folgen.</p></div>
-        <div class="resource-bottom"><span class="resource-price">Soon</span><span class="resource-link muted">Stay tuned</span></div>
+
+
+      <!-- COMING NEXT -->
+
+      <article
+        class="resource-card
+        resource-card-placeholder"
+      >
+
+        <div class="resource-meta">
+          Coming next
+        </div>
+
+        <div>
+
+          <h3>
+            More knowledge.<br>
+            Less noise.
+          </h3>
+
+          <p>
+            Weitere Guides, Analysen
+            und kompakte Ressourcen
+            zu Krypto, Steuern
+            und internationalen Themen folgen.
+          </p>
+
+        </div>
+
+
+        <div class="resource-bottom">
+
+          <span class="resource-price">
+            Soon
+          </span>
+
+          <span
+            class="resource-link muted"
+          >
+            Stay tuned
+          </span>
+
+        </div>
+
       </article>
+
+
     </div>
+
   </section>
 
-    <div class="community-cta">
-      <div>
-        <p class="resources-eyebrow">Community</p>
-        <h3>STAY <em>AHEAD.</em></h3>
-        <p>Krypto-Steuern verändern sich. Deine Strategie sollte mithalten. In meiner Community teile ich aktuelle Entwicklungen, Einordnungen und Wissen rund um Krypto &amp; Steuern.</p>
-      </div>
-      <div class="community-action">
-        <a class="community-button" href="https://krypto-steuern.net/index.php/community/">Join the Community →</a>
-      </div>
+
+  <!-- ─────────────────────────────
+       COMMUNITY
+  ───────────────────────────── -->
+
+  <section class="community-cta">
+
+    <div>
+
+      <p class="resources-eyebrow">
+        Community
+      </p>
+
+      <h3>
+        STAY <em>AHEAD.</em>
+      </h3>
+
+      <p>
+        Krypto-Steuern verändern sich.
+        Deine Strategie sollte mithalten.
+        In meiner Community teile ich aktuelle Entwicklungen,
+        Einordnungen und Wissen rund um Krypto &amp; Steuern.
+      </p>
+
     </div>
 
 
-  <section class="brand-wordmark" aria-label="Tami Joan"><span>TAMI JOAN</span></section>
+    <div class="community-action">
+
+      <a
+        class="community-button"
+        href="https://krypto-steuern.net/index.php/community/"
+      >
+        Join the Community →
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ─────────────────────────────
+       TAMI JOAN
+  ───────────────────────────── -->
+
+  <section
+    class="brand-wordmark"
+    aria-label="Tami Joan"
+  >
+
+    <span>
+      TAMI JOAN
+    </span>
+
+  </section>
+
+
+  <!-- ─────────────────────────────
+       FOOTER
+  ───────────────────────────── -->
 
   <footer class="site-footer">
-    <div>&copy; 2026 Tami Mönnig. All rights reserved.</div>
-    <div class="footer-links">
-      <a href="https://www.linkedin.com/in/tami-moennig/">LinkedIn</a>
-      <a href="https://www.instagram.com/tami.moennig/">Instagram</a>
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
+
+    <div>
+      &copy; 2026 Tami Mönnig.
+      All rights reserved.
     </div>
+
+
+    <div class="footer-links">
+
+      <a
+        href="https://www.linkedin.com/in/tami-moennig/"
+      >
+        LinkedIn
+      </a>
+
+      <a
+        href="https://www.instagram.com/tami.moennig/"
+      >
+        Instagram
+      </a>
+
+      <a href="impressum.html">
+        Impressum
+      </a>
+
+      <a href="datenschutz.html">
+        Datenschutz
+      </a>
+
+    </div>
+
   </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const fitWordmark = () => {
-        const wordmark = document.querySelector('.brand-wordmark span');
-        if (!wordmark) return;
-        wordmark.style.transform = 'scaleX(1)';
-        const naturalWidth = wordmark.getBoundingClientRect().width;
-        const targetWidth = Math.max(0, window.innerWidth - 32);
-        if (naturalWidth > 0) wordmark.style.transform = `scaleX(${targetWidth / naturalWidth})`;
-      };
-      fitWordmark();
-      if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitWordmark);
-      window.addEventListener('resize', fitWordmark);
 
-      document.querySelectorAll('.card').forEach(card => {
-        const video = card.querySelector('.card-video');
-        if (!video) return;
-        card.addEventListener('mouseenter', () => { video.currentTime = 0; video.play().catch(()=>{}); });
-        card.addEventListener('mouseleave', () => video.pause());
-      });
-    });
+  <!-- ONLY WORDMARK JS — NO VIDEO CODE -->
+
+  <script>
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      () => {
+
+        const fitWordmark = () => {
+
+          const wordmark =
+            document.querySelector(
+              '.brand-wordmark span'
+            );
+
+          if (!wordmark) return;
+
+
+          wordmark.style.transform =
+            'scaleX(1)';
+
+
+          const naturalWidth =
+            wordmark.getBoundingClientRect().width;
+
+
+          const targetWidth =
+            Math.max(
+              0,
+              window.innerWidth - 32
+            );
+
+
+          if (naturalWidth > 0) {
+
+            const scaleX =
+              targetWidth / naturalWidth;
+
+
+            wordmark.style.transform =
+              `scaleX(${scaleX})`;
+
+          }
+
+        };
+
+
+        fitWordmark();
+
+
+        if (
+          document.fonts &&
+          document.fonts.ready
+        ) {
+
+          document.fonts.ready
+            .then(fitWordmark);
+
+        }
+
+
+        window.addEventListener(
+          'resize',
+          fitWordmark
+        );
+
+      }
+    );
+
   </script>
+
+
 </body>
 </html>

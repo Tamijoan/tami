@@ -57,8 +57,6 @@
         Arial,
         sans-serif;
 
-      /* maximal 3 Schriftgrößen */
-
       --display:
         clamp(3.4rem, 6vw, 7rem);
 
@@ -69,10 +67,6 @@
         .6rem;
     }
 
-
-    /* ─────────────────────────────
-       BASE
-    ───────────────────────────── */
 
     html,
     body {
@@ -85,15 +79,14 @@
       overflow-x: hidden;
     }
 
+
     a {
       color: inherit;
       text-decoration: none;
     }
 
 
-    /* ─────────────────────────────
-       NAVIGATION
-    ───────────────────────────── */
+    /* NAV */
 
     nav {
       height: 94px;
@@ -118,16 +111,19 @@
       z-index: 20;
     }
 
+
     .brand {
       font-family:
         var(--serif);
     }
+
 
     nav .links {
       display: flex;
 
       gap: 2rem;
     }
+
 
     nav .links a {
       color:
@@ -141,9 +137,7 @@
     }
 
 
-    /* ─────────────────────────────
-       HERO
-    ───────────────────────────── */
+    /* HERO */
 
     .hero {
       min-height: 78vh;
@@ -172,11 +166,6 @@
         var(--line);
     }
 
-
-    /*
-      HERO IMAGE:
-      international-header.png
-    */
 
     .hero::before {
       content: "";
@@ -249,6 +238,7 @@
       line-height: .8;
     }
 
+
     .hero h1 em,
     h2 em {
       font-weight: 300;
@@ -282,9 +272,7 @@
     }
 
 
-    /* ─────────────────────────────
-       SECTIONS
-    ───────────────────────────── */
+    /* SECTIONS */
 
     .section {
       padding:
@@ -332,9 +320,7 @@
     }
 
 
-    /* ─────────────────────────────
-       PERSPECTIVE CARDS
-    ───────────────────────────── */
+    /* PERSPECTIVE CARDS */
 
     .cards {
       display: grid;
@@ -431,9 +417,7 @@
     }
 
 
-    /* ─────────────────────────────
-       BREAK
-    ───────────────────────────── */
+    /* BREAK */
 
     .break {
       padding:
@@ -458,9 +442,7 @@
     }
 
 
-    /* ─────────────────────────────
-       TAMI × DANIEL
-    ───────────────────────────── */
+    /* TAMI × DANIEL */
 
     .pair {
       display: grid;
@@ -472,14 +454,12 @@
 
       margin-top: 3rem;
 
-      align-items: stretch;
+      align-items: start;
     }
 
 
     .person {
       min-width: 0;
-
-      min-height: 780px;
 
       display: flex;
 
@@ -496,15 +476,8 @@
     }
 
 
-    /* Portrait frame */
-
     .portrait {
       width: 100%;
-
-      aspect-ratio:
-        4 / 5;
-
-      min-height: 0;
 
       overflow: hidden;
 
@@ -514,27 +487,23 @@
 
       background:
         #090909;
-
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
     }
 
 
-    .portrait img {
+    /* TAMI */
+
+    .portrait-tami {
+      aspect-ratio:
+        4 / 5;
+    }
+
+
+    .portrait-tami img {
       display: block;
 
       width: 100%;
       height: 100%;
-    }
 
-
-    /*
-      Tami darf den Rahmen füllen.
-    */
-
-    .portrait-tami img {
       object-fit: cover;
 
       object-position:
@@ -542,13 +511,8 @@
     }
 
 
-    /*
-      Daniel NICHT beschneiden.
-
-      object-fit: contain sorgt dafür,
-      dass das komplette Hochformat
-      sichtbar bleibt.
-    */
+    /* DANIEL
+       Original-Seitenverhältnis */
 
     .portrait-daniel {
       background:
@@ -557,16 +521,14 @@
 
 
     .portrait-daniel img {
-      object-fit: contain;
+      display: block;
 
-      object-position:
-        center top;
+      width: 100%;
+      height: auto;
     }
 
 
     .person-content {
-      flex: 1;
-
       padding:
         2.2rem;
 
@@ -595,9 +557,7 @@
     }
 
 
-    /* ─────────────────────────────
-       QUOTE
-    ───────────────────────────── */
+    /* QUOTE */
 
     .quote {
       padding:
@@ -692,9 +652,7 @@
     }
 
 
-    /* ─────────────────────────────
-       DEPTH
-    ───────────────────────────── */
+    /* DEPTH */
 
     .depth-section {
       position: relative;
@@ -800,9 +758,7 @@
     }
 
 
-    /* ─────────────────────────────
-       WORDMARK
-    ───────────────────────────── */
+    /* WORDMARK */
 
     .wordmark {
       padding:
@@ -828,9 +784,7 @@
     }
 
 
-    /* ─────────────────────────────
-       FOOTER
-    ───────────────────────────── */
+    /* FOOTER */
 
     footer {
       padding:
@@ -864,9 +818,7 @@
     }
 
 
-    /* ─────────────────────────────
-       EXACTLY 3 FONT SIZES
-    ───────────────────────────── */
+    /* EXACTLY 3 FONT SIZES */
 
     .hero h1,
     h2,
@@ -904,9 +856,7 @@
     }
 
 
-    /* ─────────────────────────────
-       MOBILE
-    ───────────────────────────── */
+    /* MOBILE */
 
     @media
     (max-width: 850px) {
@@ -978,7 +928,7 @@
       }
 
 
-      .portrait {
+      .portrait-tami {
         aspect-ratio:
           4 / 5;
       }
@@ -1047,8 +997,6 @@
 <body>
 
 
-  <!-- NAVIGATION -->
-
   <nav>
 
     <a
@@ -1091,10 +1039,7 @@
   <main>
 
 
-    <!-- ─────────────────────────────
-         HERO
-         IMAGE: international-header.png
-    ───────────────────────────── -->
+    <!-- HERO -->
 
     <section class="hero">
 
@@ -1128,9 +1073,7 @@
     </section>
 
 
-    <!-- ─────────────────────────────
-         PERSPEKTIVE
-    ───────────────────────────── -->
+    <!-- PERSPEKTIVE -->
 
     <section
       class="
@@ -1190,8 +1133,6 @@
       <div class="cards">
 
 
-        <!-- 01 -->
-
         <article class="card">
 
           <span class="num">
@@ -1212,8 +1153,6 @@
         </article>
 
 
-        <!-- 02 -->
-
         <article class="card">
 
           <span class="num">
@@ -1233,8 +1172,6 @@
 
         </article>
 
-
-        <!-- 03 -->
 
         <article class="card">
 
@@ -1262,9 +1199,7 @@
     </section>
 
 
-    <!-- ─────────────────────────────
-         BREAK
-    ───────────────────────────── -->
+    <!-- BREAK -->
 
     <section
       class="
@@ -1282,9 +1217,7 @@
     </section>
 
 
-    <!-- ─────────────────────────────
-         TAMI × DANIEL
-    ───────────────────────────── -->
+    <!-- TAMI × DANIEL -->
 
     <section
       class="
@@ -1429,9 +1362,7 @@
     </section>
 
 
-    <!-- ─────────────────────────────
-         QUOTE
-    ───────────────────────────── -->
+    <!-- QUOTE -->
 
     <section class="quote">
 
@@ -1460,9 +1391,7 @@
     </section>
 
 
-    <!-- ─────────────────────────────
-         WORDMARK
-    ───────────────────────────── -->
+    <!-- WORDMARK -->
 
     <section class="wordmark">
 
@@ -1475,8 +1404,6 @@
 
   </main>
 
-
-  <!-- FOOTER -->
 
   <footer>
 

@@ -5,7 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" href="favicon-tami.png" />
+  <link
+    rel="icon"
+    type="image/png"
+    href="favicon-tami.png?v=2"
+  />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,32 +28,32 @@
 
   <style>
 
-    * {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+
     :root {
       --black: #050505;
       --white: #f5f3ef;
-      --muted: rgba(245, 243, 239, .55);
-      --line: rgba(245, 243, 239, .17);
+      --muted: rgba(245,243,239,.56);
+      --line: rgba(245,243,239,.17);
 
       --serif: 'Cormorant Garamond', Georgia, serif;
       --sans: 'Inter', Arial, sans-serif;
 
-      /* Maximal 3 Schriftgrößen */
-      --type-display: clamp(3.4rem, 6vw, 7rem);
-      --type-body: .95rem;
-      --type-meta: .6rem;
+      /* maximal 3 Schriftgrößen */
+      --display: clamp(3.4rem,6vw,7rem);
+      --body: .95rem;
+      --meta: .6rem;
     }
 
 
-    /* ─────────────────────────────
-       BASE
-    ───────────────────────────── */
-
+    html,
     body {
       background: var(--black);
       color: var(--white);
@@ -59,6 +63,7 @@
 
       overflow-x: hidden;
     }
+
 
     a {
       color: inherit;
@@ -70,32 +75,57 @@
        NAVIGATION
     ───────────────────────────── */
 
-    .site-nav {
+    nav {
       height: 94px;
 
-      padding: 0 2.5rem;
+      padding:
+        0 2.5rem;
 
       display: flex;
+
       align-items: center;
       justify-content: space-between;
 
-      border-bottom: 1px solid var(--line);
+      border-bottom:
+        1px solid
+        var(--line);
+
+      background:
+        var(--black);
+
+      position: relative;
+
+      z-index: 20;
     }
+
 
     .brand {
-      font-family: var(--serif);
+      font-family:
+        var(--serif);
     }
 
-    .nav-links {
+
+    nav .links {
       display: flex;
-      gap: 2rem;
+      gap: 1.7rem;
     }
 
-    .nav-links a {
+
+    nav .links a {
+      color: var(--muted);
+
       letter-spacing: .16em;
+
       text-transform: uppercase;
 
-      color: var(--muted);
+      transition:
+        color .2s ease;
+    }
+
+
+    nav .links a:hover,
+    nav .links a.active {
+      color: var(--white);
     }
 
 
@@ -106,28 +136,30 @@
     .hero {
       min-height: 78vh;
 
-      padding: 6rem 4vw 4rem;
+      padding:
+        6rem 4vw
+        4rem;
 
       display: grid;
-      grid-template-columns: .78fr 1.22fr;
+
+      grid-template-columns:
+        .78fr 1.22fr;
 
       gap: 4vw;
 
       align-items: end;
 
-      border-bottom: 1px solid var(--line);
-
       position: relative;
+
       isolation: isolate;
 
-      background:
-        linear-gradient(
-          rgba(0, 0, 0, .38),
-          rgba(0, 0, 0, .58)
-        ),
-        url('Tami_about_header.png')
-        center / cover no-repeat;
+      overflow: hidden;
+
+      border-bottom:
+        1px solid
+        var(--line);
     }
+
 
     .hero::before {
       content: "";
@@ -136,11 +168,33 @@
       inset: 0;
 
       background:
+        url('Tami_about_header.png')
+        center center / cover
+        no-repeat;
+
+      filter:
+        grayscale(100%)
+        brightness(.40);
+
+      transform:
+        scale(1.015);
+
+      z-index: -2;
+    }
+
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
         linear-gradient(
-          90deg,
-          rgba(0, 0, 0, .18),
-          rgba(0, 0, 0, .04) 48%,
-          rgba(0, 0, 0, .18)
+          180deg,
+          rgba(0,0,0,.24) 0%,
+          rgba(0,0,0,.45) 55%,
+          rgba(0,0,0,.84) 100%
         );
 
       z-index: -1;
@@ -148,41 +202,65 @@
       pointer-events: none;
     }
 
+
     .hero > * {
       position: relative;
       z-index: 1;
     }
 
-    .kicker,
-    .index {
-      letter-spacing: .24em;
-      text-transform: uppercase;
 
-      color: rgba(245, 243, 239, .35);
+    .hero h1,
+    h2,
+    h3,
+    .editorial-break div,
+    .journey-card h3,
+    .quote blockquote,
+    .wordmark span {
+      font-family:
+        var(--serif);
+
+      font-weight: 300;
+
+      letter-spacing:
+        -.045em;
     }
+
 
     .hero h1 {
-      font-family: var(--serif);
-      font-weight: 300;
-
-      line-height: .77;
-      letter-spacing: -.06em;
+      line-height: .8;
     }
 
-    .hero h1 em {
+
+    .hero h1 em,
+    h2 em {
       font-weight: 300;
     }
+
 
     .hero-copy {
-      max-width: 560px;
+      max-width: 580px;
 
       margin-left: auto;
     }
 
-    .hero-copy p {
-      line-height: 1.6;
 
-      color: var(--muted);
+    .hero-copy p {
+      line-height: 1.7;
+
+      color:
+        rgba(245,243,239,.72);
+    }
+
+
+    .meta {
+      letter-spacing:
+        .22em;
+
+      text-transform:
+        uppercase;
+
+      color:
+        rgba(245,243,239,.40);
     }
 
 
@@ -191,95 +269,121 @@
     ───────────────────────────── */
 
     .story {
-      padding: 7rem 4vw;
+      padding:
+        7rem 4vw;
 
       display: grid;
-      grid-template-columns: .9fr 1.1fr;
+
+      grid-template-columns:
+        .9fr 1.1fr;
 
       gap: 5vw;
 
-      border-bottom: 1px solid var(--line);
+      border-bottom:
+        1px solid
+        var(--line);
     }
 
-    .story-title h2 {
-      font-family: var(--serif);
-      font-weight: 300;
 
+    .story h2 {
       line-height: .86;
-      letter-spacing: -.045em;
 
-      margin-top: 1.3rem;
+      margin-top: 1.2rem;
     }
+
 
     .story-copy {
       padding-top: 3rem;
     }
 
+
     .story-copy p {
-      max-width: 700px;
+      max-width: 720px;
+
+      margin-bottom: 1.35rem;
 
       line-height: 1.75;
 
       color: var(--muted);
-
-      margin-bottom: 1.3rem;
     }
 
 
     /* ─────────────────────────────
-       IMAGE GALLERY
-       ALLE 3 BILDER GLEICH GROSS
+       TRAVEL IMAGES
     ───────────────────────────── */
 
     .gallery {
-      padding: 0 4vw 7rem;
+      padding:
+        0 4vw
+        7rem;
 
       display: grid;
 
       grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+        repeat(3,minmax(0,1fr));
 
       gap: 1.2rem;
     }
 
-    .photo {
-      position: relative;
 
+    .photo {
       height: 500px;
+
+      position: relative;
 
       overflow: hidden;
 
-      background-color: #181818;
+      border:
+        1px solid
+        var(--line);
 
-      border: 1px solid var(--line);
+      background-color:
+        #111;
+
+      background-size:
+        cover;
+
+      background-position:
+        center;
+
+      background-repeat:
+        no-repeat;
     }
+
 
     .photo-brazil {
-      background:
-        url('Tami_about_brazil.png')
-        center / cover no-repeat;
+      background-image:
+        url('Tami_about_brazil.png');
     }
+
 
     .photo-peru {
-      background:
-        url('Tami_about_peru.png')
-        center / cover no-repeat;
+      /*
+        Wichtig:
+        Bitte Tami_about_peru.png selbst schwärzen,
+        damit sensible Bildschirm-Inhalte auch beim
+        direkten Öffnen der Bilddatei nicht sichtbar sind.
+      */
+
+      background-image:
+        url('Tami_about_peru.png');
     }
+
 
     .photo-cruise {
-      background:
-        url('Tami_about_cruise.png')
-        center / cover no-repeat;
+      background-image:
+        url('Tami_about_cruise.png');
     }
 
-    .photo-label {
+
+    .photo-number {
       position: absolute;
 
       right: 1.2rem;
       bottom: 1.2rem;
 
-      letter-spacing: .17em;
-      text-transform: uppercase;
+      letter-spacing:
+        .17em;
 
       color: var(--white);
     }
@@ -290,26 +394,25 @@
     ───────────────────────────── */
 
     .editorial-break {
-      padding: 4rem 4vw;
+      padding:
+        4rem 4vw;
 
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+      border-top:
+        1px solid
+        var(--line);
+
+      border-bottom:
+        1px solid
+        var(--line);
 
       overflow: hidden;
     }
 
-    .editorial-break div {
-      font-family: var(--serif);
-      font-weight: 300;
 
-      line-height: .7;
-      letter-spacing: -.065em;
+    .editorial-break div {
+      line-height: .72;
 
       white-space: nowrap;
-    }
-
-    .editorial-break em {
-      font-weight: 300;
     }
 
 
@@ -318,147 +421,236 @@
     ───────────────────────────── */
 
     .today {
-      padding: 7rem 4vw;
+      padding:
+        7rem 4vw
+        8rem;
+
+      border-bottom:
+        1px solid
+        var(--line);
     }
+
 
     .today-head {
       display: grid;
 
       grid-template-columns:
-        .7fr 1.3fr;
+        .78fr 1.22fr;
 
       gap: 5vw;
 
-      margin-bottom: 4rem;
+      margin-bottom:
+        4rem;
     }
 
-    .today h2 {
-      font-family: var(--serif);
-      font-weight: 300;
 
+    .today-head h2 {
       line-height: .86;
-      letter-spacing: -.045em;
 
-      margin-top: 1.3rem;
+      margin-top:
+        1.2rem;
     }
 
-    .today-head p {
-      max-width: 600px;
 
-      padding-top: 2.5rem;
+    .today-intro {
+      max-width: 650px;
 
-      line-height: 1.7;
+      padding-top:
+        2.5rem;
 
-      color: var(--muted);
+      line-height:
+        1.7;
+
+      color:
+        var(--muted);
     }
 
 
     /* ─────────────────────────────
-       CARDS
+       CLICKABLE JOURNEY CARDS
     ───────────────────────────── */
 
-    .cards {
+    .journey-grid {
       display: grid;
 
       grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+        repeat(3,minmax(0,1fr));
 
       gap: 1rem;
     }
 
-    .card {
-      min-width: 0;
-      min-height: 430px;
+
+    .journey-card {
+      min-height: 480px;
 
       padding:
-        3rem 2rem
-        2rem;
+        2.6rem;
+
+      position: relative;
 
       display: flex;
 
       flex-direction: column;
 
-      justify-content: flex-end;
-
-      position: relative;
+      justify-content:
+        space-between;
 
       overflow: hidden;
 
-      border: 1px solid var(--line);
+      border:
+        1px solid
+        var(--line);
 
-      border-radius:
-        999px 999px
-        2rem 2rem;
+      background:
+        rgba(255,255,255,.012);
+
+      transition:
+        transform .35s ease,
+        border-color .35s ease;
     }
 
-    .card::before {
+
+    .journey-card:hover {
+      transform:
+        translateY(-5px);
+
+      border-color:
+        rgba(245,243,239,.34);
+    }
+
+
+    .journey-card::before {
       content: "";
 
       position: absolute;
-      inset: 0;
 
-      background:
-        linear-gradient(
-          180deg,
-          rgba(255, 255, 255, .035),
-          transparent 45%
-        );
+      width: 520px;
+      height: 520px;
+
+      border-radius: 50%;
+
+      filter:
+        blur(60px);
+
+      opacity:
+        .68;
+
+      z-index: 0;
 
       pointer-events: none;
     }
 
-    .card .num {
-      position: absolute;
 
-      top: 2rem;
-      left: 50%;
+    .journey-card:nth-child(1)::before {
+      left: -280px;
+      bottom: -260px;
 
-      transform:
-        translateX(-50%);
-
-      letter-spacing: .18em;
-
-      color:
-        rgba(245, 243, 239, .35);
+      background:
+        radial-gradient(
+          circle,
+          rgba(107,50,82,.56) 0%,
+          rgba(72,35,77,.30) 42%,
+          rgba(0,0,0,0) 72%
+        );
     }
 
-    .card h3 {
-      font-family: var(--serif);
-      font-weight: 300;
 
-      line-height: 1;
+    .journey-card:nth-child(2)::before {
+      right: -220px;
+      top: -240px;
 
-      margin-bottom: 1rem;
-
-      max-width: 100%;
+      background:
+        radial-gradient(
+          circle,
+          rgba(87,44,103,.58) 0%,
+          rgba(117,53,76,.28) 45%,
+          rgba(0,0,0,0) 74%
+        );
     }
 
-    .card p {
+
+    .journey-card:nth-child(3)::before {
+      right: -240px;
+      bottom: -260px;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(124,63,75,.52) 0%,
+          rgba(70,36,89,.30) 44%,
+          rgba(0,0,0,0) 73%
+        );
+    }
+
+
+    .journey-card > * {
+      position: relative;
+
+      z-index: 1;
+    }
+
+
+    .journey-top {
+      display: flex;
+
+      justify-content:
+        space-between;
+
+      align-items: center;
+    }
+
+
+    .journey-card h3 {
+      line-height: .91;
+
+      margin-top:
+        auto;
+
+      margin-bottom:
+        1.3rem;
+    }
+
+
+    .journey-card p {
+      max-width: 420px;
+
       line-height: 1.65;
 
-      color: var(--muted);
+      color:
+        var(--muted);
     }
 
 
-    /*
-      "International" ist als einzelnes Wort zu breit.
-      Wir behalten exakt dieselbe Schriftgröße,
-      komprimieren das Wort aber horizontal.
-      Dadurch bleibt das 3-Größen-System erhalten.
-    */
+    .journey-link {
+      margin-top: 2rem;
 
-    .card-title-fit {
-      display: inline-block;
+      display: inline-flex;
 
-      width: 118%;
+      align-items: center;
 
+      gap: .5rem;
+
+      letter-spacing:
+        .16em;
+
+      text-transform:
+        uppercase;
+
+      color:
+        rgba(245,243,239,.76);
+    }
+
+
+    .journey-arrow {
+      transition:
+        transform .2s ease;
+    }
+
+
+    .journey-card:hover
+    .journey-arrow {
       transform:
-        scaleX(.84);
-
-      transform-origin:
-        left center;
-
-      white-space: nowrap;
+        translateX(5px);
     }
 
 
@@ -471,56 +663,147 @@
         7rem 4vw
         8rem;
 
-      background: var(--black);
-
-      color: var(--white);
-
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+      border-bottom:
+        1px solid
+        var(--line);
     }
+
 
     .quote::before {
       content: "";
 
       display: block;
 
-      width: 100%;
       height: 1px;
 
-      margin-bottom: 3rem;
+      margin-bottom:
+        3rem;
 
       background:
-        rgba(245, 243, 239, .14);
+        rgba(245,243,239,.14);
     }
+
 
     .quote blockquote {
-      max-width: 1200px;
+      max-width:
+        1200px;
 
-      font-family: var(--serif);
-      font-weight: 300;
-
-      line-height: .94;
-      letter-spacing: -.04em;
+      line-height:
+        .94;
 
       color:
-        rgba(245, 243, 239, .86);
+        rgba(245,243,239,.86);
     }
+
 
     .quote cite {
       display: block;
 
-      margin-top: 2.2rem;
+      margin-top:
+        2.2rem;
 
-      font-family: var(--sans);
-      font-style: normal;
-      font-weight: 400;
+      font-style:
+        normal;
 
-      letter-spacing: .2em;
+      letter-spacing:
+        .2em;
 
-      text-transform: uppercase;
+      text-transform:
+        uppercase;
 
       color:
-        rgba(245, 243, 239, .42);
+        rgba(245,243,239,.42);
+    }
+
+
+    /* ─────────────────────────────
+       DEPTH
+    ───────────────────────────── */
+
+    .depth-section {
+      position: relative;
+
+      isolation: isolate;
+
+      overflow: hidden;
+    }
+
+
+    .depth-section > * {
+      position: relative;
+
+      z-index: 1;
+    }
+
+
+    .depth-section::before,
+    .depth-section::after {
+      content: "";
+
+      position: absolute;
+
+      border-radius: 50%;
+
+      pointer-events: none;
+
+      z-index: 0;
+
+      filter:
+        blur(68px);
+
+      opacity:
+        .92;
+    }
+
+
+    .depth-warm::before {
+      width: 720px;
+      height: 720px;
+
+      right: -220px;
+      top: 4%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(126,49,88,.55) 0%,
+          rgba(89,35,97,.34) 38%,
+          rgba(5,5,5,0) 72%
+        );
+    }
+
+
+    .depth-warm::after {
+      width: 520px;
+      height: 520px;
+
+      left: -220px;
+      bottom: -180px;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(115,58,68,.34) 0%,
+          rgba(67,31,74,.22) 42%,
+          rgba(5,5,5,0) 73%
+        );
+    }
+
+
+    .depth-violet::before {
+      width: 760px;
+      height: 560px;
+
+      left: 32%;
+      top: -300px;
+
+      background:
+        radial-gradient(
+          ellipse,
+          rgba(72,38,91,.46) 0%,
+          rgba(116,47,78,.29) 43%,
+          rgba(5,5,5,0) 74%
+        );
     }
 
 
@@ -538,122 +821,18 @@
       overflow: hidden;
     }
 
+
     .wordmark span {
-      display: inline-block;
-
-      font-family: var(--serif);
-      font-weight: 300;
-
       line-height: .75;
 
-      letter-spacing: -.06em;
+      letter-spacing:
+        -.06em;
 
-      white-space: nowrap;
+      white-space:
+        nowrap;
 
       color:
-        rgba(245, 243, 239, .13);
-    }
-
-
-    /* ─────────────────────────────
-       DEPTH GLOWS
-    ───────────────────────────── */
-
-    .depth-section {
-      position: relative;
-
-      isolation: isolate;
-
-      overflow: hidden;
-    }
-
-    .depth-section > * {
-      position: relative;
-
-      z-index: 1;
-    }
-
-    .depth-section::before,
-    .depth-section::after {
-      content: "";
-
-      position: absolute;
-
-      border-radius: 50%;
-
-      pointer-events: none;
-
-      z-index: 0;
-
-      filter: blur(68px);
-
-      opacity: .92;
-    }
-
-
-    .depth-warm::before {
-      width: 720px;
-      height: 720px;
-
-      right: -220px;
-      top: 4%;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(126, 49, 88, .55) 0%,
-          rgba(89, 35, 97, .34) 38%,
-          rgba(5, 5, 5, 0) 72%
-        );
-    }
-
-    .depth-warm::after {
-      width: 520px;
-      height: 520px;
-
-      left: -220px;
-      bottom: -180px;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(115, 58, 68, .34) 0%,
-          rgba(67, 31, 74, .22) 42%,
-          rgba(5, 5, 5, 0) 73%
-        );
-    }
-
-
-    .depth-violet::before {
-      width: 760px;
-      height: 560px;
-
-      left: 32%;
-      top: -300px;
-
-      background:
-        radial-gradient(
-          ellipse,
-          rgba(72, 38, 91, .46) 0%,
-          rgba(116, 47, 78, .29) 43%,
-          rgba(5, 5, 5, 0) 74%
-        );
-    }
-
-    .depth-violet::after {
-      width: 560px;
-      height: 560px;
-
-      right: -220px;
-      bottom: -270px;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(132, 65, 76, .36) 0%,
-          rgba(73, 37, 89, .21) 44%,
-          rgba(5, 5, 5, 0) 73%
-        );
+        rgba(245,243,239,.13);
     }
 
 
@@ -661,28 +840,32 @@
        FOOTER
     ───────────────────────────── */
 
-    .site-footer {
+    footer {
       padding:
         1.2rem 2.5rem
         2rem;
 
       display: flex;
 
-      justify-content: space-between;
+      justify-content:
+        space-between;
 
       border-top:
         1px solid
         var(--line);
 
-      letter-spacing: .12em;
+      letter-spacing:
+        .12em;
 
-      text-transform: uppercase;
+      text-transform:
+        uppercase;
 
       color:
-        rgba(245, 243, 239, .35);
+        rgba(245,243,239,.35);
     }
 
-    .footer-links {
+
+    footer .links {
       display: flex;
 
       gap: 1rem;
@@ -693,41 +876,39 @@
        EXACTLY 3 FONT SIZES
     ───────────────────────────── */
 
-    h1,
+    .hero h1,
     h2,
     h3,
-    .hero h1,
-    .story-title h2,
-    .today h2,
     .editorial-break div,
-    .card h3,
+    .journey-card h3,
     .quote blockquote,
     .wordmark span {
       font-size:
-        var(--type-display) !important;
+        var(--display) !important;
     }
+
 
     p,
     .hero-copy p,
     .story-copy p,
-    .today-head p,
-    .card p {
+    .today-intro,
+    .journey-card p {
       font-size:
-        var(--type-body) !important;
+        var(--body) !important;
     }
 
-    .site-nav,
+
+    nav,
     .brand,
-    .nav-links a,
-    .kicker,
-    .index,
-    .photo-label,
-    .card .num,
+    nav .links a,
+    .meta,
+    .photo-number,
+    .journey-top,
+    .journey-link,
     .quote cite,
-    .site-footer,
-    .footer-links {
+    footer {
       font-size:
-        var(--type-meta) !important;
+        var(--meta) !important;
     }
 
 
@@ -735,41 +916,49 @@
        MOBILE
     ───────────────────────────── */
 
-    @media (max-width: 850px) {
+    @media(max-width:850px) {
 
       :root {
-        --type-display:
-          clamp(3rem, 12vw, 5rem);
+        --display:
+          clamp(3rem,12vw,5rem);
 
-        --type-body:
+        --body:
           .95rem;
 
-        --type-meta:
+        --meta:
           .6rem;
       }
 
-      .site-nav {
+
+      nav {
         padding:
           0 1.2rem;
       }
 
-      .nav-links {
-        display: none;
+
+      nav .links {
+        display:
+          none;
       }
+
 
       .hero,
       .story,
       .today-head {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          1fr;
       }
 
+
       .hero {
-        min-height: auto;
+        min-height:
+          72vh;
 
         padding:
           5rem 1.2rem
           3rem;
       }
+
 
       .story,
       .today,
@@ -779,19 +968,19 @@
       }
 
 
-      /* Bilder untereinander,
-         weiterhin alle gleich groß */
-
       .gallery {
         padding:
           0 1.2rem
           4rem;
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          1fr;
       }
 
+
       .photo {
-        height: 440px;
+        height:
+          440px;
       }
 
 
@@ -801,59 +990,33 @@
       }
 
 
-      .cards {
+      .journey-grid {
         grid-template-columns:
           1fr;
       }
 
-      .card {
-        min-height: 380px;
-      }
 
-      .card-title-fit {
-        width: auto;
-
-        transform: none;
-
-        white-space: normal;
+      .journey-card {
+        min-height:
+          380px;
       }
 
 
-      .site-footer {
+      footer {
         padding:
           1.5rem 1.2rem;
 
-        flex-direction: column;
+        flex-direction:
+          column;
 
-        gap: 1rem;
-      }
-
-
-      .depth-section::before,
-      .depth-section::after {
-        filter: blur(58px);
-
-        opacity: .74;
-      }
-
-      .depth-warm::before {
-        width: 520px;
-        height: 520px;
-
-        right: -340px;
-      }
-
-      .depth-violet::before {
-        width: 500px;
-        height: 420px;
-
-        left: 15%;
-        top: -240px;
+        gap:
+          1rem;
       }
 
     }
 
   </style>
+
 </head>
 
 
@@ -862,7 +1025,7 @@
 
   <!-- NAVIGATION -->
 
-  <nav class="site-nav">
+  <nav>
 
     <a
       class="brand"
@@ -872,14 +1035,17 @@
     </a>
 
 
-    <div class="nav-links">
+    <div class="links">
 
-      <a href="about.html">
-        About
+      <a href="index.html">
+        Overview
       </a>
 
-      <a href="https://www.krypto-steuern.net/">
-        Krypto
+      <a
+        href="about.html"
+        class="active"
+      >
+        About
       </a>
 
       <a href="speaking.html">
@@ -892,6 +1058,14 @@
 
       <a href="astrologie.html">
         Astrology × Finance
+      </a>
+
+      <a
+        href="https://www.krypto-steuern.net/"
+        target="_blank"
+        rel="noopener"
+      >
+        Krypto-Steuern ↗
       </a>
 
     </div>
@@ -908,13 +1082,13 @@
 
       <div>
 
-        <p class="kicker">
+        <p class="meta">
           About Tami — 01
         </p>
 
         <h1>
-          Keine<br>
-          <em>Schablone.</em>
+          Passt in keine<br>
+          <em>Schublade.</em>
         </h1>
 
       </div>
@@ -923,10 +1097,13 @@
       <div class="hero-copy">
 
         <p>
-          Steuerrechtlerin, Krypto-Expertin,
+          Steuerrechtlerin,
+          Krypto-Expertin,
           Speakerin und digitale Nomadin.
+
           Passt in keine Schublade –
-          und wollte da ehrlich gesagt auch nie rein.
+          und wollte da ehrlich gesagt
+          auch nie rein.
         </p>
 
       </div>
@@ -937,16 +1114,18 @@
     <!-- STORY -->
 
     <section
-      class="story
-      depth-section
-      depth-warm"
+      class="
+        story
+        depth-section
+        depth-warm
+      "
     >
 
-      <div class="story-title">
+      <div>
 
-        <span class="index">
+        <p class="meta">
           01 — Der Weg
-        </span>
+        </p>
 
         <h2>
           Vom durchgeplanten Job
@@ -959,26 +1138,35 @@
       <div class="story-copy">
 
         <p>
-          Ich komme aus dem klassischen deutschen Steuerrecht.
+          Ich komme aus dem klassischen
+          deutschen Steuerrecht.
+
           Mein Weg war vorgezeichnet,
           sicher und absolut berechenbar.
+
           Aber genau da lag das Problem:
-          Ich wollte mein Leben nicht einfach nur
-          bis zur Rente verwalten.
+          Ich wollte mein Leben nicht
+          einfach nur bis zur Rente verwalten.
+
           Ich habe mir gedacht:
-          <em>Das kann es doch jetzt nicht gewesen sein.</em>
+          <em>
+            Das kann es doch jetzt
+            nicht gewesen sein.
+          </em>
         </p>
 
 
         <p>
           2023 habe ich den Schnitt gemacht,
           gekündigt und bin nach Brasilien geflogen.
+
           Ohne fertigen Masterplan,
           aber mit dem festen Entschluss,
           es selbst anzupacken.
 
           Meinen allerersten bezahlten Auftrag
-          in der Selbstständigkeit habe ich in Peru erledigt –
+          in der Selbstständigkeit
+          habe ich in Peru erledigt –
           in einem Dorf ohne fließend Wasser,
           in einer halben Ruine,
           wo der Hund durchs Bild lief,
@@ -987,14 +1175,18 @@
 
 
         <p>
-          Zwei Jahre später sass ich einen Monat lang
-          auf einem Schiff von den USA nach Australien.
+          Zwei Jahre später saß ich
+          einen Monat lang in einer Suite
+          auf einem Schiff von den USA
+          nach Australien.
 
-          Heute arbeite ich bereits seit 3 Jahren
-          von unterwegs für Mandanten weltweit.
+          Heute arbeite ich bereits
+          seit drei Jahren von unterwegs
+          für Mandanten weltweit.
 
           Zwischen den Anfängen in Peru
-          und meinen mittlerweile 5-stelligen Monatsumsätzen
+          und meinen mittlerweile
+          5-stelligen Monatsumsätzen
           liegen hunderte Krypto-Fälle,
           Vorträge,
           Veröffentlichungen in Fachverlagen
@@ -1013,48 +1205,40 @@
 
     <section class="gallery">
 
-
-      <!-- 01 BRAZIL -->
-
       <figure
-        class="photo
-        photo-brazil"
+        class="
+          photo
+          photo-brazil
+        "
       >
-
-        <figcaption class="photo-label">
+        <figcaption class="photo-number">
           01
         </figcaption>
-
       </figure>
 
 
-      <!-- 02 PERU -->
-
       <figure
-        class="photo
-        photo-peru"
+        class="
+          photo
+          photo-peru
+        "
       >
-
-        <figcaption class="photo-label">
+        <figcaption class="photo-number">
           02
         </figcaption>
-
       </figure>
 
-
-      <!-- 03 CRUISE -->
 
       <figure
-        class="photo
-        photo-cruise"
+        class="
+          photo
+          photo-cruise
+        "
       >
-
-        <figcaption class="photo-label">
+        <figcaption class="photo-number">
           03
         </figcaption>
-
       </figure>
-
 
     </section>
 
@@ -1062,9 +1246,11 @@
     <!-- EDITORIAL BREAK -->
 
     <section
-      class="editorial-break
-      depth-section
-      depth-violet"
+      class="
+        editorial-break
+        depth-section
+        depth-violet
+      "
     >
 
       <div>
@@ -1079,18 +1265,20 @@
     <!-- TODAY -->
 
     <section
-      class="today
-      depth-section
-      depth-warm"
+      class="
+        today
+        depth-section
+        depth-warm
+      "
     >
 
       <div class="today-head">
 
         <div>
 
-          <span class="index">
+          <p class="meta">
             02 — Heute
-          </span>
+          </p>
 
           <h2>
             Welten verbinden
@@ -1101,10 +1289,11 @@
         </div>
 
 
-        <p>
+        <p class="today-intro">
           Heute verbinde ich Welten,
           die für viele auf den ersten Blick
           gar nicht zusammenpassen:
+
           trockene Paragrafen
           und komplexe Krypto-Transaktionen.
 
@@ -1118,82 +1307,159 @@
       </div>
 
 
-      <div class="cards">
+      <!-- CLICKABLE NAV CARDS -->
+
+      <div class="journey-grid">
 
 
         <!-- KRYPTO -->
 
-        <article class="card">
+        <a
+          class="journey-card"
+          href="https://www.krypto-steuern.net/"
+          target="_blank"
+          rel="noopener"
+        >
 
-          <span class="num">
-            01
-          </span>
+          <div class="journey-top">
 
-          <h3>
-            Krypto &amp;
-            Steuern
-          </h3>
+            <span>
+              01
+            </span>
 
-          <p>
-            Strategie,
-            Beratung und Community.
+            <span>
+              EXTERNAL ↗
+            </span>
 
-            Damit Krypto-Investoren
-            und Unternehmer
-            ihre Transaktionen und Steuern
-            von Anfang an im Griff haben.
-          </p>
+          </div>
 
-        </article>
+
+          <div>
+
+            <h3>
+              Krypto &amp;<br>
+              Steuern
+            </h3>
+
+            <p>
+              Strategie,
+              Beratung und Community.
+
+              Damit Krypto-Investoren
+              und Unternehmer
+              ihre Transaktionen und Steuern
+              von Anfang an im Griff haben.
+            </p>
+
+
+            <span class="journey-link">
+              Krypto-Steuern ansehen
+              <span class="journey-arrow">
+                →
+              </span>
+            </span>
+
+          </div>
+
+        </a>
 
 
         <!-- INTERNATIONAL -->
 
-        <article class="card">
+        <a
+          class="journey-card"
+          href="international.html"
+        >
 
-          <span class="num">
-            02
-          </span>
+          <div class="journey-top">
 
-          <h3>
-    <span class="card-title-fit">
-        Inter-<br>national
-    </span>
-</h3>
+            <span>
+              02
+            </span>
 
-          <p>
-            Unternehmens- und Vermögensstrukturen
-            für Gründer und Investoren,
-            deren Leben und Business
-            nicht an einer Landesgrenze aufhören.
-          </p>
+            <span>
+              STRUCTURES
+            </span>
 
-        </article>
+          </div>
+
+
+          <div>
+
+            <h3>
+              Inter-<br>
+              national
+            </h3>
+
+            <p>
+              Unternehmens-
+              und Vermögensstrukturen
+              für Gründer und Investoren,
+              deren Leben und Business
+              nicht an einer Landesgrenze aufhören.
+            </p>
+
+
+            <span class="journey-link">
+              Mehr erfahren
+              <span class="journey-arrow">
+                →
+              </span>
+            </span>
+
+          </div>
+
+        </a>
 
 
         <!-- SPEAKING -->
 
-        <article class="card">
+        <a
+          class="journey-card"
+          href="speaking.html"
+        >
 
-          <span class="num">
-            03
-          </span>
+          <div class="journey-top">
 
-          <h3>
-            Speaking
-          </h3>
+            <span>
+              03
+            </span>
 
-          <p>
-            Vorträge,
-            Panels und Fortbildungen.
+            <span>
+              STAGE
+            </span>
 
-            Komplexe Krypto- und Steuer-Themen
-            klar erklärt –
-            für Fachpublikum,
-            Unternehmen und Investoren.
-          </p>
+          </div>
 
-        </article>
+
+          <div>
+
+            <h3>
+              Speaking
+            </h3>
+
+            <p>
+              Vorträge,
+              Panels und Fortbildungen.
+
+              Komplexe Krypto-
+              und Steuer-Themen
+              klar erklärt –
+              für Fachpublikum,
+              Unternehmen und Investoren.
+            </p>
+
+
+            <span class="journey-link">
+              Speaking ansehen
+              <span class="journey-arrow">
+                →
+              </span>
+            </span>
+
+          </div>
+
+        </a>
 
 
       </div>
@@ -1209,6 +1475,7 @@
 
         „Ich wusste beim Start nicht genau,
         wo die Reise hingeht.
+
         Aber ich wusste zu 100 %,
         dass das alte, sichere Leben
         nicht mehr meine Antwort war.“
@@ -1238,15 +1505,14 @@
 
   <!-- FOOTER -->
 
-  <footer class="site-footer">
+  <footer>
 
     <div>
-      &copy; 2026 Tami Mönnig.
-      All rights reserved.
+      © 2026 Tami Mönnig
     </div>
 
 
-    <div class="footer-links">
+    <div class="links">
 
       <a
         href="https://www.linkedin.com/in/tami-moennig/"

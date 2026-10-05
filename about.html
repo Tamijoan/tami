@@ -5,11 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link
-    rel="icon"
-    type="image/png"
-    href="favicon-tami.png?v=2"
-  />
+  <link rel="icon" type="image/png" href="favicon-tami.png?v=2" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,7 +15,7 @@
     rel="stylesheet"
   />
 
-  <title>About Tami — Tami Mönnig</title>
+  <title>Über Tami — Tami Mönnig</title>
 
   <meta
     name="description"
@@ -36,7 +32,6 @@
       padding: 0;
     }
 
-
     :root {
       --black: #050505;
       --white: #f5f3ef;
@@ -46,12 +41,10 @@
       --serif: 'Cormorant Garamond', Georgia, serif;
       --sans: 'Inter', Arial, sans-serif;
 
-      /* maximal 3 Schriftgrößen */
       --display: clamp(3.4rem,6vw,7rem);
       --body: .95rem;
       --meta: .6rem;
     }
-
 
     html,
     body {
@@ -63,7 +56,6 @@
 
       overflow-x: hidden;
     }
-
 
     a {
       color: inherit;
@@ -78,50 +70,37 @@
     nav {
       height: 94px;
 
-      padding:
-        0 2.5rem;
+      padding: 0 2.5rem;
 
       display: flex;
-
       align-items: center;
       justify-content: space-between;
 
-      border-bottom:
-        1px solid
-        var(--line);
+      border-bottom: 1px solid var(--line);
 
-      background:
-        var(--black);
+      background: var(--black);
 
       position: relative;
-
       z-index: 20;
     }
 
-
     .brand {
-      font-family:
-        var(--serif);
+      font-family: var(--serif);
     }
-
 
     nav .links {
       display: flex;
       gap: 1.7rem;
     }
 
-
     nav .links a {
       color: var(--muted);
 
       letter-spacing: .16em;
-
       text-transform: uppercase;
 
-      transition:
-        color .2s ease;
+      transition: color .2s ease;
     }
-
 
     nav .links a:hover,
     nav .links a.active {
@@ -136,30 +115,21 @@
     .hero {
       min-height: 78vh;
 
-      padding:
-        6rem 4vw
-        4rem;
+      padding: 6rem 4vw 4rem;
 
       display: grid;
-
-      grid-template-columns:
-        .78fr 1.22fr;
+      grid-template-columns: .78fr 1.22fr;
 
       gap: 4vw;
 
       align-items: end;
 
       position: relative;
-
       isolation: isolate;
-
       overflow: hidden;
 
-      border-bottom:
-        1px solid
-        var(--line);
+      border-bottom: 1px solid var(--line);
     }
-
 
     .hero::before {
       content: "";
@@ -176,12 +146,10 @@
         grayscale(100%)
         brightness(.40);
 
-      transform:
-        scale(1.015);
+      transform: scale(1.015);
 
       z-index: -2;
     }
-
 
     .hero::after {
       content: "";
@@ -198,16 +166,13 @@
         );
 
       z-index: -1;
-
       pointer-events: none;
     }
-
 
     .hero > * {
       position: relative;
       z-index: 1;
     }
-
 
     .hero h1,
     h2,
@@ -216,33 +181,24 @@
     .journey-card h3,
     .quote blockquote,
     .wordmark span {
-      font-family:
-        var(--serif);
-
+      font-family: var(--serif);
       font-weight: 300;
-
-      letter-spacing:
-        -.045em;
+      letter-spacing: -.045em;
     }
-
 
     .hero h1 {
       line-height: .8;
     }
-
 
     .hero h1 em,
     h2 em {
       font-weight: 300;
     }
 
-
     .hero-copy {
       max-width: 580px;
-
       margin-left: auto;
     }
-
 
     .hero-copy p {
       line-height: 1.7;
@@ -251,13 +207,9 @@
         rgba(245,243,239,.72);
     }
 
-
     .meta {
-      letter-spacing:
-        .22em;
-
-      text-transform:
-        uppercase;
+      letter-spacing: .22em;
+      text-transform: uppercase;
 
       color:
         rgba(245,243,239,.40);
@@ -269,33 +221,24 @@
     ───────────────────────────── */
 
     .story {
-      padding:
-        7rem 4vw;
+      padding: 7rem 4vw;
 
       display: grid;
-
-      grid-template-columns:
-        .9fr 1.1fr;
+      grid-template-columns: .9fr 1.1fr;
 
       gap: 5vw;
 
-      border-bottom:
-        1px solid
-        var(--line);
+      border-bottom: 1px solid var(--line);
     }
-
 
     .story h2 {
       line-height: .86;
-
       margin-top: 1.2rem;
     }
-
 
     .story-copy {
       padding-top: 3rem;
     }
-
 
     .story-copy p {
       max-width: 720px;
@@ -325,56 +268,34 @@
       gap: 1.2rem;
     }
 
-
     .photo {
       height: 500px;
 
       position: relative;
-
       overflow: hidden;
 
-      border:
-        1px solid
-        var(--line);
+      border: 1px solid var(--line);
 
-      background-color:
-        #111;
-
-      background-size:
-        cover;
-
-      background-position:
-        center;
-
-      background-repeat:
-        no-repeat;
+      background-color: #111;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
-
 
     .photo-brazil {
       background-image:
         url('Tami_about_brazil.png');
     }
 
-
     .photo-peru {
-      /*
-        Wichtig:
-        Bitte Tami_about_peru.png selbst schwärzen,
-        damit sensible Bildschirm-Inhalte auch beim
-        direkten Öffnen der Bilddatei nicht sichtbar sind.
-      */
-
       background-image:
         url('Tami_about_peru.png');
     }
-
 
     .photo-cruise {
       background-image:
         url('Tami_about_cruise.png');
     }
-
 
     .photo-number {
       position: absolute;
@@ -382,8 +303,7 @@
       right: 1.2rem;
       bottom: 1.2rem;
 
-      letter-spacing:
-        .17em;
+      letter-spacing: .17em;
 
       color: var(--white);
     }
@@ -394,24 +314,16 @@
     ───────────────────────────── */
 
     .editorial-break {
-      padding:
-        4rem 4vw;
+      padding: 4rem 4vw;
 
-      border-top:
-        1px solid
-        var(--line);
-
-      border-bottom:
-        1px solid
-        var(--line);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
 
       overflow: hidden;
     }
 
-
     .editorial-break div {
       line-height: .72;
-
       white-space: nowrap;
     }
 
@@ -426,10 +338,8 @@
         8rem;
 
       border-bottom:
-        1px solid
-        var(--line);
+        1px solid var(--line);
     }
-
 
     .today-head {
       display: grid;
@@ -439,35 +349,27 @@
 
       gap: 5vw;
 
-      margin-bottom:
-        4rem;
+      margin-bottom: 4rem;
     }
-
 
     .today-head h2 {
       line-height: .86;
-
-      margin-top:
-        1.2rem;
+      margin-top: 1.2rem;
     }
-
 
     .today-intro {
       max-width: 650px;
 
-      padding-top:
-        2.5rem;
+      padding-top: 2.5rem;
 
-      line-height:
-        1.7;
+      line-height: 1.7;
 
-      color:
-        var(--muted);
+      color: var(--muted);
     }
 
 
     /* ─────────────────────────────
-       CLICKABLE JOURNEY CARDS
+       CLICKABLE NAVIGATION CARDS
     ───────────────────────────── */
 
     .journey-grid {
@@ -479,30 +381,34 @@
       gap: 1rem;
     }
 
-
     .journey-card {
-      min-height: 480px;
+      min-height: 520px;
 
-      padding:
-        2.6rem;
+      padding: 2.6rem;
 
       position: relative;
 
       display: flex;
-
       flex-direction: column;
-
-      justify-content:
-        space-between;
+      justify-content: space-between;
 
       overflow: hidden;
 
       border:
         1px solid
-        var(--line);
+        rgba(245,243,239,.22);
 
-      background:
-        rgba(255,255,255,.012);
+      background-color:
+        #090909;
+
+      background-size:
+        cover;
+
+      background-position:
+        center;
+
+      background-repeat:
+        no-repeat;
 
       transition:
         transform .35s ease,
@@ -510,106 +416,89 @@
     }
 
 
+    /* 3 NEUE BILDER */
+
+    .journey-card-krypto {
+      background-image:
+        url('about-krypto.png');
+    }
+
+    .journey-card-international {
+      background-image:
+        url('about-international.png');
+    }
+
+    .journey-card-speaking {
+      background-image:
+        url('about-speaking.png');
+    }
+
+
+    /* dunkles Overlay für Lesbarkeit */
+
+    .journey-card::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(5,5,5,.28) 0%,
+          rgba(5,5,5,.48) 42%,
+          rgba(5,5,5,.93) 100%
+        );
+
+      z-index: 0;
+
+      transition:
+        background .35s ease;
+    }
+
     .journey-card:hover {
       transform:
         translateY(-5px);
 
       border-color:
-        rgba(245,243,239,.34);
+        rgba(245,243,239,.42);
     }
 
-
-    .journey-card::before {
-      content: "";
-
-      position: absolute;
-
-      width: 520px;
-      height: 520px;
-
-      border-radius: 50%;
-
-      filter:
-        blur(60px);
-
-      opacity:
-        .68;
-
-      z-index: 0;
-
-      pointer-events: none;
-    }
-
-
-    .journey-card:nth-child(1)::before {
-      left: -280px;
-      bottom: -260px;
-
+    .journey-card:hover::after {
       background:
-        radial-gradient(
-          circle,
-          rgba(107,50,82,.56) 0%,
-          rgba(72,35,77,.30) 42%,
-          rgba(0,0,0,0) 72%
+        linear-gradient(
+          180deg,
+          rgba(5,5,5,.18) 0%,
+          rgba(5,5,5,.38) 42%,
+          rgba(5,5,5,.90) 100%
         );
     }
-
-
-    .journey-card:nth-child(2)::before {
-      right: -220px;
-      top: -240px;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(87,44,103,.58) 0%,
-          rgba(117,53,76,.28) 45%,
-          rgba(0,0,0,0) 74%
-        );
-    }
-
-
-    .journey-card:nth-child(3)::before {
-      right: -240px;
-      bottom: -260px;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(124,63,75,.52) 0%,
-          rgba(70,36,89,.30) 44%,
-          rgba(0,0,0,0) 73%
-        );
-    }
-
 
     .journey-card > * {
       position: relative;
-
-      z-index: 1;
+      z-index: 2;
     }
-
 
     .journey-top {
       display: flex;
 
-      justify-content:
-        space-between;
-
+      justify-content: space-between;
       align-items: center;
-    }
 
+      color:
+        rgba(245,243,239,.88);
+    }
 
     .journey-card h3 {
       line-height: .91;
 
-      margin-top:
-        auto;
+      margin-top: auto;
+      margin-bottom: 1.3rem;
 
-      margin-bottom:
-        1.3rem;
+      text-shadow:
+        0 2px 20px
+        rgba(0,0,0,.35);
     }
-
 
     .journey-card p {
       max-width: 420px;
@@ -617,9 +506,8 @@
       line-height: 1.65;
 
       color:
-        var(--muted);
+        rgba(245,243,239,.68);
     }
-
 
     .journey-link {
       margin-top: 2rem;
@@ -630,22 +518,18 @@
 
       gap: .5rem;
 
-      letter-spacing:
-        .16em;
+      letter-spacing: .16em;
 
-      text-transform:
-        uppercase;
+      text-transform: uppercase;
 
       color:
-        rgba(245,243,239,.76);
+        rgba(245,243,239,.86);
     }
-
 
     .journey-arrow {
       transition:
         transform .2s ease;
     }
-
 
     .journey-card:hover
     .journey-arrow {
@@ -668,7 +552,6 @@
         var(--line);
     }
 
-
     .quote::before {
       content: "";
 
@@ -676,40 +559,31 @@
 
       height: 1px;
 
-      margin-bottom:
-        3rem;
+      margin-bottom: 3rem;
 
       background:
         rgba(245,243,239,.14);
     }
 
-
     .quote blockquote {
-      max-width:
-        1200px;
+      max-width: 1200px;
 
-      line-height:
-        .94;
+      line-height: .94;
 
       color:
         rgba(245,243,239,.86);
     }
 
-
     .quote cite {
       display: block;
 
-      margin-top:
-        2.2rem;
+      margin-top: 2.2rem;
 
-      font-style:
-        normal;
+      font-style: normal;
 
-      letter-spacing:
-        .2em;
+      letter-spacing: .2em;
 
-      text-transform:
-        uppercase;
+      text-transform: uppercase;
 
       color:
         rgba(245,243,239,.42);
@@ -728,13 +602,10 @@
       overflow: hidden;
     }
 
-
     .depth-section > * {
       position: relative;
-
       z-index: 1;
     }
-
 
     .depth-section::before,
     .depth-section::after {
@@ -748,13 +619,10 @@
 
       z-index: 0;
 
-      filter:
-        blur(68px);
+      filter: blur(68px);
 
-      opacity:
-        .92;
+      opacity: .92;
     }
-
 
     .depth-warm::before {
       width: 720px;
@@ -772,7 +640,6 @@
         );
     }
 
-
     .depth-warm::after {
       width: 520px;
       height: 520px;
@@ -788,7 +655,6 @@
           rgba(5,5,5,0) 73%
         );
     }
-
 
     .depth-violet::before {
       width: 760px;
@@ -821,15 +687,12 @@
       overflow: hidden;
     }
 
-
     .wordmark span {
       line-height: .75;
 
-      letter-spacing:
-        -.06em;
+      letter-spacing: -.06em;
 
-      white-space:
-        nowrap;
+      white-space: nowrap;
 
       color:
         rgba(245,243,239,.13);
@@ -864,10 +727,8 @@
         rgba(245,243,239,.35);
     }
 
-
     footer .links {
       display: flex;
-
       gap: 1rem;
     }
 
@@ -887,7 +748,6 @@
         var(--display) !important;
     }
 
-
     p,
     .hero-copy p,
     .story-copy p,
@@ -896,7 +756,6 @@
       font-size:
         var(--body) !important;
     }
-
 
     nav,
     .brand,
@@ -929,18 +788,15 @@
           .6rem;
       }
 
-
       nav {
         padding:
           0 1.2rem;
       }
 
-
       nav .links {
         display:
           none;
       }
-
 
       .hero,
       .story,
@@ -948,7 +804,6 @@
         grid-template-columns:
           1fr;
       }
-
 
       .hero {
         min-height:
@@ -959,14 +814,12 @@
           3rem;
       }
 
-
       .story,
       .today,
       .quote {
         padding:
           4rem 1.2rem;
       }
-
 
       .gallery {
         padding:
@@ -977,30 +830,25 @@
           1fr;
       }
 
-
       .photo {
         height:
           440px;
       }
-
 
       .editorial-break {
         padding:
           3rem 1.2rem;
       }
 
-
       .journey-grid {
         grid-template-columns:
           1fr;
       }
 
-
       .journey-card {
         min-height:
-          380px;
+          500px;
       }
-
 
       footer {
         padding:
@@ -1038,14 +886,14 @@
     <div class="links">
 
       <a href="index.html">
-        Overview
+        Übersicht
       </a>
 
       <a
         href="about.html"
         class="active"
       >
-        About
+        Über Tami
       </a>
 
       <a href="speaking.html">
@@ -1057,7 +905,7 @@
       </a>
 
       <a href="astrologie.html">
-        Astrology × Finance
+        Astrologie × Finanzen
       </a>
 
       <a
@@ -1083,7 +931,7 @@
       <div>
 
         <p class="meta">
-          About Tami — 01
+          Über Tami — 01
         </p>
 
         <h1>
@@ -1254,9 +1102,9 @@
     >
 
       <div>
-        FINANCE.
-        <em>FREEDOM.</em>
-        PERSPECTIVE.
+        FINANZEN.
+        <em>FREIHEIT.</em>
+        PERSPEKTIVE.
       </div>
 
     </section>
@@ -1307,7 +1155,7 @@
       </div>
 
 
-      <!-- CLICKABLE NAV CARDS -->
+      <!-- NAVIGATIONSKARTEN -->
 
       <div class="journey-grid">
 
@@ -1315,7 +1163,10 @@
         <!-- KRYPTO -->
 
         <a
-          class="journey-card"
+          class="
+            journey-card
+            journey-card-krypto
+          "
           href="https://www.krypto-steuern.net/"
           target="_blank"
           rel="noopener"
@@ -1328,7 +1179,7 @@
             </span>
 
             <span>
-              EXTERNAL ↗
+              EXTERN ↗
             </span>
 
           </div>
@@ -1354,6 +1205,7 @@
 
             <span class="journey-link">
               Krypto-Steuern ansehen
+
               <span class="journey-arrow">
                 →
               </span>
@@ -1367,7 +1219,10 @@
         <!-- INTERNATIONAL -->
 
         <a
-          class="journey-card"
+          class="
+            journey-card
+            journey-card-international
+          "
           href="international.html"
         >
 
@@ -1378,7 +1233,7 @@
             </span>
 
             <span>
-              STRUCTURES
+              STRUKTUREN
             </span>
 
           </div>
@@ -1402,6 +1257,7 @@
 
             <span class="journey-link">
               Mehr erfahren
+
               <span class="journey-arrow">
                 →
               </span>
@@ -1415,7 +1271,10 @@
         <!-- SPEAKING -->
 
         <a
-          class="journey-card"
+          class="
+            journey-card
+            journey-card-speaking
+          "
           href="speaking.html"
         >
 
@@ -1426,7 +1285,7 @@
             </span>
 
             <span>
-              STAGE
+              SPEAKING
             </span>
 
           </div>
@@ -1452,6 +1311,7 @@
 
             <span class="journey-link">
               Speaking ansehen
+
               <span class="journey-arrow">
                 →
               </span>
@@ -1514,15 +1374,11 @@
 
     <div class="links">
 
-      <a
-        href="https://www.linkedin.com/in/tami-moennig/"
-      >
+      <a href="https://www.linkedin.com/in/tami-moennig/">
         LinkedIn
       </a>
 
-      <a
-        href="https://www.instagram.com/tami.moennig/"
-      >
+      <a href="https://www.instagram.com/tami.moennig/">
         Instagram
       </a>
 

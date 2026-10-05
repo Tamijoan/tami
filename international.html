@@ -19,11 +19,11 @@
     rel="stylesheet"
   />
 
-  <title>International Structures — Tami Mönnig</title>
+  <title>Internationale Strukturen — Tami Mönnig</title>
 
   <meta
     name="description"
-    content="Internationale Unternehmens- und Vermögensstrukturen mit Tami Mönnig und Daniel Reuter."
+    content="Internationale Unternehmens- und Vermögensstrukturen mit Tami Mönnig."
   />
 
   <style>
@@ -39,23 +39,40 @@
     :root {
       --black: #050505;
       --white: #f5f3ef;
-      --muted: rgba(245, 243, 239, .55);
+      --muted: rgba(245, 243, 239, .56);
       --line: rgba(245, 243, 239, .17);
 
-      --serif: 'Cormorant Garamond', Georgia, serif;
-      --sans: 'Inter', Arial, sans-serif;
+      --serif:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
 
-      --display: clamp(3.4rem, 6vw, 7rem);
-      --body: .95rem;
-      --meta: .6rem;
+      --sans:
+        'Inter',
+        Arial,
+        sans-serif;
+
+      --display:
+        clamp(3.4rem, 6vw, 7rem);
+
+      --body:
+        .95rem;
+
+      --meta:
+        .6rem;
     }
+
+
+    /* BASE */
 
     html,
     body {
       background: var(--black);
       color: var(--white);
+
       font-family: var(--sans);
       font-weight: 300;
+
       overflow-x: hidden;
     }
 
@@ -65,7 +82,7 @@
     }
 
 
-    /* NAV */
+    /* NAVIGATION */
 
     nav {
       height: 94px;
@@ -75,7 +92,10 @@
       align-items: center;
       justify-content: space-between;
 
-      border-bottom: 1px solid var(--line);
+      border-bottom:
+        1px solid
+        var(--line);
+
       background: var(--black);
 
       position: relative;
@@ -88,13 +108,22 @@
 
     nav .links {
       display: flex;
-      gap: 2rem;
+      gap: 1.7rem;
     }
 
     nav .links a {
       color: var(--muted);
+
       letter-spacing: .16em;
       text-transform: uppercase;
+
+      transition:
+        color .2s ease;
+    }
+
+    nav .links a:hover,
+    nav .links a.active {
+      color: var(--white);
     }
 
 
@@ -102,18 +131,29 @@
 
     .hero {
       min-height: 78vh;
-      padding: 6rem 4vw 4rem;
+
+      padding:
+        6rem 4vw
+        4rem;
 
       display: grid;
-      grid-template-columns: .82fr 1.18fr;
+
+      grid-template-columns:
+        .82fr 1.18fr;
+
       gap: 4vw;
+
       align-items: end;
 
       position: relative;
+
       isolation: isolate;
+
       overflow: hidden;
 
-      border-bottom: 1px solid var(--line);
+      border-bottom:
+        1px solid
+        var(--line);
     }
 
     .hero::before {
@@ -131,7 +171,8 @@
         grayscale(100%)
         brightness(.38);
 
-      transform: scale(1.015);
+      transform:
+        scale(1.015);
 
       z-index: -2;
     }
@@ -145,9 +186,9 @@
       background:
         linear-gradient(
           180deg,
-          rgba(0, 0, 0, .28) 0%,
-          rgba(0, 0, 0, .46) 52%,
-          rgba(0, 0, 0, .84) 100%
+          rgba(0,0,0,.24) 0%,
+          rgba(0,0,0,.46) 55%,
+          rgba(0,0,0,.84) 100%
         );
 
       z-index: -1;
@@ -163,10 +204,11 @@
     h2,
     h3,
     .break div,
-    .card h3,
+    .topic-card h3,
+    .focus-card h3,
+    .partner-card h3,
     .quote blockquote,
-    .wordmark span,
-    .person h3 {
+    .wordmark span {
       font-family: var(--serif);
       font-weight: 300;
       letter-spacing: -.045em;
@@ -188,27 +230,36 @@
 
     .hero-copy p {
       line-height: 1.7;
-      color: rgba(245, 243, 239, .72);
+      color: rgba(245,243,239,.72);
     }
 
     .meta {
       letter-spacing: .22em;
       text-transform: uppercase;
-      color: rgba(245, 243, 239, .4);
+
+      color:
+        rgba(245,243,239,.40);
     }
 
 
-    /* SECTIONS */
+    /* GENERAL SECTIONS */
 
     .section {
       padding: 7rem 4vw;
-      border-bottom: 1px solid var(--line);
+
+      border-bottom:
+        1px solid
+        var(--line);
     }
 
     .grid2 {
       display: grid;
-      grid-template-columns: .75fr 1.25fr;
+
+      grid-template-columns:
+        .75fr 1.25fr;
+
       gap: 5vw;
+
       align-items: start;
     }
 
@@ -224,80 +275,121 @@
 
     .copy p {
       margin-bottom: 1.25rem;
+
       line-height: 1.7;
+
       color: var(--muted);
     }
 
 
-    /* PERSPECTIVE CARDS */
+    /* THEMENKARTEN */
 
-    .cards {
+    .topic-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
       gap: 1rem;
+
       margin-top: 3rem;
     }
 
-    .card {
-      min-width: 0;
-      min-height: 440px;
+    .topic-card {
+      min-height: 470px;
 
-      padding: 3rem 2rem 2.5rem;
+      padding: 2.5rem;
+
+      position: relative;
+
+      overflow: hidden;
 
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
+      justify-content: space-between;
 
-      position: relative;
-      overflow: hidden;
-
-      border: 1px solid var(--line);
-
-      border-radius:
-        999px 999px
-        2rem 2rem;
+      border:
+        1px solid
+        rgba(245,243,239,.18);
 
       background:
-        rgba(245, 243, 239, .012);
+        rgba(245,243,239,.012);
     }
 
-    .card::before {
+    .topic-card::before {
       content: "";
 
       position: absolute;
-      inset: 0;
 
-      background:
-        linear-gradient(
-          180deg,
-          rgba(255, 255, 255, .025),
-          transparent 45%
-        );
+      width: 520px;
+      height: 520px;
+
+      border-radius: 50%;
+
+      filter: blur(60px);
+
+      opacity: .70;
+
+      z-index: 0;
 
       pointer-events: none;
     }
 
-    .card .num {
-      position: absolute;
+    .topic-card:nth-child(1)::before {
+      left: -280px;
+      bottom: -260px;
 
-      top: 2.2rem;
-      left: 50%;
+      background:
+        radial-gradient(
+          circle,
+          rgba(105,49,83,.58) 0%,
+          rgba(69,35,78,.30) 42%,
+          rgba(0,0,0,0) 72%
+        );
+    }
 
-      transform: translateX(-50%);
+    .topic-card:nth-child(2)::before {
+      right: -240px;
+      top: -240px;
 
+      background:
+        radial-gradient(
+          circle,
+          rgba(84,45,101,.58) 0%,
+          rgba(117,54,78,.28) 45%,
+          rgba(0,0,0,0) 74%
+        );
+    }
+
+    .topic-card:nth-child(3)::before {
+      right: -250px;
+      bottom: -260px;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(126,64,75,.52) 0%,
+          rgba(68,36,87,.30) 44%,
+          rgba(0,0,0,0) 73%
+        );
+    }
+
+    .topic-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .topic-number {
       letter-spacing: .18em;
-
-      color:
-        rgba(245, 243, 239, .35);
+      color: rgba(245,243,239,.40);
     }
 
-    .card h3 {
+    .topic-card h3 {
       line-height: .92;
-      margin-bottom: 1.4rem;
-      max-width: 100%;
+      margin-bottom: 1.25rem;
     }
 
-    .card p {
+    .topic-card p {
       line-height: 1.65;
       color: var(--muted);
     }
@@ -320,134 +412,196 @@
     }
 
 
-    /* TAMI × DANIEL */
+    /* TAMI FOCUS */
 
-    .pair {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-
-      gap: 1rem;
-      margin-top: 3rem;
-
-      align-items: stretch;
-    }
-
-
-    /* Beide Boxen exakt gleich */
-
-    .person {
-      min-width: 0;
-      height: 100%;
-
-      display: grid;
-      grid-template-rows: 620px 1fr;
-
-      border: 1px solid var(--line);
-
-      overflow: hidden;
-
-      background:
-        rgba(245, 243, 239, .008);
-    }
-
-
-    /* Beide Bildbereiche exakt gleich */
-
-    .portrait {
-      width: 100%;
-      height: 620px;
-
-      overflow: hidden;
+    .focus-section {
+      padding: 7rem 4vw;
 
       border-bottom:
         1px solid
         var(--line);
+    }
 
-      background: #090909;
+    .focus-card {
+      display: grid;
+
+      grid-template-columns:
+        .9fr 1.1fr;
+
+      min-height: 620px;
+
+      border:
+        1px solid
+        var(--line);
+
+      overflow: hidden;
+
+      background:
+        rgba(245,243,239,.01);
+    }
+
+    .focus-image {
+      min-height: 620px;
+
+      background:
+        url('tami-international.png')
+        center 20% / cover
+        no-repeat;
+
+      filter:
+        grayscale(100%);
+    }
+
+    .focus-content {
+      padding: 4rem;
 
       display: flex;
-      align-items: center;
+
+      flex-direction: column;
+
+      justify-content: flex-end;
+    }
+
+    .focus-content h3 {
+      line-height: .9;
+
+      margin:
+        1rem 0
+        1.5rem;
+    }
+
+    .focus-content p {
+      max-width: 650px;
+
+      line-height: 1.7;
+
+      color: var(--muted);
+    }
+
+
+    /* PARTNER / KOOPERATION */
+
+    .partner-section {
+      padding: 7rem 4vw;
+
+      border-bottom:
+        1px solid
+        var(--line);
+    }
+
+    .partner-head {
+      display: grid;
+
+      grid-template-columns:
+        .8fr 1.2fr;
+
+      gap: 5vw;
+
+      margin-bottom: 3rem;
+    }
+
+    .partner-head h2 {
+      line-height: .88;
+
+      margin-top: 1.1rem;
+    }
+
+    .partner-head p {
+      padding-top: 2.5rem;
+
+      max-width: 720px;
+
+      line-height: 1.7;
+
+      color: var(--muted);
+    }
+
+    .partner-card {
+      display: grid;
+
+      grid-template-columns:
+        280px 1fr;
+
+      gap: 0;
+
+      max-width: 980px;
+
+      border:
+        1px solid
+        var(--line);
+
+      background:
+        rgba(245,243,239,.015);
+    }
+
+    .partner-image {
+      min-height: 360px;
+
+      overflow: hidden;
+
+      background: #111;
+    }
+
+    .partner-image img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      object-position:
+        center top;
+    }
+
+    .partner-content {
+      padding: 2.6rem;
+
+      display: flex;
+
+      flex-direction: column;
+
       justify-content: center;
     }
 
+    .partner-label {
+      margin-bottom: 1.2rem;
 
-    /* TAMI */
+      letter-spacing: .16em;
 
-    .portrait-tami img {
-      display: block;
+      text-transform: uppercase;
 
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-      object-position: center center;
+      color:
+        rgba(245,243,239,.42);
     }
 
+    .partner-content h3 {
+      line-height: .95;
 
-    /* DANIEL */
-
-    .portrait-daniel {
-      background: #090909;
+      margin-bottom: 1.2rem;
     }
 
-    .portrait-daniel img {
-      display: block;
+    .partner-content p {
+      max-width: 640px;
 
-      width: 100%;
-      height: 100%;
+      line-height: 1.7;
 
-      object-fit: cover;
-      object-position: center top;
-    }
-
-
-    /* IDENTISCHE TEXTBEREICHE */
-
-    .person-content {
-      min-height: 360px;
-
-      padding: 2.2rem;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-    }
-
-    .person h3 {
-      line-height: .9;
-      margin-bottom: 1rem;
-
-      overflow-wrap: normal;
-      word-break: normal;
-    }
-
-    .person p {
-      line-height: 1.65;
       color: var(--muted);
-      margin-bottom: .35rem;
+
+      margin-bottom: .8rem;
     }
 
 
     /* QUOTE */
 
     .quote {
-      padding: 7rem 4vw 8rem;
+      padding:
+        7rem 4vw
+        8rem;
 
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .quote::before {
-      content: "";
-
-      display: block;
-
-      height: 1px;
-
-      margin-bottom: 3rem;
-
-      background:
-        rgba(245, 243, 239, .14);
+      border-bottom:
+        1px solid
+        var(--line);
     }
 
     .quote blockquote {
@@ -456,7 +610,7 @@
       line-height: .94;
 
       color:
-        rgba(245, 243, 239, .86);
+        rgba(245,243,239,.86);
     }
 
     .quote cite {
@@ -467,23 +621,30 @@
       font-style: normal;
 
       letter-spacing: .2em;
+
       text-transform: uppercase;
 
       color:
-        rgba(245, 243, 239, .42);
+        rgba(245,243,239,.42);
     }
 
     .button {
       display: inline-flex;
 
-      margin-top: 2rem;
+      margin-top: 2.5rem;
 
-      padding: .9rem 1.35rem;
+      padding:
+        .9rem 1.35rem;
 
-      border: 1px solid var(--line);
-      border-radius: 999px;
+      border:
+        1px solid
+        var(--line);
+
+      border-radius:
+        999px;
 
       letter-spacing: .15em;
+
       text-transform: uppercase;
 
       transition:
@@ -501,7 +662,9 @@
 
     .depth-section {
       position: relative;
+
       isolation: isolate;
+
       overflow: hidden;
     }
 
@@ -523,6 +686,7 @@
       z-index: 0;
 
       filter: blur(68px);
+
       opacity: .92;
     }
 
@@ -536,9 +700,9 @@
       background:
         radial-gradient(
           circle,
-          rgba(126, 49, 88, .55) 0%,
-          rgba(89, 35, 97, .34) 38%,
-          rgba(5, 5, 5, 0) 72%
+          rgba(126,49,88,.55) 0%,
+          rgba(89,35,97,.34) 38%,
+          rgba(5,5,5,0) 72%
         );
     }
 
@@ -552,9 +716,9 @@
       background:
         radial-gradient(
           circle,
-          rgba(115, 58, 68, .34) 0%,
-          rgba(67, 31, 74, .22) 42%,
-          rgba(5, 5, 5, 0) 73%
+          rgba(115,58,68,.34) 0%,
+          rgba(67,31,74,.22) 42%,
+          rgba(5,5,5,0) 73%
         );
     }
 
@@ -568,25 +732,9 @@
       background:
         radial-gradient(
           ellipse,
-          rgba(72, 38, 91, .46) 0%,
-          rgba(116, 47, 78, .29) 43%,
-          rgba(5, 5, 5, 0) 74%
-        );
-    }
-
-    .depth-violet::after {
-      width: 560px;
-      height: 560px;
-
-      right: -220px;
-      bottom: -270px;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(132, 65, 76, .36) 0%,
-          rgba(73, 37, 89, .21) 44%,
-          rgba(5, 5, 5, 0) 73%
+          rgba(72,38,91,.46) 0%,
+          rgba(116,47,78,.29) 43%,
+          rgba(5,5,5,0) 74%
         );
     }
 
@@ -594,7 +742,9 @@
     /* WORDMARK */
 
     .wordmark {
-      padding: 4rem 1rem 2rem;
+      padding:
+        4rem 1rem
+        2rem;
 
       text-align: center;
 
@@ -609,31 +759,37 @@
       white-space: nowrap;
 
       color:
-        rgba(245, 243, 239, .13);
+        rgba(245,243,239,.13);
     }
 
 
     /* FOOTER */
 
     footer {
-      padding: 1.2rem 2.5rem 2rem;
+      padding:
+        1.2rem 2.5rem
+        2rem;
 
       display: flex;
-      justify-content: space-between;
+
+      justify-content:
+        space-between;
 
       border-top:
         1px solid
         var(--line);
 
       letter-spacing: .12em;
+
       text-transform: uppercase;
 
       color:
-        rgba(245, 243, 239, .35);
+        rgba(245,243,239,.35);
     }
 
     footer .links {
       display: flex;
+
       gap: 1rem;
     }
 
@@ -644,10 +800,11 @@
     h2,
     h3,
     .break div,
-    .card h3,
+    .topic-card h3,
+    .focus-card h3,
+    .partner-card h3,
     .quote blockquote,
-    .wordmark span,
-    .person h3 {
+    .wordmark span {
       font-size:
         var(--display) !important;
     }
@@ -655,8 +812,10 @@
     p,
     .hero-copy p,
     .copy p,
-    .card p,
-    .person p {
+    .topic-card p,
+    .focus-content p,
+    .partner-head p,
+    .partner-content p {
       font-size:
         var(--body) !important;
     }
@@ -665,7 +824,8 @@
     .brand,
     nav .links a,
     .meta,
-    .card .num,
+    .topic-number,
+    .partner-label,
     .quote cite,
     .button,
     footer {
@@ -676,11 +836,11 @@
 
     /* MOBILE */
 
-    @media (max-width: 850px) {
+    @media(max-width:850px) {
 
       :root {
         --display:
-          clamp(3rem, 12vw, 5rem);
+          clamp(3rem,12vw,5rem);
 
         --body:
           .95rem;
@@ -690,7 +850,8 @@
       }
 
       nav {
-        padding: 0 1.2rem;
+        padding:
+          0 1.2rem;
       }
 
       nav .links {
@@ -698,8 +859,11 @@
       }
 
       .hero,
-      .grid2 {
-        grid-template-columns: 1fr;
+      .grid2,
+      .partner-head,
+      .focus-card {
+        grid-template-columns:
+          1fr;
       }
 
       .hero {
@@ -711,76 +875,63 @@
       }
 
       .section,
+      .focus-section,
+      .partner-section,
       .quote {
         padding:
           4rem 1.2rem;
       }
 
-      .cards,
-      .pair {
-        grid-template-columns: 1fr;
+      .topic-grid {
+        grid-template-columns:
+          1fr;
       }
 
-      .card {
-        min-height: 390px;
+      .topic-card {
+        min-height:
+          390px;
       }
 
+      .focus-image {
+        min-height:
+          480px;
 
-      /* Personen mobile */
-
-      .person {
-        height: auto;
-        grid-template-rows: auto auto;
+        background-position:
+          center 15%;
       }
 
-      .portrait {
-        height: auto;
-        aspect-ratio: 4 / 5;
+      .focus-content {
+        padding:
+          2rem;
       }
 
-      .portrait-tami img,
-      .portrait-daniel img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      .partner-card {
+        grid-template-columns:
+          1fr;
+
+        max-width: none;
       }
 
-      .person-content {
-        min-height: auto;
+      .partner-image {
+        min-height:
+          420px;
       }
-
 
       .break {
         padding:
           3rem 1.2rem;
       }
 
-      .depth-section::before,
-      .depth-section::after {
-        filter: blur(58px);
-        opacity: .74;
-      }
-
-      .depth-warm::before {
-        width: 520px;
-        height: 520px;
-        right: -300px;
-      }
-
-      .depth-violet::before {
-        width: 500px;
-        height: 420px;
-        left: 15%;
-        top: -240px;
-      }
-
       footer {
         padding:
           1.5rem 1.2rem;
 
-        flex-direction: column;
+        flex-direction:
+          column;
+
         gap: 1rem;
       }
+
     }
 
   </style>
@@ -791,7 +942,7 @@
 <body>
 
 
-  <!-- NAV -->
+  <!-- NAVIGATION -->
 
   <nav>
 
@@ -804,24 +955,35 @@
 
     <div class="links">
 
-      <a href="about.html">
-        About
+      <a href="index.html">
+        Übersicht
       </a>
 
-      <a href="https://www.krypto-steuern.net/">
-        Krypto
+      <a href="about.html">
+        Über Tami
       </a>
 
       <a href="speaking.html">
         Speaking
       </a>
 
-      <a href="international.html">
+      <a
+        href="international.html"
+        class="active"
+      >
         International
       </a>
 
       <a href="astrologie.html">
-        Astrology × Finance
+        Astrologie × Finanzen
+      </a>
+
+      <a
+        href="https://www.krypto-steuern.net/"
+        target="_blank"
+        rel="noopener"
+      >
+        Krypto-Steuern ↗
       </a>
 
     </div>
@@ -839,24 +1001,27 @@
       <div>
 
         <p class="meta">
-          International Structures — 03
+          Internationale Strukturen — 03
         </p>
 
         <h1>
-          Life is global.<br>
+          Dein Leben ist<br>
+          international.<br>
+
           <em>
-            Your structure<br>
-            should be, too.
+            Deine Struktur<br>
+            sollte es auch sein.
           </em>
         </h1>
 
       </div>
 
+
       <div class="hero-copy">
 
         <p>
           Für Unternehmer und Investoren,
-          deren Leben, Firmen und Geld
+          deren Leben, Firmen und Vermögen
           nicht an einer Landesgrenze aufhören.
         </p>
 
@@ -884,35 +1049,39 @@
           </p>
 
           <h2>
-            Business doesn't
-            stop at
-            <em>borders.</em>
+            Unternehmertum kennt
+            keine <em>Landesgrenzen.</em>
           </h2>
 
         </div>
+
 
         <div class="copy">
 
           <p>
             Die Realität vieler Unternehmer
             ist längst international.
-            Wohnsitz, Firmen, Investments
-            und Accounts verteilen sich
-            über verschiedene Länder.
 
-            Und genau da wird es spannend –
+            Wohnsitz,
+            Firmen,
+            Investments und Accounts
+            verteilen sich über verschiedene Länder.
+
+            Genau da wird es spannend –
             aber auch schnell kompliziert,
             wenn man eingleisig denkt.
           </p>
 
           <p>
-            Hier gibt es keine Pauschal-Tipps
-            aus der Konserve.
+            Internationale Strukturen
+            funktionieren nicht nach Schema F.
 
-            Jede internationale Struktur
-            muss exakt zu deiner persönlichen
-            Situation, deinen Ländern
-            und deinen echten Zielen passen.
+            Entscheidend ist,
+            das gesamte Bild zu sehen:
+            deine Länder,
+            dein Business,
+            dein Vermögen
+            und deine langfristigen Ziele.
           </p>
 
         </div>
@@ -920,67 +1089,88 @@
       </div>
 
 
-      <div class="cards">
+      <!-- THEMEN -->
 
-        <article class="card">
+      <div class="topic-grid">
 
-          <span class="num">
+
+        <article class="topic-card">
+
+          <span class="topic-number">
             01
           </span>
 
-          <h3>
-            Cross-<br>
-            Border
-          </h3>
+          <div>
 
-          <p>
-            Leben und Wirtschaften
-            in mehreren Ländern –
-            ohne steuerliches Chaos.
-          </p>
+            <h3>
+              Cross-<br>
+              Border
+            </h3>
+
+            <p>
+              Leben und Wirtschaften
+              in mehreren Ländern –
+              ohne den Überblick
+              über steuerliche Zusammenhänge
+              zu verlieren.
+            </p>
+
+          </div>
 
         </article>
 
 
-        <article class="card">
+        <article class="topic-card">
 
-          <span class="num">
+          <span class="topic-number">
             02
           </span>
 
-          <h3>
-            Business<br>
-            Setup
-          </h3>
+          <div>
 
-          <p>
-            Intelligente Firmenstrukturen
-            für Gründer und Unternehmer
-            mit internationalem Fokus.
-          </p>
+            <h3>
+              Business<br>
+              Setup
+            </h3>
+
+            <p>
+              Unternehmensstrukturen
+              für Gründer und Unternehmer
+              mit internationalem Fokus –
+              immer im Kontext
+              der tatsächlichen Lebensrealität.
+            </p>
+
+          </div>
 
         </article>
 
 
-        <article class="card">
+        <article class="topic-card">
 
-          <span class="num">
+          <span class="topic-number">
             03
           </span>
 
-          <h3>
-            Crypto<br>
-            Wealth
-          </h3>
+          <div>
 
-          <p>
-            Dein Krypto-Vermögen
-            im Zusammenspiel mit Wohnsitz,
-            Firmen und internationalen
-            Strukturen.
-          </p>
+            <h3>
+              Crypto<br>
+              Wealth
+            </h3>
+
+            <p>
+              Krypto-Vermögen
+              im Zusammenspiel
+              mit Wohnsitz,
+              Unternehmen
+              und langfristiger Struktur.
+            </p>
+
+          </div>
 
         </article>
+
 
       </div>
 
@@ -998,156 +1188,157 @@
     >
 
       <div>
-        TWO PERSPECTIVES.
-        <em>ONE STRUCTURE.</em>
+        GLOBAL DENKEN.
+        <em>INDIVIDUELL STRUKTURIEREN.</em>
       </div>
 
     </section>
 
 
-    <!-- TAMI × DANIEL -->
+    <!-- TAMI IM FOKUS -->
+
+    <section class="focus-section">
+
+      <article class="focus-card">
+
+
+        <div
+          class="focus-image"
+          role="img"
+          aria-label="Tami Mönnig"
+        ></div>
+
+
+        <div class="focus-content">
+
+          <p class="meta">
+            02 — Meine Perspektive
+          </p>
+
+          <h3>
+            International denken.
+            <br>
+            <em>Ohne Schema F.</em>
+          </h3>
+
+          <p>
+            Ich bringe meine Erfahrung
+            aus Krypto-Steuern,
+            internationalen Lebensmodellen
+            und grenzüberschreitenden
+            Fragestellungen zusammen.
+
+            Dabei geht es nicht darum,
+            möglichst komplizierte Strukturen
+            zu bauen.
+
+            Sondern darum,
+            eine Lösung zu finden,
+            die wirklich zu deinem Leben,
+            deinem Business
+            und deinem Vermögen passt.
+          </p>
+
+        </div>
+
+
+      </article>
+
+    </section>
+
+
+    <!-- KOOPERATION -->
 
     <section
       class="
-        section
+        partner-section
         depth-section
         depth-warm
       "
     >
 
-      <div class="grid2">
+      <div class="partner-head">
 
         <div>
 
           <p class="meta">
-            02 — Tami × Daniel
+            03 — Kooperationen
           </p>
 
           <h2>
-            Different expertise.<br>
-            <em>One view.</em>
+            Expertise ergänzen,
+            wenn sie <em>Sinn macht.</em>
           </h2>
 
         </div>
 
-        <div class="copy">
+
+        <p>
+          Je nach Fragestellung
+          arbeite ich mit spezialisierten
+          Partnern zusammen.
+
+          So können unterschiedliche
+          Perspektiven dort zusammenkommen,
+          wo ein Fall mehr Expertise braucht –
+          ohne dass daraus automatisch
+          ein gemeinsames Angebot wird.
+        </p>
+
+      </div>
+
+
+      <!-- DANIEL ALS OPTIONALE KOOPERATION -->
+
+      <article class="partner-card">
+
+        <div class="partner-image">
+
+          <img
+            src="daniel-reuter.jpg"
+            alt="Daniel Reuter"
+          />
+
+        </div>
+
+
+        <div class="partner-content">
+
+          <span class="partner-label">
+            Kooperationspartner
+          </span>
+
+          <h3>
+            Daniel Reuter
+          </h3>
 
           <p>
-            Internationale Strukturen
-            funktionieren nicht nach Schema F.
+            Unternehmens-
+            und Vermögensstrukturen · Holdings · Investments
+          </p>
 
-            Tami Mönnig und Daniel Reuter
-            verbinden steuerliche,
-            unternehmerische und
-            vermögensstrategische Perspektiven –
-            für Unternehmer und Investoren,
-            deren Leben, Unternehmen
-            und Vermögen längst international
-            gedacht werden müssen.
+          <p>
+            Für ausgewählte Fragestellungen
+            im Bereich Unternehmens-
+            und Vermögensstrukturen
+            arbeite ich mit Daniel Reuter zusammen.
+
+            Seine Perspektive ergänzt
+            meine eigene dort,
+            wo unternehmerische,
+            strukturelle
+            und vermögensstrategische Themen
+            zusammenlaufen.
           </p>
 
         </div>
 
-      </div>
-
-
-      <div class="pair">
-
-
-        <!-- TAMI -->
-
-        <article class="person">
-
-          <div
-            class="
-              portrait
-              portrait-tami
-            "
-          >
-
-            <img
-              src="tami-international.png"
-              alt="Tami Mönnig"
-            />
-
-          </div>
-
-          <div class="person-content">
-
-            <h3>
-              Tami Mönnig
-            </h3>
-
-            <p>
-              Krypto · Steuern · Cross-Border
-            </p>
-
-            <p>
-              Tami bringt ihre Perspektive
-              auf Krypto-Steuern,
-              internationale Lebensmodelle
-              und die steuerlichen Fragen
-              mobiler Unternehmer
-              und Investoren ein.
-            </p>
-
-          </div>
-
-        </article>
-
-
-        <!-- DANIEL -->
-
-        <article class="person">
-
-          <div
-            class="
-              portrait
-              portrait-daniel
-            "
-          >
-
-            <img
-              src="daniel-reuter.jpg"
-              alt="Daniel Reuter"
-            />
-
-          </div>
-
-          <div class="person-content">
-
-            <h3>
-              Daniel Reuter
-            </h3>
-
-            <p>
-              Holding · Unternehmensstrukturen · Investments
-            </p>
-
-            <p>
-              Daniel begleitet Unternehmer,
-              Family Offices und Investoren
-              beim Aufbau nachhaltiger
-              Unternehmens- und Vermögensstrukturen.
-
-              Sein Fokus liegt auf Holding-
-              und Beteiligungsstrukturen,
-              strategischem Vermögensaufbau,
-              Investments und
-              unternehmerischer Skalierung.
-            </p>
-
-          </div>
-
-        </article>
-
-
-      </div>
+      </article>
 
     </section>
 
 
-    <!-- QUOTE -->
+    <!-- QUOTE + CTA -->
 
     <section class="quote">
 
@@ -1165,9 +1356,10 @@
 
       </blockquote>
 
+
       <a
         class="button"
-        href="mailto:info@krypto-steuern.net?subject=International%20Structures"
+        href="mailto:info@krypto-steuern.net?subject=Internationale%20Strukturen"
       >
         Interesse anmelden →
       </a>
@@ -1197,13 +1389,18 @@
       © 2026 Tami Mönnig
     </div>
 
+
     <div class="links">
 
-      <a href="https://www.linkedin.com/in/tami-moennig/">
+      <a
+        href="https://www.linkedin.com/in/tami-moennig/"
+      >
         LinkedIn
       </a>
 
-      <a href="https://www.instagram.com/tami.moennig/">
+      <a
+        href="https://www.instagram.com/tami.moennig/"
+      >
         Instagram
       </a>
 

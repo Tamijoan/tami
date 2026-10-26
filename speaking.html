@@ -4,14 +4,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="icon" type="image/png" href="favicon-tami.png?v=2">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
   <title>Speaking — Tami Mönnig</title>
-  <meta name="description" content="Tami Mönnig als Speakerin, Dozentin und Panelistin für Krypto-Steuern, internationale Themen und Regulierung.">
+
+  <meta
+    name="description"
+    content="Tami Mönnig als Speakerin, Dozentin und Panelistin für Krypto-Steuern, internationale Themen und Regulierung."
+  >
 
   <style>
+    /* GRUNDEINSTELLUNGEN */
+
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -23,8 +32,10 @@
       --white: #f7f6f4;
       --muted: rgba(245,243,239,.55);
       --line: rgba(245,243,239,.17);
+
       --serif: 'Instrument Serif', Georgia, serif;
       --sans: 'Inter', Arial, sans-serif;
+
       --display: clamp(3.4rem,6vw,7rem);
       --body: .95rem;
       --meta: .6rem;
@@ -32,8 +43,18 @@
 
     html, body {
       background:
-        radial-gradient(ellipse at 90% 20%,rgba(19,115,132,.23),transparent 45%),
-        linear-gradient(155deg,#031b2b 0%,#073b50 50%,#031b2b 100%);
+        radial-gradient(
+          ellipse at 90% 20%,
+          rgba(19,115,132,.23),
+          transparent 45%
+        ),
+        linear-gradient(
+          155deg,
+          #031b2b 0%,
+          #073b50 50%,
+          #031b2b 100%
+        );
+
       color: var(--white);
       font-family: var(--sans);
       font-weight: 300;
@@ -46,6 +67,7 @@
     }
 
     /* NAVIGATION */
+
     nav {
       height: 94px;
       padding: 0 2.5rem;
@@ -58,8 +80,14 @@
       z-index: 20;
     }
 
-    .brand { font-family: var(--serif); }
-    nav .links { display: flex; gap: 1.7rem; }
+    .brand {
+      font-family: var(--serif);
+    }
+
+    nav .links {
+      display: flex;
+      gap: 1.7rem;
+    }
 
     nav .links a {
       color: var(--muted);
@@ -69,9 +97,12 @@
     }
 
     nav .links a:hover,
-    nav .links a.active { color: var(--white); }
+    nav .links a.active {
+      color: var(--white);
+    }
 
     /* HERO */
+
     .hero {
       min-height: 78vh;
       padding: 6rem 4vw 4rem;
@@ -89,38 +120,59 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: url('speaking-header.jpeg') center 42% / cover no-repeat;
+
+      background:
+        url('speaking-header.jpeg')
+        center 42% / cover
+        no-repeat;
+
       filter: none;
       transform: scale(1.015);
       z-index: -2;
     }
 
-    /* Neutraler, dunkler Verlauf – kein Blaustich */
+    /* Neutraler Verlauf – kein Blaustich */
+
     .hero::after {
       content: "";
       position: absolute;
       inset: 0;
+
       background: linear-gradient(
         180deg,
         rgba(0,0,0,.22) 0%,
         rgba(0,0,0,.45) 55%,
         rgba(0,0,0,.82) 100%
       );
+
       z-index: -1;
       pointer-events: none;
     }
 
-    .hero > * { position: relative; z-index: 1; }
+    .hero > * {
+      position: relative;
+      z-index: 1;
+    }
 
-    .hero h1, h2, h3,
-    .break div, .card h3, .wordmark span {
+    .hero h1,
+    h2,
+    h3,
+    .break div,
+    .card h3,
+    .wordmark span {
       font-family: var(--serif);
       font-weight: 300;
       letter-spacing: -.045em;
     }
 
-    .hero h1 { line-height: .8; }
-    .hero h1 em, h2 em { font-weight: 300; }
+    .hero h1 {
+      line-height: .8;
+    }
+
+    .hero h1 em,
+    h2 em {
+      font-weight: 300;
+    }
 
     .hero-copy {
       max-width: 620px;
@@ -139,6 +191,7 @@
     }
 
     /* ALLGEMEINE SEKTIONEN */
+
     .section {
       padding: 7rem 4vw;
       border-bottom: 1px solid var(--line);
@@ -168,6 +221,7 @@
     }
 
     /* THEMENKARTEN */
+
     .cards {
       display: grid;
       grid-template-columns: repeat(3,minmax(0,1fr));
@@ -193,9 +247,13 @@
       content: "";
       position: absolute;
       inset: 0;
+
       background: linear-gradient(
-        180deg,rgba(255,255,255,.025),transparent 45%
+        180deg,
+        rgba(255,255,255,.025),
+        transparent 45%
       );
+
       pointer-events: none;
     }
 
@@ -220,6 +278,7 @@
     }
 
     /* SPEAKING-BILDER */
+
     .gallery {
       padding: 0 4vw 7rem;
       display: grid;
@@ -260,6 +319,7 @@
     }
 
     /* EDITORIAL BREAK */
+
     .break {
       padding: 4rem 4vw;
       border-top: 1px solid var(--line);
@@ -273,7 +333,10 @@
     }
 
     /* INTERVIEWS & GESPRÄCHE */
-    .media-intro { margin-bottom: 2rem; }
+
+    .media-intro {
+      margin-bottom: 2rem;
+    }
 
     .media-intro p {
       line-height: 1.7;
@@ -286,15 +349,20 @@
       border-top: 1px solid var(--line);
     }
 
+    /* THUMBNAIL-KARTEN */
+
     .media-link {
-      padding: 1.2rem 0;
-      display: flex;
+      display: grid;
+      grid-template-columns: 180px minmax(0,1fr) auto;
       align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
+      gap: 1.5rem;
+      padding: 1.2rem 0;
       border-bottom: 1px solid var(--line);
       color: var(--muted);
-      transition: color .2s ease,padding-left .2s ease;
+
+      transition:
+        color .2s ease,
+        padding-left .2s ease;
     }
 
     .media-link:hover {
@@ -302,7 +370,32 @@
       padding-left: .35rem;
     }
 
-    .media-title { min-width: 0; }
+    .media-thumbnail {
+      width: 180px;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 6px;
+      background: #073b50;
+      border: 1px solid var(--line);
+    }
+
+    .media-thumbnail img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: none;
+      transition: transform .35s ease;
+    }
+
+    .media-link:hover .media-thumbnail img {
+      transform: scale(1.045);
+    }
+
+    .media-title {
+      min-width: 0;
+      line-height: 1.5;
+    }
 
     .media-platform {
       flex-shrink: 0;
@@ -316,6 +409,7 @@
     }
 
     /* BUTTONS */
+
     .button {
       display: inline-flex;
       margin-top: 2.5rem;
@@ -324,7 +418,10 @@
       border-radius: 999px;
       letter-spacing: .15em;
       text-transform: uppercase;
-      transition: background .2s ease,color .2s ease;
+
+      transition:
+        background .2s ease,
+        color .2s ease;
     }
 
     .button:hover {
@@ -332,7 +429,8 @@
       color: var(--black);
     }
 
-    /* DEKORATIVE TIEFENVERLÄUFE */
+    /* DEKORATIVE FARBVERLÄUFE */
+
     .depth-section {
       position: relative;
       isolation: isolate;
@@ -360,6 +458,7 @@
       height: 720px;
       right: -220px;
       top: 4%;
+
       background: radial-gradient(
         circle,
         rgba(16,115,132,.55) 0%,
@@ -373,6 +472,7 @@
       height: 520px;
       left: -220px;
       bottom: -180px;
+
       background: radial-gradient(
         circle,
         rgba(21,108,123,.34) 0%,
@@ -386,6 +486,7 @@
       height: 560px;
       left: 32%;
       top: -300px;
+
       background: radial-gradient(
         ellipse,
         rgba(11,91,118,.46) 0%,
@@ -399,6 +500,7 @@
       height: 560px;
       right: -220px;
       bottom: -270px;
+
       background: radial-gradient(
         circle,
         rgba(20,120,136,.36) 0%,
@@ -408,6 +510,7 @@
     }
 
     /* WORDMARK */
+
     .wordmark {
       padding: 4rem 1rem 2rem;
       text-align: center;
@@ -422,6 +525,7 @@
     }
 
     /* FOOTER */
+
     footer {
       padding: 1.2rem 2.5rem 2rem;
       display: flex;
@@ -438,23 +542,38 @@
     }
 
     /* SCHRIFTGRÖSSEN */
-    .hero h1, h2, h3,
-    .break div, .card h3, .wordmark span {
+
+    .hero h1,
+    h2,
+    h3,
+    .break div,
+    .card h3,
+    .wordmark span {
       font-size: var(--display) !important;
     }
 
-    p, .hero-copy p, .copy p,
-    .card p, .media-link {
+    p,
+    .hero-copy p,
+    .copy p,
+    .card p,
+    .media-link {
       font-size: var(--body) !important;
     }
 
-    nav, .brand, nav .links a,
-    .meta, .card .num, .photo-number,
-    .media-platform, .button, footer {
+    nav,
+    .brand,
+    nav .links a,
+    .meta,
+    .card .num,
+    .photo-number,
+    .media-platform,
+    .button,
+    footer {
       font-size: var(--meta) !important;
     }
 
     /* MOBILE */
+
     @media(max-width:850px) {
       :root {
         --display: clamp(3rem,12vw,5rem);
@@ -462,10 +581,16 @@
         --meta: .6rem;
       }
 
-      nav { padding: 0 1.2rem; }
-      nav .links { display: none; }
+      nav {
+        padding: 0 1.2rem;
+      }
 
-      .hero, .grid2 {
+      nav .links {
+        display: none;
+      }
+
+      .hero,
+      .grid2 {
         grid-template-columns: 1fr;
       }
 
@@ -478,21 +603,29 @@
         background-position: center center;
       }
 
-      .section { padding: 4rem 1.2rem; }
-      .cards { grid-template-columns: 1fr; }
-      .card { min-height: 390px; }
+      .section {
+        padding: 4rem 1.2rem;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        min-height: 390px;
+      }
 
       .gallery {
         padding: 0 1.2rem 4rem;
         grid-template-columns: 1fr;
       }
 
-      .photo { height: 440px; }
-      .break { padding: 3rem 1.2rem; }
+      .photo {
+        height: 440px;
+      }
 
-      .media-link {
-        align-items: flex-start;
-        gap: 1rem;
+      .break {
+        padding: 3rem 1.2rem;
       }
 
       .depth-section::before,
@@ -507,12 +640,30 @@
         gap: 1rem;
       }
     }
+
+    @media(max-width:600px) {
+      .media-link {
+        grid-template-columns: 110px minmax(0,1fr);
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .media-thumbnail {
+        width: 110px;
+      }
+
+      .media-platform {
+        grid-column: 2;
+        margin-top: -.5rem;
+      }
+    }
   </style>
 </head>
 
 <body>
 
   <!-- NAVIGATION -->
+
   <nav>
     <a class="brand" href="index.html">Tami Mönnig</a>
 
@@ -522,17 +673,25 @@
       <a href="speaking.html" class="active">Speaking</a>
       <a href="international.html">International</a>
       <a href="astrologie.html">Astrologie × Finanzen</a>
-      <a href="https://www.krypto-steuern.net/"
-         target="_blank" rel="noopener">Krypto-Steuern ↗</a>
+
+      <a
+        href="https://www.krypto-steuern.net/"
+        target="_blank"
+        rel="noopener"
+      >
+        Krypto-Steuern ↗
+      </a>
     </div>
   </nav>
 
   <main>
 
     <!-- HERO -->
+
     <section class="hero">
       <div>
         <p class="meta">Speaking &amp; Lehre — 02</p>
+
         <h1>
           Expertise, die auch<br>
           <em>auf der Bühne glänzt.</em>
@@ -550,10 +709,13 @@
     </section>
 
     <!-- THEMEN -->
+
     <section class="section depth-section depth-warm">
       <div class="grid2">
+
         <div>
           <p class="meta">01 — Themen</p>
+
           <h2>
             Komplexe Themen.<br>
             <em>Klar erzählt.</em>
@@ -574,10 +736,12 @@
       </div>
 
       <div class="cards">
-        <!-- 01 KRYPTO -->
+
         <article class="card">
           <span class="num">01</span>
+
           <h3>Krypto-<br>Steuern</h3>
+
           <p>
             Besteuerung von Kryptowerten,
             lückenloses Reporting,
@@ -587,10 +751,11 @@
           </p>
         </article>
 
-        <!-- 02 INTERNATIONAL -->
         <article class="card">
           <span class="num">02</span>
+
           <h3>Inter-<br>national</h3>
+
           <p>
             Exit Tax,
             grenzüberschreitende Setups
@@ -600,10 +765,11 @@
           </p>
         </article>
 
-        <!-- 03 REGULIERUNG -->
         <article class="card">
           <span class="num">03</span>
+
           <h3>Regulierung</h3>
+
           <p>
             DAC8,
             Transparenz,
@@ -611,11 +777,14 @@
             und was auf Anleger zukommt.
           </p>
         </article>
+
       </div>
     </section>
 
     <!-- SPEAKING-BILDER -->
+
     <section class="gallery">
+
       <figure class="photo photo-stage">
         <figcaption class="photo-number">01</figcaption>
       </figure>
@@ -627,9 +796,11 @@
       <figure class="photo photo-teaching">
         <figcaption class="photo-number">03</figcaption>
       </figure>
+
     </section>
 
     <!-- EDITORIAL BREAK -->
+
     <section class="break depth-section depth-violet">
       <div>
         BÜHNE.
@@ -639,11 +810,16 @@
     </section>
 
     <!-- DOZENTIN BEI FACHSEMINARE VON FÜRSTENBERG -->
-    <section class="section depth-section depth-violet"
-             id="fuerstenberg">
+
+    <section
+      class="section depth-section depth-violet"
+      id="fuerstenberg"
+    >
       <div class="grid2">
+
         <div>
           <p class="meta">02 — Fachliche Weiterbildung</p>
+
           <h2>
             Wissen für<br>
             <em>die Praxis.</em>
@@ -652,7 +828,9 @@
 
         <div class="copy">
           <p>
-            <strong>Dozentin bei Fachseminare von Fürstenberg</strong>
+            <strong>
+              Dozentin bei Fachseminare von Fürstenberg
+            </strong>
           </p>
 
           <p>
@@ -689,14 +867,18 @@
             Zum Zertifizierungslehrgang →
           </a>
         </div>
+
       </div>
     </section>
 
     <!-- INTERVIEWS & GESPRÄCHE -->
+
     <section class="section depth-section depth-warm">
       <div class="grid2">
+
         <div>
           <p class="meta">03 — Interviews &amp; Gespräche</p>
+
           <h2>
             Weiterhören.<br>
             <em>Weiterschauen.</em>
@@ -704,6 +886,7 @@
         </div>
 
         <div class="copy">
+
           <div class="media-intro">
             <p>
               Ausgewählte Interviews,
@@ -713,18 +896,36 @@
             </p>
           </div>
 
+          <!-- EXTERNE LINKS MIT THUMBNAILS -->
+
           <div class="media-links">
+
+            <!-- 01 ERBE & VERKAUF -->
+
             <a
               class="media-link"
               href="https://youtu.be/Rp7IB_Vul4c?si=YKwWpYr5Rom0r3f6"
               target="_blank"
               rel="noopener"
             >
+              <div class="media-thumbnail">
+                <img
+                  src="thumbnail-erbe.png"
+                  alt="Erbe und Probleme beim Verkauf"
+                  loading="lazy"
+                >
+              </div>
+
               <span class="media-title">
                 Erbe &amp; Probleme beim Verkauf
               </span>
-              <span class="media-platform">YouTube ↗</span>
+
+              <span class="media-platform">
+                YouTube ↗
+              </span>
             </a>
+
+            <!-- 02 NFTS & STEUERRECHT -->
 
             <a
               class="media-link"
@@ -732,11 +933,24 @@
               target="_blank"
               rel="noopener"
             >
+              <div class="media-thumbnail">
+                <img
+                  src="thumbnail-nft.png"
+                  alt="NFTs und Steuerrecht"
+                  loading="lazy"
+                >
+              </div>
+
               <span class="media-title">
                 NFTs &amp; Steuerrecht
               </span>
-              <span class="media-platform">YouTube ↗</span>
+
+              <span class="media-platform">
+                YouTube ↗
+              </span>
             </a>
+
+            <!-- 03 MINING & STAKING -->
 
             <a
               class="media-link"
@@ -744,11 +958,24 @@
               target="_blank"
               rel="noopener"
             >
+              <div class="media-thumbnail">
+                <img
+                  src="thumbnail-mining.png"
+                  alt="Mining und Staking"
+                  loading="lazy"
+                >
+              </div>
+
               <span class="media-title">
                 Mining &amp; Staking
               </span>
-              <span class="media-platform">YouTube ↗</span>
+
+              <span class="media-platform">
+                YouTube ↗
+              </span>
             </a>
+
+            <!-- 04 INTERNATIONAL & EXIT TAX -->
 
             <a
               class="media-link"
@@ -756,11 +983,24 @@
               target="_blank"
               rel="noopener"
             >
+              <div class="media-thumbnail">
+                <img
+                  src="thumbnail-international.png"
+                  alt="International Crypto und Exit Tax"
+                  loading="lazy"
+                >
+              </div>
+
               <span class="media-title">
                 International Crypto &amp; Exit Tax
               </span>
-              <span class="media-platform">YouTube ↗</span>
+
+              <span class="media-platform">
+                YouTube ↗
+              </span>
             </a>
+
+            <!-- 05 BITCOIN VERSTEHEN -->
 
             <a
               class="media-link"
@@ -768,11 +1008,24 @@
               target="_blank"
               rel="noopener"
             >
+              <div class="media-thumbnail">
+                <img
+                  src="thumbnail-bitcoin.png"
+                  alt="Bitcoin verstehen"
+                  loading="lazy"
+                >
+              </div>
+
               <span class="media-title">
                 Bitcoin verstehen
               </span>
-              <span class="media-platform">YouTube ↗</span>
+
+              <span class="media-platform">
+                YouTube ↗
+              </span>
             </a>
+
+            <!-- 06 DELOITTE D.TALKS -->
 
             <a
               class="media-link"
@@ -780,12 +1033,26 @@
               target="_blank"
               rel="noopener"
             >
+              <div class="media-thumbnail">
+                <img
+                  src="thumbnail-deloitte.png"
+                  alt="Deloitte D.Talks Podcast"
+                  loading="lazy"
+                >
+              </div>
+
               <span class="media-title">
                 Deloitte D.Talks
               </span>
-              <span class="media-platform">Podcast ↗</span>
+
+              <span class="media-platform">
+                Podcast ↗
+              </span>
             </a>
+
           </div>
+
+          <!-- SPEAKING CTA -->
 
           <a
             class="button"
@@ -793,11 +1060,13 @@
           >
             Speaking anfragen →
           </a>
+
         </div>
       </div>
     </section>
 
     <!-- WORDMARK -->
+
     <section class="wordmark">
       <span>TAMI JOAN</span>
     </section>
@@ -805,6 +1074,7 @@
   </main>
 
   <!-- FOOTER -->
+
   <footer>
     <div>© 2026 Tami Mönnig</div>
 
@@ -812,9 +1082,11 @@
       <a href="https://www.linkedin.com/in/tami-moennig/">
         LinkedIn
       </a>
+
       <a href="https://www.instagram.com/tami.moennig/">
         Instagram
       </a>
+
       <a href="impressum.html">Impressum</a>
       <a href="datenschutz.html">Datenschutz</a>
     </div>

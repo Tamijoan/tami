@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Über Tami — Tami Mönnig</title>
-  <meta name="description" content="Tami Mönnig: Krypto-Steuerexpertin, Speakerin und digitale Nomadin. Über ihren Weg in die internationale Selbstständigkeit.">
+  <meta name="description" content="Tami Mönnig: Digitale Nomadin, Speakerin, Astrologin und Steuerrechtlerin mit Fokus auf Kryptosteuern.">
 
   <link rel="icon" type="image/png" href="favicon-tami.png?v=2">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -128,7 +128,7 @@
       z-index: 30;
     }
 
-    /* NEUES ZWEIZEILIGES BRANDING */
+    /* ZWEIZEILIGES BRANDING */
 
     .brand {
       display: flex;
@@ -204,6 +204,8 @@
       border-bottom: 1px solid var(--line);
     }
 
+    /* ORIGINALFARBEN DES HEADERBILDES */
+
     .hero::before {
       content: "";
       position: absolute;
@@ -211,29 +213,25 @@
       background:
         url('Tami_about_header.png')
         center center / cover no-repeat;
-      filter: grayscale(100%) brightness(.52);
+      filter: none;
       z-index: -2;
       transform: scale(1.015);
     }
+
+    /* NEUTRALER SCHWARZER VERLAUF STATT BLAUFILTER */
 
     .hero::after {
       content: "";
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(2,24,39,.88) 0%,
-          rgba(4,44,61,.55) 55%,
-          rgba(4,49,65,.28) 100%
-        ),
-        linear-gradient(
-          180deg,
-          rgba(2,23,37,.18) 0%,
-          rgba(2,23,37,.3) 45%,
-          rgba(2,23,37,.92) 100%
-        );
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,.22) 0%,
+        rgba(0,0,0,.45) 55%,
+        rgba(0,0,0,.82) 100%
+      );
       z-index: -1;
+      pointer-events: none;
     }
 
     .hero-inner {
@@ -845,11 +843,10 @@
 
           <div class="hero-copy">
             <p>
-              Steuerrechtlerin, Krypto-Expertin,
-              Speakerin und digitale Nomadin.
-              Passt in keine Schublade –
-              und wollte da ehrlich gesagt
-              auch nie rein.
+              Digitale Nomadin, Speakerin, Astrologin,
+              Steuerrechtlerin mit Fokus auf Kryptosteuern.
+              Passt in keine Schublade – und wollte da
+              ehrlich gesagt auch nie rein.
             </p>
           </div>
         </div>

@@ -1,78 +1,69 @@
+
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link
-    rel="icon"
-    type="image/png"
-    href="favicon-tami.png?v=2"
-  />
+  <link rel="icon" type="image/png" href="favicon-tami.png?v=2">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap"
-    rel="stylesheet"
-  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <title>Internationale Strukturen — Tami Mönnig</title>
 
-  <meta
-    name="description"
-    content="Internationale Unternehmens- und Vermögensstrukturen mit Tami Mönnig."
-  />
+  <meta name="description" content="Internationale Unternehmens- und Vermögensstrukturen mit Tami Mönnig.">
 
   <style>
-
-    *,
-    *::before,
-    *::after {
+    *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
     :root {
-      --black: #050505;
-      --white: #f5f3ef;
-      --muted: rgba(245, 243, 239, .56);
-      --line: rgba(245, 243, 239, .17);
-
-      --serif:
-        'Cormorant Garamond',
-        Georgia,
-        serif;
-
-      --sans:
-        'Inter',
-        Arial,
-        sans-serif;
-
-      --display:
-        clamp(3.4rem, 6vw, 7rem);
-
-      --body:
-        .95rem;
-
-      --meta:
-        .6rem;
+      --black: #031b2b;
+      --white: #f7f6f4;
+      --muted: rgba(245,243,239,.65);
+      --line: rgba(185,229,235,.22);
+      --sea-glass: #a4dbd6;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Inter', Arial, sans-serif;
+      --display: clamp(3.4rem,6vw,7rem);
+      --body: .95rem;
+      --meta: .6rem;
     }
-
 
     /* BASE */
 
-    html,
-    body {
-      background: var(--black);
+    html, body {
+      background:
+        radial-gradient(
+          ellipse 65% 28% at 92% 13%,
+          rgba(23,124,142,.35),
+          transparent 76%
+        ),
+        radial-gradient(
+          ellipse 58% 34% at 4% 47%,
+          rgba(13,100,128,.36),
+          transparent 76%
+        ),
+        radial-gradient(
+          ellipse 65% 28% at 85% 82%,
+          rgba(18,118,133,.28),
+          transparent 75%
+        ),
+        linear-gradient(
+          155deg,
+          #031b2b 0%,
+          #073b50 38%,
+          #052c41 65%,
+          #021927 100%
+        );
       color: var(--white);
-
       font-family: var(--sans);
       font-weight: 300;
-
       overflow-x: hidden;
     }
 
@@ -81,29 +72,48 @@
       text-decoration: none;
     }
 
-
     /* NAVIGATION */
 
     nav {
       height: 94px;
       padding: 0 2.5rem;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
-      border-bottom:
-        1px solid
-        var(--line);
-
+      border-bottom: 1px solid var(--line);
       background: var(--black);
-
       position: relative;
       z-index: 20;
     }
 
-    .brand {
-      font-family: var(--serif);
+    /* TAMI JOAN / MÖNNIG */
+
+    nav .brand {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 4px;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    nav .brand-main {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 1.65rem;
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: -.025em;
+      color: #f7f6f4;
+    }
+
+    nav .brand-sub {
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: .55rem;
+      font-weight: 400;
+      line-height: 1.3;
+      letter-spacing: .38em;
+      color: #a4dbd6;
     }
 
     nav .links {
@@ -113,12 +123,9 @@
 
     nav .links a {
       color: var(--muted);
-
       letter-spacing: .16em;
       text-transform: uppercase;
-
-      transition:
-        color .2s ease;
+      transition: color .2s ease;
     }
 
     nav .links a:hover,
@@ -126,71 +133,43 @@
       color: var(--white);
     }
 
-
     /* HERO */
 
     .hero {
       min-height: 78vh;
-
-      padding:
-        6rem 4vw
-        4rem;
-
+      padding: 6rem 4vw 4rem;
       display: grid;
-
-      grid-template-columns:
-        .82fr 1.18fr;
-
+      grid-template-columns: .82fr 1.18fr;
       gap: 4vw;
-
       align-items: end;
-
       position: relative;
-
       isolation: isolate;
-
       overflow: hidden;
-
-      border-bottom:
-        1px solid
-        var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
     .hero::before {
       content: "";
-
       position: absolute;
       inset: 0;
-
       background:
         url('international-header.png')
-        center center / cover
-        no-repeat;
-
-      filter:
-        grayscale(100%)
-        brightness(.38);
-
-      transform:
-        scale(1.015);
-
+        center center / cover no-repeat;
+      filter: none;
+      transform: scale(1.015);
       z-index: -2;
     }
 
     .hero::after {
       content: "";
-
       position: absolute;
       inset: 0;
-
-      background:
-        linear-gradient(
-          180deg,
-          rgba(0,0,0,.24) 0%,
-          rgba(0,0,0,.46) 55%,
-          rgba(0,0,0,.84) 100%
-        );
-
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,.22) 0%,
+        rgba(0,0,0,.45) 55%,
+        rgba(0,0,0,.82) 100%
+      );
       z-index: -1;
       pointer-events: none;
     }
@@ -221,6 +200,7 @@
     .hero h1 em,
     h2 em {
       font-weight: 300;
+      color: var(--sea-glass);
     }
 
     .hero-copy {
@@ -230,42 +210,38 @@
 
     .hero-copy p {
       line-height: 1.7;
-      color: rgba(245,243,239,.72);
+      color: rgba(245,243,239,.82);
     }
 
     .meta {
       letter-spacing: .22em;
       text-transform: uppercase;
-
-      color:
-        rgba(245,243,239,.40);
+      color: var(--sea-glass);
     }
-
 
     /* GENERAL SECTIONS */
 
     .section {
       padding: 7rem 4vw;
-
-      border-bottom:
-        1px solid
-        var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
     .grid2 {
       display: grid;
-
-      grid-template-columns:
-        .75fr 1.25fr;
-
+      grid-template-columns: .75fr 1.25fr;
       gap: 5vw;
-
       align-items: start;
     }
 
     .section h2 {
       line-height: .88;
       margin-top: 1.1rem;
+    }
+
+    .section h2 em,
+    .partner-head h2 em,
+    .focus-content h3 em {
+      color: var(--sea-glass);
     }
 
     .copy {
@@ -275,103 +251,74 @@
 
     .copy p {
       margin-bottom: 1.25rem;
-
       line-height: 1.7;
-
       color: var(--muted);
     }
-
 
     /* THEMENKARTEN */
 
     .topic-grid {
       display: grid;
-
-      grid-template-columns:
-        repeat(3,minmax(0,1fr));
-
+      grid-template-columns: repeat(3,minmax(0,1fr));
       gap: 1rem;
-
       margin-top: 3rem;
     }
 
     .topic-card {
       min-height: 470px;
-
       padding: 2.5rem;
-
       position: relative;
-
       overflow: hidden;
-
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-
-      border:
-        1px solid
-        rgba(245,243,239,.18);
-
-      background:
-        rgba(245,243,239,.012);
+      border: 1px solid var(--line);
+      background: rgba(247,246,244,.025);
     }
 
     .topic-card::before {
       content: "";
-
       position: absolute;
-
       width: 520px;
       height: 520px;
-
       border-radius: 50%;
-
       filter: blur(60px);
-
       opacity: .70;
-
       z-index: 0;
-
       pointer-events: none;
     }
 
     .topic-card:nth-child(1)::before {
       left: -280px;
       bottom: -260px;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(105,49,83,.58) 0%,
-          rgba(69,35,78,.30) 42%,
-          rgba(0,0,0,0) 72%
-        );
+      background: radial-gradient(
+        circle,
+        rgba(16,115,132,.58) 0%,
+        rgba(9,78,104,.30) 42%,
+        rgba(0,0,0,0) 72%
+      );
     }
 
     .topic-card:nth-child(2)::before {
       right: -240px;
       top: -240px;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(84,45,101,.58) 0%,
-          rgba(117,54,78,.28) 45%,
-          rgba(0,0,0,0) 74%
-        );
+      background: radial-gradient(
+        circle,
+        rgba(22,116,132,.58) 0%,
+        rgba(8,75,103,.28) 45%,
+        rgba(0,0,0,0) 74%
+      );
     }
 
     .topic-card:nth-child(3)::before {
       right: -250px;
       bottom: -260px;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(126,64,75,.52) 0%,
-          rgba(68,36,87,.30) 44%,
-          rgba(0,0,0,0) 73%
-        );
+      background: radial-gradient(
+        circle,
+        rgba(21,108,123,.52) 0%,
+        rgba(5,60,85,.30) 44%,
+        rgba(0,0,0,0) 73%
+      );
     }
 
     .topic-card > * {
@@ -381,7 +328,7 @@
 
     .topic-number {
       letter-spacing: .18em;
-      color: rgba(245,243,239,.40);
+      color: var(--sea-glass);
     }
 
     .topic-card h3 {
@@ -394,15 +341,12 @@
       color: var(--muted);
     }
 
-
     /* BREAK */
 
     .break {
       padding: 4rem 4vw;
-
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
-
       overflow: hidden;
     }
 
@@ -411,245 +355,163 @@
       white-space: nowrap;
     }
 
+    .break em {
+      color: var(--sea-glass);
+    }
 
     /* TAMI FOCUS */
 
     .focus-section {
       padding: 7rem 4vw;
-
-      border-bottom:
-        1px solid
-        var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
     .focus-card {
       display: grid;
-
-      grid-template-columns:
-        .9fr 1.1fr;
-
+      grid-template-columns: .9fr 1.1fr;
       min-height: 620px;
-
-      border:
-        1px solid
-        var(--line);
-
+      border: 1px solid var(--line);
       overflow: hidden;
-
-      background:
-        rgba(245,243,239,.01);
+      background: rgba(247,246,244,.025);
     }
 
     .focus-image {
       min-height: 620px;
-
       background:
         url('tami-international.png')
-        center 20% / cover
-        no-repeat;
+        center 20% / cover no-repeat;
 
-      filter:
-        grayscale(100%);
+      /* TAMI IN ORIGINALFARBEN */
+      filter: none;
     }
 
     .focus-content {
       padding: 4rem;
-
       display: flex;
-
       flex-direction: column;
-
       justify-content: flex-end;
     }
 
     .focus-content h3 {
       line-height: .9;
-
-      margin:
-        1rem 0
-        1.5rem;
+      margin: 1rem 0 1.5rem;
     }
 
     .focus-content p {
       max-width: 650px;
-
       line-height: 1.7;
-
       color: var(--muted);
     }
-
 
     /* PARTNER / KOOPERATION */
 
     .partner-section {
       padding: 7rem 4vw;
-
-      border-bottom:
-        1px solid
-        var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
     .partner-head {
       display: grid;
-
-      grid-template-columns:
-        .8fr 1.2fr;
-
+      grid-template-columns: .8fr 1.2fr;
       gap: 5vw;
-
       margin-bottom: 3rem;
     }
 
     .partner-head h2 {
       line-height: .88;
-
       margin-top: 1.1rem;
     }
 
     .partner-head p {
       padding-top: 2.5rem;
-
       max-width: 720px;
-
       line-height: 1.7;
-
       color: var(--muted);
     }
 
     .partner-card {
       display: grid;
-
-      grid-template-columns:
-        280px 1fr;
-
+      grid-template-columns: 280px 1fr;
       gap: 0;
-
       max-width: 980px;
-
-      border:
-        1px solid
-        var(--line);
-
-      background:
-        rgba(245,243,239,.015);
+      border: 1px solid var(--line);
+      background: rgba(247,246,244,.025);
     }
 
     .partner-image {
       min-height: 360px;
-
       overflow: hidden;
-
-      background: #111;
+      background: #031b2b;
     }
 
     .partner-image img {
       display: block;
-
       width: 100%;
       height: 100%;
-
       object-fit: cover;
+      object-position: center top;
 
-      object-position:
-        center top;
+      /* DANIEL IN SCHWARZ-WEISS */
+      filter: grayscale(100%);
     }
 
     .partner-content {
       padding: 2.6rem;
-
       display: flex;
-
       flex-direction: column;
-
       justify-content: center;
     }
 
     .partner-label {
       margin-bottom: 1.2rem;
-
       letter-spacing: .16em;
-
       text-transform: uppercase;
-
-      color:
-        rgba(245,243,239,.42);
+      color: var(--sea-glass);
     }
 
     .partner-content h3 {
       line-height: .95;
-
       margin-bottom: 1.2rem;
     }
 
     .partner-content p {
       max-width: 640px;
-
       line-height: 1.7;
-
       color: var(--muted);
-
       margin-bottom: .8rem;
     }
-
 
     /* QUOTE */
 
     .quote {
-      padding:
-        7rem 4vw
-        8rem;
-
-      border-bottom:
-        1px solid
-        var(--line);
+      padding: 7rem 4vw 8rem;
+      border-bottom: 1px solid var(--line);
     }
 
     .quote blockquote {
       max-width: 1200px;
-
       line-height: .94;
-
-      color:
-        rgba(245,243,239,.86);
+      color: rgba(245,243,239,.86);
     }
 
     .quote cite {
       display: block;
-
       margin-top: 2.2rem;
-
       font-style: normal;
-
       letter-spacing: .2em;
-
       text-transform: uppercase;
-
-      color:
-        rgba(245,243,239,.42);
+      color: var(--sea-glass);
     }
 
     .button {
       display: inline-flex;
-
       margin-top: 2.5rem;
-
-      padding:
-        .9rem 1.35rem;
-
-      border:
-        1px solid
-        var(--line);
-
-      border-radius:
-        999px;
-
+      padding: .9rem 1.35rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
       letter-spacing: .15em;
-
       text-transform: uppercase;
-
-      transition:
-        background .2s ease,
-        color .2s ease;
+      transition: background .2s ease, color .2s ease;
     }
 
     .button:hover {
@@ -657,14 +519,11 @@
       color: var(--black);
     }
 
-
-    /* DEPTH */
+    /* BLUE DEPTH EFFECTS */
 
     .depth-section {
       position: relative;
-
       isolation: isolate;
-
       overflow: hidden;
     }
 
@@ -676,125 +535,90 @@
     .depth-section::before,
     .depth-section::after {
       content: "";
-
       position: absolute;
-
       border-radius: 50%;
-
       pointer-events: none;
-
       z-index: 0;
-
       filter: blur(68px);
-
       opacity: .92;
     }
 
     .depth-warm::before {
       width: 720px;
       height: 720px;
-
       right: -220px;
       top: 4%;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(126,49,88,.55) 0%,
-          rgba(89,35,97,.34) 38%,
-          rgba(5,5,5,0) 72%
-        );
+      background: radial-gradient(
+        circle,
+        rgba(16,115,132,.55) 0%,
+        rgba(9,78,104,.34) 38%,
+        rgba(5,5,5,0) 72%
+      );
     }
 
     .depth-warm::after {
       width: 520px;
       height: 520px;
-
       left: -220px;
       bottom: -180px;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(115,58,68,.34) 0%,
-          rgba(67,31,74,.22) 42%,
-          rgba(5,5,5,0) 73%
-        );
+      background: radial-gradient(
+        circle,
+        rgba(21,108,123,.34) 0%,
+        rgba(5,60,85,.22) 42%,
+        rgba(5,5,5,0) 73%
+      );
     }
 
     .depth-violet::before {
       width: 760px;
       height: 560px;
-
       left: 32%;
       top: -300px;
-
-      background:
-        radial-gradient(
-          ellipse,
-          rgba(72,38,91,.46) 0%,
-          rgba(116,47,78,.29) 43%,
-          rgba(5,5,5,0) 74%
-        );
+      background: radial-gradient(
+        ellipse,
+        rgba(11,91,118,.46) 0%,
+        rgba(22,116,132,.29) 43%,
+        rgba(5,5,5,0) 74%
+      );
     }
-
 
     /* WORDMARK */
 
     .wordmark {
-      padding:
-        4rem 1rem
-        2rem;
-
+      padding: 4rem 1rem 2rem;
       text-align: center;
-
       overflow: hidden;
     }
 
     .wordmark span {
       line-height: .75;
-
       letter-spacing: -.06em;
-
       white-space: nowrap;
-
-      color:
-        rgba(245,243,239,.13);
+      color: rgba(245,243,239,.13);
     }
-
 
     /* FOOTER */
 
     footer {
-      padding:
-        1.2rem 2.5rem
-        2rem;
-
+      padding: 1.2rem 2.5rem 2rem;
       display: flex;
-
-      justify-content:
-        space-between;
-
-      border-top:
-        1px solid
-        var(--line);
-
+      justify-content: space-between;
+      border-top: 1px solid var(--line);
       letter-spacing: .12em;
-
       text-transform: uppercase;
-
-      color:
-        rgba(245,243,239,.35);
+      color: rgba(245,243,239,.45);
     }
 
     footer .links {
       display: flex;
-
       gap: 1rem;
     }
 
+    footer a:hover {
+      color: var(--white);
+    }
 
-    /* EXACTLY 3 FONT SIZES */
+    /* TYPOGRAPHY */
 
     .hero h1,
     h2,
@@ -805,8 +629,7 @@
     .partner-card h3,
     .quote blockquote,
     .wordmark span {
-      font-size:
-        var(--display) !important;
+      font-size: var(--display) !important;
     }
 
     p,
@@ -816,12 +639,10 @@
     .focus-content p,
     .partner-head p,
     .partner-content p {
-      font-size:
-        var(--body) !important;
+      font-size: var(--body) !important;
     }
 
     nav,
-    .brand,
     nav .links a,
     .meta,
     .topic-number,
@@ -829,29 +650,24 @@
     .quote cite,
     .button,
     footer {
-      font-size:
-        var(--meta) !important;
+      font-size: var(--meta) !important;
     }
-
 
     /* MOBILE */
 
-    @media(max-width:850px) {
-
+    @media (max-width: 850px) {
       :root {
-        --display:
-          clamp(3rem,12vw,5rem);
-
-        --body:
-          .95rem;
-
-        --meta:
-          .6rem;
+        --display: clamp(3rem,12vw,5rem);
+        --body: .95rem;
+        --meta: .6rem;
       }
 
       nav {
-        padding:
-          0 1.2rem;
+        padding: 0 1.2rem;
+      }
+
+      nav .brand-main {
+        font-size: 1.5rem;
       }
 
       nav .links {
@@ -862,202 +678,130 @@
       .grid2,
       .partner-head,
       .focus-card {
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
       }
 
       .hero {
         min-height: 72vh;
-
-        padding:
-          5rem 1.2rem
-          3rem;
+        padding: 5rem 1.2rem 3rem;
       }
 
       .section,
       .focus-section,
       .partner-section,
       .quote {
-        padding:
-          4rem 1.2rem;
+        padding: 4rem 1.2rem;
       }
 
       .topic-grid {
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
       }
 
       .topic-card {
-        min-height:
-          390px;
+        min-height: 390px;
       }
 
       .focus-image {
-        min-height:
-          480px;
-
-        background-position:
-          center 15%;
+        min-height: 480px;
+        background-position: center 15%;
       }
 
       .focus-content {
-        padding:
-          2rem;
+        padding: 2rem;
       }
 
       .partner-card {
-        grid-template-columns:
-          1fr;
-
+        grid-template-columns: 1fr;
         max-width: none;
       }
 
       .partner-image {
-        min-height:
-          420px;
+        min-height: 420px;
       }
 
       .break {
-        padding:
-          3rem 1.2rem;
+        padding: 3rem 1.2rem;
       }
 
       footer {
-        padding:
-          1.5rem 1.2rem;
-
-        flex-direction:
-          column;
-
+        padding: 1.5rem 1.2rem;
+        flex-direction: column;
         gap: 1rem;
       }
-
     }
-
   </style>
-
 </head>
 
-
 <body>
-
 
   <!-- NAVIGATION -->
 
   <nav>
-
     <a
       class="brand"
       href="index.html"
+      aria-label="Tami Joan Mönnig – Startseite"
     >
-      Tami Mönnig
+      <span class="brand-main">TAMI JOAN</span>
+      <span class="brand-sub">MÖNNIG</span>
     </a>
 
     <div class="links">
-
-      <a href="index.html">
-        Übersicht
-      </a>
-
-      <a href="about.html">
-        Über Tami
-      </a>
-
-      <a href="speaking.html">
-        Speaking
-      </a>
-
-      <a
-        href="international.html"
-        class="active"
-      >
-        International
-      </a>
-
-      <a href="astrologie.html">
-        Astrologie × Finanzen
-      </a>
-
+      <a href="index.html">Übersicht</a>
+      <a href="about.html">Über Tami</a>
+      <a href="speaking.html">Speaking</a>
+      <a href="international.html" class="active">International</a>
+      <a href="astrologie.html">Astrologie × Finanzen</a>
       <a
         href="https://www.krypto-steuern.net/"
         target="_blank"
         rel="noopener"
-      >
-        Krypto-Steuern ↗
-      </a>
-
+      >Krypto-Steuern ↗</a>
     </div>
-
   </nav>
 
-
   <main>
-
 
     <!-- HERO -->
 
     <section class="hero">
-
       <div>
-
-        <p class="meta">
-          Internationale Strukturen — 03
-        </p>
+        <p class="meta">Internationale Strukturen — 03</p>
 
         <h1>
           Dein Leben ist<br>
           international.<br>
-
           <em>
             Deine Struktur<br>
             sollte es auch sein.
           </em>
         </h1>
-
       </div>
 
-
       <div class="hero-copy">
-
         <p>
           Für Unternehmer und Investoren,
           deren Leben, Firmen und Vermögen
           nicht an einer Landesgrenze aufhören.
         </p>
-
       </div>
-
     </section>
-
 
     <!-- PERSPEKTIVE -->
 
-    <section
-      class="
-        section
-        depth-section
-        depth-warm
-      "
-    >
-
+    <section class="section depth-section depth-warm">
       <div class="grid2">
 
         <div>
-
-          <p class="meta">
-            01 — Perspektive
-          </p>
+          <p class="meta">01 — Perspektive</p>
 
           <h2>
             Unternehmertum kennt
             keine <em>Landesgrenzen.</em>
           </h2>
-
         </div>
 
-
         <div class="copy">
-
           <p>
             Die Realität vieler Unternehmer
             ist längst international.
@@ -1083,29 +827,18 @@
             dein Vermögen
             und deine langfristigen Ziele.
           </p>
-
         </div>
-
       </div>
-
 
       <!-- THEMEN -->
 
       <div class="topic-grid">
 
-
         <article class="topic-card">
-
-          <span class="topic-number">
-            01
-          </span>
+          <span class="topic-number">01</span>
 
           <div>
-
-            <h3>
-              Cross-<br>
-              Border
-            </h3>
+            <h3>Cross-<br>Border</h3>
 
             <p>
               Leben und Wirtschaften
@@ -1114,24 +847,14 @@
               über steuerliche Zusammenhänge
               zu verlieren.
             </p>
-
           </div>
-
         </article>
 
-
         <article class="topic-card">
-
-          <span class="topic-number">
-            02
-          </span>
+          <span class="topic-number">02</span>
 
           <div>
-
-            <h3>
-              Business<br>
-              Setup
-            </h3>
+            <h3>Business<br>Setup</h3>
 
             <p>
               Unternehmensstrukturen
@@ -1140,24 +863,14 @@
               immer im Kontext
               der tatsächlichen Lebensrealität.
             </p>
-
           </div>
-
         </article>
 
-
         <article class="topic-card">
-
-          <span class="topic-number">
-            03
-          </span>
+          <span class="topic-number">03</span>
 
           <div>
-
-            <h3>
-              Crypto<br>
-              Wealth
-            </h3>
+            <h3>Crypto<br>Wealth</h3>
 
             <p>
               Krypto-Vermögen
@@ -1166,41 +879,25 @@
               Unternehmen
               und langfristiger Struktur.
             </p>
-
           </div>
-
         </article>
 
-
       </div>
-
     </section>
-
 
     <!-- BREAK -->
 
-    <section
-      class="
-        break
-        depth-section
-        depth-violet
-      "
-    >
-
+    <section class="break depth-section depth-violet">
       <div>
         GLOBAL DENKEN.
         <em>INDIVIDUELL STRUKTURIEREN.</em>
       </div>
-
     </section>
-
 
     <!-- TAMI IM FOKUS -->
 
     <section class="focus-section">
-
       <article class="focus-card">
-
 
         <div
           class="focus-image"
@@ -1208,16 +905,11 @@
           aria-label="Tami Mönnig"
         ></div>
 
-
         <div class="focus-content">
-
-          <p class="meta">
-            02 — Meine Perspektive
-          </p>
+          <p class="meta">02 — Meine Perspektive</p>
 
           <h3>
-            International denken.
-            <br>
+            International denken.<br>
             <em>Ohne Schema F.</em>
           </h3>
 
@@ -1238,40 +930,24 @@
             deinem Business
             und deinem Vermögen passt.
           </p>
-
         </div>
 
-
       </article>
-
     </section>
-
 
     <!-- KOOPERATION -->
 
-    <section
-      class="
-        partner-section
-        depth-section
-        depth-warm
-      "
-    >
-
+    <section class="partner-section depth-section depth-warm">
       <div class="partner-head">
 
         <div>
-
-          <p class="meta">
-            03 — Kooperationen
-          </p>
+          <p class="meta">03 — Kooperationen</p>
 
           <h2>
             Expertise ergänzen,
             wenn sie <em>Sinn macht.</em>
           </h2>
-
         </div>
-
 
         <p>
           Je nach Fragestellung
@@ -1287,30 +963,23 @@
 
       </div>
 
-
       <!-- DANIEL ALS OPTIONALE KOOPERATION -->
 
       <article class="partner-card">
 
         <div class="partner-image">
-
           <img
             src="daniel-reuter.jpg"
             alt="Daniel Reuter"
-          />
-
+          >
         </div>
 
-
         <div class="partner-content">
-
           <span class="partner-label">
             Kooperationspartner
           </span>
 
-          <h3>
-            Daniel Reuter
-          </h3>
+          <h3>Daniel Reuter</h3>
 
           <p>
             Unternehmens-
@@ -1330,32 +999,24 @@
             und vermögensstrategische Themen
             zusammenlaufen.
           </p>
-
         </div>
 
       </article>
-
     </section>
-
 
     <!-- QUOTE + CTA -->
 
     <section class="quote">
 
       <blockquote>
-
         International denken heißt nicht,
         alles kompliziert zu machen.
 
         Es heißt,
         das gesamte Bild zu sehen.
 
-        <cite>
-          — Tami Mönnig
-        </cite>
-
+        <cite>— Tami Mönnig</cite>
       </blockquote>
-
 
       <a
         class="button"
@@ -1366,56 +1027,32 @@
 
     </section>
 
-
     <!-- WORDMARK -->
 
     <section class="wordmark">
-
-      <span>
-        TAMI JOAN
-      </span>
-
+      <span>TAMI JOAN</span>
     </section>
 
-
   </main>
-
 
   <!-- FOOTER -->
 
   <footer>
-
-    <div>
-      © 2026 Tami Mönnig
-    </div>
-
+    <div>© 2026 Tami Mönnig</div>
 
     <div class="links">
-
-      <a
-        href="https://www.linkedin.com/in/tami-moennig/"
-      >
+      <a href="https://www.linkedin.com/in/tami-moennig/">
         LinkedIn
       </a>
 
-      <a
-        href="https://www.instagram.com/tami.moennig/"
-      >
+      <a href="https://www.instagram.com/tami.moennig/">
         Instagram
       </a>
 
-      <a href="impressum.html">
-        Impressum
-      </a>
-
-      <a href="datenschutz.html">
-        Datenschutz
-      </a>
-
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
     </div>
-
   </footer>
-
 
 </body>
 </html>

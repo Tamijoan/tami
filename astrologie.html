@@ -1,88 +1,70 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="de">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link
-    rel="icon"
-    type="image/png"
-    href="favicon-tami.png?v=2"
-  >
+  <link rel="icon" type="image/png" href="favicon-tami.png?v=2">
 
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Inter:wght@300;400&display=swap"
-    rel="stylesheet"
-  >
-
-  <title>
-    Astrologie × Finanzen — Tami Mönnig
-  </title>
-
-  <meta
-    name="description"
-    content="Astrologie als zusätzliche Perspektive auf Karriere, Geld, Business und strategische Entscheidungen."
-  >
+  <title>Astrologie × Finanzen — Tami Joan Mönnig</title>
+  <meta name="description" content="Astrologie als zusätzliche Perspektive auf Karriere, Geld, Unternehmertum und bewusste Entscheidungen. Horoskop-Readings mit Tami Joan Mönnig.">
 
   <style>
-
-    *,
-    *::before,
-    *::after {
+    *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
     :root {
-      --black: #050505;
-      --white: #f5f3ef;
-      --muted: rgba(245,243,239,.55);
-      --line: rgba(245,243,239,.17);
-
-      --serif:
-        'Cormorant Garamond',
-        Georgia,
-        serif;
-
-      --sans:
-        'Inter',
-        Arial,
-        sans-serif;
-
-      --display:
-        clamp(3.4rem,6vw,7rem);
-
-      --body:
-        .95rem;
-
-      --meta:
-        .6rem;
+      --black: #031b2b;
+      --white: #f7f6f4;
+      --muted: rgba(245,243,239,.72);
+      --line: rgba(185,229,235,.22);
+      --sea-glass: #a4dbd6;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Inter', Arial, sans-serif;
+      --display: clamp(3.4rem,6vw,7rem);
+      --body: .95rem;
+      --meta: .65rem;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
 
-    /* BASE */
-
-    html,
-    body {
-      background: var(--black);
+    html, body {
+      background:
+        radial-gradient(
+          ellipse 65% 28% at 92% 13%,
+          rgba(23,124,142,.35),
+          transparent 76%
+        ),
+        radial-gradient(
+          ellipse 58% 34% at 4% 47%,
+          rgba(13,100,128,.36),
+          transparent 76%
+        ),
+        radial-gradient(
+          ellipse 65% 28% at 85% 82%,
+          rgba(18,118,133,.28),
+          transparent 75%
+        ),
+        linear-gradient(
+          155deg,
+          #031b2b 0%,
+          #073b50 38%,
+          #052c41 65%,
+          #021927 100%
+        );
       color: var(--white);
-
       font-family: var(--sans);
       font-weight: 300;
-
       overflow-x: hidden;
     }
 
@@ -91,766 +73,678 @@
       text-decoration: none;
     }
 
+    p {
+      font-size: var(--body);
+      line-height: 1.8;
+    }
 
-    /* ─────────────────────────────
-       NAVIGATION
-    ───────────────────────────── */
+    em {
+      font-weight: 300;
+    }
+
+    /* NAVIGATION */
 
     nav {
-      height: 94px;
-
-      padding:
-        0 2.5rem;
-
+      min-height: 94px;
+      padding: 0 2.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-
-      border-bottom:
-        1px solid
-        var(--line);
-
-      background:
-        var(--black);
-
+      gap: 2rem;
+      border-bottom: 1px solid var(--line);
+      background: var(--black);
       position: relative;
-
       z-index: 20;
     }
 
-    .brand {
-      font-family:
-        var(--serif);
+    nav .brand {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 4px;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    nav .brand-main {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 1.65rem;
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: -.025em;
+      color: var(--white);
+    }
+
+    nav .brand-sub {
+      font-family: var(--sans);
+      font-size: .55rem;
+      font-weight: 400;
+      line-height: 1.3;
+      letter-spacing: .38em;
+      color: var(--sea-glass);
     }
 
     nav .links {
       display: flex;
-
+      align-items: center;
       gap: 1.7rem;
     }
 
     nav .links a {
-      color:
-        var(--muted);
-
-      letter-spacing:
-        .16em;
-
-      text-transform:
-        uppercase;
-
-      transition:
-        color .2s ease;
+      font-size: var(--meta);
+      color: var(--muted);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      transition: color .2s ease;
     }
 
     nav .links a:hover,
     nav .links a.active {
-      color:
-        var(--white);
+      color: var(--white);
     }
 
+    /* TYPOGRAPHY */
 
-    /* ─────────────────────────────
-       HERO
-    ───────────────────────────── */
+    h1, h2, h3,
+    .break div,
+    .quote blockquote,
+    .wordmark span {
+      font-family: var(--serif);
+      font-weight: 300;
+      letter-spacing: -.045em;
+    }
+
+    h1 {
+      font-size: var(--display);
+      line-height: .88;
+    }
+
+    h2 {
+      font-size: clamp(3.2rem,5.5vw,6.6rem);
+      line-height: .93;
+    }
+
+    h3 {
+      font-size: clamp(2.5rem,3.7vw,4.7rem);
+      line-height: .98;
+    }
+
+    h1 em, h2 em, h3 em {
+      color: var(--sea-glass);
+    }
+
+    .meta {
+      font-size: var(--meta);
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--sea-glass);
+    }
+
+    /* HERO */
 
     .hero {
       min-height: 78vh;
-
-      padding:
-        6rem 4vw
-        4rem;
-
+      padding: 6rem 4vw 4rem;
       display: grid;
-
-      grid-template-columns:
-        .82fr 1.18fr;
-
+      grid-template-columns: .82fr 1.18fr;
       gap: 4vw;
-
       align-items: end;
-
       position: relative;
-
       isolation: isolate;
-
       overflow: hidden;
-
-      border-bottom:
-        1px solid
-        var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
     .hero::before {
       content: "";
-
       position: absolute;
       inset: 0;
-
-      background:
-        url('astrology-header.png')
-        center center / cover
-        no-repeat;
-
-      filter:
-        grayscale(100%)
-        brightness(.40);
-
-      transform:
-        scale(1.015);
-
+      background: url('astrology-header.png') center center / cover no-repeat;
+      filter: none;
+      transform: scale(1.015);
       z-index: -2;
     }
 
     .hero::after {
       content: "";
-
       position: absolute;
       inset: 0;
-
-      background:
-        linear-gradient(
-          180deg,
-          rgba(0,0,0,.25) 0%,
-          rgba(0,0,0,.44) 52%,
-          rgba(0,0,0,.84) 100%
-        );
-
+      background: linear-gradient(
+        180deg,
+        rgba(3,27,43,.24) 0%,
+        rgba(3,27,43,.48) 52%,
+        rgba(3,27,43,.9) 100%
+      );
       z-index: -1;
-
-      pointer-events: none;
     }
 
     .hero > * {
       position: relative;
-
       z-index: 1;
     }
 
-    .hero h1,
-    h2,
-    h3,
-    .break div,
-    .card h3,
-    .quote blockquote,
-    .wordmark span {
-      font-family:
-        var(--serif);
-
-      font-weight: 300;
-
-      letter-spacing:
-        -.045em;
-    }
-
-    .hero h1 {
-      line-height: .8;
-    }
-
-    .hero h1 em,
-    h2 em {
-      font-weight: 300;
+    .hero .meta {
+      margin-bottom: 2rem;
     }
 
     .hero-copy {
       max-width: 620px;
-
       margin-left: auto;
     }
 
     .hero-copy p {
-      line-height: 1.7;
-
-      color:
-        rgba(245,243,239,.72);
+      color: rgba(247,246,244,.9);
     }
 
-    .meta {
-      letter-spacing:
-        .22em;
-
-      text-transform:
-        uppercase;
-
-      color:
-        rgba(245,243,239,.40);
-    }
-
-
-    /* ─────────────────────────────
-       SECTIONS
-    ───────────────────────────── */
+    /* GENERAL SECTIONS */
 
     .section {
-      padding:
-        7rem 4vw;
-
-      border-bottom:
-        1px solid
-        var(--line);
+      padding: 7rem 4vw;
+      border-bottom: 1px solid var(--line);
     }
 
     .grid2 {
       display: grid;
-
-      grid-template-columns:
-        .75fr 1.25fr;
-
+      grid-template-columns: .75fr 1.25fr;
       gap: 5vw;
-
       align-items: start;
     }
 
     .section h2 {
-      line-height: .88;
-
       margin-top: 1.1rem;
     }
 
     .copy {
       padding-top: 2.5rem;
-
       max-width: 820px;
     }
 
     .copy p {
       margin-bottom: 1.25rem;
-
-      line-height: 1.7;
-
-      color:
-        var(--muted);
+      color: var(--muted);
     }
 
-
-    /* ─────────────────────────────
-       FEATURE
-    ───────────────────────────── */
+    /* FEATURE */
 
     .feature {
       display: grid;
-
-      grid-template-columns:
-        1fr 1fr;
-
+      grid-template-columns: 1fr 1fr;
       gap: 1.2rem;
-
-      padding:
-        0 4vw
-        7rem;
+      padding: 7rem 4vw;
+      border-bottom: 1px solid var(--line);
     }
 
     .visual {
       min-height: 560px;
-
-      border:
-        1px solid
-        var(--line);
-
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-
-      color:
-        rgba(245,243,239,.22);
-
-      letter-spacing:
-        .18em;
-
-      text-transform:
-        uppercase;
+      border: 1px solid var(--line);
+      background: rgba(247,246,244,.025);
     }
 
     .astrology-portrait {
-      background:
-        url('Tami_astrology.png')
-        center / cover
-        no-repeat !important;
+      background: url('Tami_astrology.png') center / cover no-repeat;
+      filter: none;
     }
 
     .feature .copy {
-      border:
-        1px solid
-        var(--line);
-
+      border: 1px solid var(--line);
       padding: 3rem;
-
       display: flex;
-
       flex-direction: column;
-
       justify-content: flex-end;
-
       max-width: none;
+      background: rgba(247,246,244,.025);
     }
 
+    .feature h2 {
+      margin: 1.2rem 0 2rem;
+    }
 
-    /* ─────────────────────────────
-       CARDS
-    ───────────────────────────── */
+    /* READING CARDS */
 
     .cards {
       display: grid;
-
-      grid-template-columns:
-        repeat(3,minmax(0,1fr));
-
+      grid-template-columns: repeat(3,minmax(0,1fr));
       gap: 1rem;
-
-      margin-top: 2.5rem;
+      margin-top: 3rem;
     }
 
     .card {
       min-width: 0;
-
       min-height: 420px;
-
-      border:
-        1px solid
-        var(--line);
-
-      border-radius:
-        999px 999px
-        2rem 2rem;
-
-      padding:
-        3rem 2rem
-        2rem;
-
+      border: 1px solid var(--line);
+      border-radius: 999px 999px 2rem 2rem;
+      padding: 3rem 2rem 2rem;
       display: flex;
-
       flex-direction: column;
-
       justify-content: flex-end;
-
       position: relative;
-
       overflow: hidden;
-
-      background:
-        rgba(245,243,239,.012);
+      background: rgba(247,246,244,.025);
     }
 
     .card::before {
       content: "";
-
       position: absolute;
       inset: 0;
-
-      background:
-        linear-gradient(
-          180deg,
-          rgba(255,255,255,.025),
-          transparent 45%
-        );
-
+      background: radial-gradient(
+        ellipse at 50% 15%,
+        rgba(31,134,151,.28),
+        transparent 65%
+      );
       pointer-events: none;
+    }
+
+    .card > * {
+      position: relative;
+      z-index: 1;
     }
 
     .card .num {
       position: absolute;
-
       top: 2rem;
       left: 50%;
-
-      transform:
-        translateX(-50%);
-
-      letter-spacing:
-        .18em;
-
-      color:
-        rgba(245,243,239,.35);
+      transform: translateX(-50%);
+      font-size: var(--meta);
+      letter-spacing: .18em;
+      color: var(--sea-glass);
     }
 
     .card h3 {
-      line-height: 1;
-
       margin-bottom: 1rem;
+      overflow-wrap: anywhere;
     }
 
     .card p {
-      line-height: 1.7;
-
       color: var(--muted);
     }
 
-
-    /* ─────────────────────────────
-       BREAK
-    ───────────────────────────── */
+    /* BREAK */
 
     .break {
-      padding:
-        4rem 4vw;
-
-      border-top:
-        1px solid
-        var(--line);
-
-      border-bottom:
-        1px solid
-        var(--line);
-
+      padding: 4rem 4vw;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
       overflow: hidden;
     }
 
     .break div {
-      line-height: .72;
-
-      white-space: nowrap;
+      font-size: clamp(3.4rem,6vw,7rem);
+      line-height: .95;
+      overflow-wrap: normal;
     }
 
+    .break em {
+      color: var(--sea-glass);
+    }
 
-    /* ─────────────────────────────
-       QUOTE / CTA
-    ───────────────────────────── */
+    /* CASE STORY */
+
+    .case-section {
+      padding: 8rem 4vw;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .case-intro {
+      max-width: 1250px;
+      margin-bottom: 4rem;
+    }
+
+    .case-intro h2 {
+      margin: 1.3rem 0 2rem;
+    }
+
+    .case-subtitle {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem,2.7vw,3rem);
+      line-height: 1.2;
+      color: var(--sea-glass);
+    }
+
+    .case-story {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 5vw;
+      border-top: 1px solid var(--line);
+      padding-top: 3rem;
+    }
+
+    .case-aside {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .case-aside-label {
+      font-size: var(--meta);
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--sea-glass);
+    }
+
+    .case-aside h3 {
+      font-size: clamp(2.8rem,4vw,5rem);
+    }
+
+    .case-text {
+      max-width: 800px;
+    }
+
+    .case-text p {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .case-questions {
+      margin: 2.5rem 0;
+      padding: 2rem 0 2rem 2rem;
+      border-left: 2px solid var(--sea-glass);
+    }
+
+    .case-questions p {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem,2.5vw,3rem);
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .case-questions p:last-child {
+      margin-bottom: 0;
+      color: var(--sea-glass);
+    }
+
+    .case-conclusion {
+      margin-top: 3.5rem;
+      padding: 2.5rem;
+      border: 1px solid var(--line);
+      background: rgba(164,219,214,.06);
+    }
+
+    .case-conclusion p {
+      font-family: var(--serif);
+      font-size: clamp(2rem,3vw,3.6rem);
+      line-height: 1.12;
+      color: var(--white);
+      margin: 0;
+    }
+
+    .case-conclusion strong {
+      font-weight: 400;
+      color: var(--sea-glass);
+    }
+
+    /* TESTIMONIALS */
+
+    .testimonials {
+      padding: 8rem 4vw;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .testimonials-head {
+      max-width: 1050px;
+      margin-bottom: 3.5rem;
+    }
+
+    .testimonials-head h2 {
+      margin-top: 1.2rem;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 1.2rem;
+      align-items: start;
+    }
+
+    .testimonial {
+      padding: 3rem;
+      border: 1px solid var(--line);
+      background: rgba(247,246,244,.035);
+    }
+
+    .testimonial .testimonial-mark {
+      font-family: var(--serif);
+      font-size: 6rem;
+      line-height: .6;
+      color: var(--sea-glass);
+      margin-bottom: 2rem;
+    }
+
+    .testimonial p {
+      color: var(--muted);
+      margin-bottom: 1.3rem;
+    }
+
+    .testimonial p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .testimonial strong {
+      font-weight: 500;
+      color: var(--white);
+    }
+
+    .testimonial footer {
+      display: block;
+      padding: 2rem 0 0;
+      margin-top: 2rem;
+      border-top: 1px solid var(--line);
+      font-size: .8rem;
+      letter-spacing: .05em;
+      text-transform: none;
+      color: var(--white);
+    }
+
+    .testimonial footer span {
+      display: block;
+      margin-top: .35rem;
+      font-size: var(--meta);
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--sea-glass);
+    }
+
+    /* DISCLAIMER / PERSPECTIVE */
+
+    .disclaimer-section {
+      padding: 7rem 4vw;
+      border-bottom: 1px solid var(--line);
+    }
+
+    /* QUOTE / CTA */
 
     .quote {
-      padding:
-        7rem 4vw
-        8rem;
-
-      border-top:
-        1px solid
-        var(--line);
-
-      border-bottom:
-        1px solid
-        var(--line);
-    }
-
-    .quote::before {
-      content: "";
-
-      display: block;
-
-      height: 1px;
-
-      background:
-        rgba(245,243,239,.14);
-
-      margin-bottom:
-        3rem;
+      padding: 7rem 4vw 8rem;
+      border-bottom: 1px solid var(--line);
     }
 
     .quote blockquote {
-      max-width:
-        1200px;
-
-      line-height:
-        .94;
-
-      color:
-        rgba(245,243,239,.86);
+      max-width: 1200px;
+      font-size: clamp(3.3rem,5.6vw,7rem);
+      line-height: .95;
+      color: rgba(247,246,244,.9);
     }
 
     .quote cite {
       display: block;
-
-      margin-top:
-        2.2rem;
-
-      font-style:
-        normal;
-
-      letter-spacing:
-        .2em;
-
-      text-transform:
-        uppercase;
-
-      color:
-        rgba(245,243,239,.42);
+      margin-top: 2.2rem;
+      font-family: var(--sans);
+      font-size: var(--meta);
+      font-style: normal;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--sea-glass);
     }
 
     .button {
       display: inline-flex;
-
-      border:
-        1px solid
-        var(--line);
-
-      border-radius:
-        999px;
-
-      padding:
-        .9rem 1.35rem;
-
-      letter-spacing:
-        .15em;
-
-      text-transform:
-        uppercase;
-
-      margin-top:
-        2rem;
-
-      transition:
-        background .2s ease,
-        color .2s ease;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2.5rem;
+      padding: 1.1rem 1.65rem;
+      border: 1px solid var(--sea-glass);
+      border-radius: 999px;
+      background: var(--sea-glass);
+      color: var(--black);
+      font-size: .7rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      text-align: center;
+      transition: background .2s ease, color .2s ease, transform .2s ease;
     }
 
     .button:hover {
-      background:
-        var(--white);
-
-      color:
-        var(--black);
+      background: var(--white);
+      border-color: var(--white);
+      transform: translateY(-2px);
     }
 
+    .contact-secondary {
+      margin-top: 2rem;
+      font-size: .85rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
 
-    /* ─────────────────────────────
-       DEPTH
-    ───────────────────────────── */
+    .contact-secondary a {
+      color: var(--sea-glass);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* BLUE DEPTH EFFECTS */
 
     .depth-section {
       position: relative;
-
       isolation: isolate;
-
       overflow: hidden;
     }
 
     .depth-section > * {
       position: relative;
-
       z-index: 1;
     }
 
     .depth-section::before,
     .depth-section::after {
       content: "";
-
       position: absolute;
-
-      border-radius:
-        50%;
-
-      pointer-events:
-        none;
-
+      border-radius: 50%;
+      pointer-events: none;
       z-index: 0;
-
-      filter:
-        blur(68px);
-
-      opacity:
-        .92;
+      filter: blur(68px);
+      opacity: .92;
     }
 
     .depth-warm::before {
-      width:
-        720px;
-
-      height:
-        720px;
-
-      right:
-        -220px;
-
-      top:
-        4%;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(126,49,88,.55) 0%,
-          rgba(89,35,97,.34) 38%,
-          rgba(5,5,5,0) 72%
-        );
+      width: 720px;
+      height: 720px;
+      right: -220px;
+      top: 4%;
+      background: radial-gradient(
+        circle,
+        rgba(16,115,132,.55) 0%,
+        rgba(9,78,104,.34) 38%,
+        transparent 72%
+      );
     }
 
     .depth-warm::after {
-      width:
-        520px;
-
-      height:
-        520px;
-
-      left:
-        -220px;
-
-      bottom:
-        -180px;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(115,58,68,.34) 0%,
-          rgba(67,31,74,.22) 42%,
-          rgba(5,5,5,0) 73%
-        );
+      width: 520px;
+      height: 520px;
+      left: -220px;
+      bottom: -180px;
+      background: radial-gradient(
+        circle,
+        rgba(21,108,123,.34) 0%,
+        rgba(5,60,85,.22) 42%,
+        transparent 73%
+      );
     }
 
     .depth-violet::before {
-      width:
-        760px;
-
-      height:
-        560px;
-
-      left:
-        32%;
-
-      top:
-        -300px;
-
-      background:
-        radial-gradient(
-          ellipse,
-          rgba(72,38,91,.46) 0%,
-          rgba(116,47,78,.29) 43%,
-          rgba(5,5,5,0) 74%
-        );
+      width: 760px;
+      height: 560px;
+      left: 32%;
+      top: -300px;
+      background: radial-gradient(
+        ellipse,
+        rgba(11,91,118,.46) 0%,
+        rgba(22,116,132,.29) 43%,
+        transparent 74%
+      );
     }
 
     .depth-violet::after {
-      width:
-        560px;
-
-      height:
-        560px;
-
-      right:
-        -220px;
-
-      bottom:
-        -270px;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(132,65,76,.36) 0%,
-          rgba(73,37,89,.21) 44%,
-          rgba(5,5,5,0) 73%
-        );
+      width: 560px;
+      height: 560px;
+      right: -220px;
+      bottom: -270px;
+      background: radial-gradient(
+        circle,
+        rgba(21,108,123,.36) 0%,
+        rgba(5,60,85,.21) 44%,
+        transparent 73%
+      );
     }
 
-
-    /* ─────────────────────────────
-       WORDMARK
-    ───────────────────────────── */
+    /* WORDMARK */
 
     .wordmark {
-      padding:
-        4rem 1rem
-        2rem;
-
-      text-align:
-        center;
-
-      overflow:
-        hidden;
+      padding: 4rem 1rem 2rem;
+      text-align: center;
+      overflow: hidden;
     }
 
     .wordmark span {
-      line-height:
-        .75;
-
-      letter-spacing:
-        -.06em;
-
-      white-space:
-        nowrap;
-
-      color:
-        rgba(245,243,239,.13);
+      display: block;
+      font-size: clamp(5rem,17vw,22rem);
+      line-height: .75;
+      letter-spacing: -.06em;
+      white-space: nowrap;
+      color: rgba(245,243,239,.13);
     }
 
+    /* FOOTER */
 
-    /* ─────────────────────────────
-       FOOTER
-    ───────────────────────────── */
-
-    footer {
-      padding:
-        1.2rem 2.5rem
-        2rem;
-
+    .site-footer {
+      padding: 1.2rem 2.5rem 2rem;
       display: flex;
-
-      justify-content:
-        space-between;
-
-      border-top:
-        1px solid
-        var(--line);
-
-      letter-spacing:
-        .12em;
-
-      text-transform:
-        uppercase;
-
-      color:
-        rgba(245,243,239,.35);
+      justify-content: space-between;
+      gap: 1rem;
+      border-top: 1px solid var(--line);
+      font-size: var(--meta);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(245,243,239,.5);
     }
 
-    footer .links {
+    .site-footer .links {
       display: flex;
-
+      flex-wrap: wrap;
       gap: 1rem;
     }
 
-
-    /* ─────────────────────────────
-       3 FONT SIZES
-    ───────────────────────────── */
-
-    .hero h1,
-    h2,
-    h3,
-    .break div,
-    .card h3,
-    .quote blockquote,
-    .wordmark span {
-      font-size:
-        var(--display) !important;
+    .site-footer a:hover {
+      color: var(--white);
     }
 
-    p,
-    .hero-copy p,
-    .copy p,
-    .card p {
-      font-size:
-        var(--body) !important;
-    }
+    /* MOBILE */
 
-    nav,
-    .brand,
-    nav .links a,
-    .meta,
-    .card .num,
-    .quote cite,
-    .button,
-    footer {
-      font-size:
-        var(--meta) !important;
-    }
-
-
-    /* ─────────────────────────────
-       MOBILE
-    ───────────────────────────── */
-
-    @media(max-width:850px) {
-
+    @media (max-width: 850px) {
       :root {
-        --display:
-          clamp(3rem,12vw,5rem);
-
-        --body:
-          .95rem;
-
-        --meta:
-          .6rem;
+        --display: clamp(3rem,12vw,5rem);
       }
 
       nav {
-        padding:
-          0 1.2rem;
+        padding: 1.5rem 1.2rem;
+        min-height: 94px;
+      }
+
+      nav .brand-main {
+        font-size: 1.5rem;
       }
 
       nav .links {
@@ -859,155 +753,128 @@
 
       .hero,
       .grid2,
-      .feature {
-        grid-template-columns:
-          1fr;
+      .feature,
+      .case-story,
+      .testimonial-grid {
+        grid-template-columns: 1fr;
       }
 
       .hero {
-        min-height:
-          72vh;
-
-        padding:
-          5rem 1.2rem
-          3rem;
+        min-height: 72vh;
+        padding: 5rem 1.2rem 3rem;
       }
 
       .section,
+      .feature,
+      .case-section,
+      .testimonials,
+      .disclaimer-section,
       .quote {
-        padding:
-          4rem 1.2rem;
-      }
-
-      .feature {
-        padding:
-          0 1.2rem
-          4rem;
+        padding: 4rem 1.2rem;
       }
 
       .visual {
-        min-height:
-          440px;
+        min-height: 440px;
+      }
+
+      .feature .copy {
+        padding: 2rem;
       }
 
       .cards {
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
       }
 
       .card {
-        min-height:
-          380px;
+        min-height: 380px;
       }
 
       .break {
-        padding:
-          3rem 1.2rem;
+        padding: 3rem 1.2rem;
       }
 
-      .depth-section::before,
-      .depth-section::after {
-        filter:
-          blur(58px);
-
-        opacity:
-          .74;
+      .case-story {
+        gap: 2rem;
       }
 
-      footer {
-        padding:
-          1.5rem 1.2rem;
-
-        flex-direction:
-          column;
-
-        gap: 1rem;
+      .case-questions {
+        padding-left: 1.2rem;
       }
 
+      .case-conclusion {
+        padding: 1.5rem;
+      }
+
+      .testimonial {
+        padding: 2rem;
+      }
+
+      .site-footer {
+        padding: 1.5rem 1.2rem;
+        flex-direction: column;
+      }
     }
 
-  </style>
+    @media (max-width: 480px) {
+      h1 {
+        font-size: clamp(2.7rem,11vw,4rem);
+      }
 
+      h2 {
+        font-size: clamp(2.8rem,11vw,4.2rem);
+      }
+
+      .card {
+        padding: 3rem 1.5rem 2rem;
+      }
+
+      .break div {
+        font-size: clamp(2.8rem,11vw,4.5rem);
+      }
+
+      .testimonial {
+        padding: 1.5rem;
+      }
+    }
+  </style>
 </head>
 
-
 <body>
-
 
   <!-- NAVIGATION -->
 
   <nav>
-
-    <a
-      class="brand"
-      href="index.html"
-    >
-      Tami Mönnig
+    <a class="brand" href="index.html" aria-label="Tami Joan Mönnig – Startseite">
+      <span class="brand-main">TAMI JOAN</span>
+      <span class="brand-sub">MÖNNIG</span>
     </a>
 
-
     <div class="links">
-
-      <a href="index.html">
-        Übersicht
-      </a>
-
-      <a href="about.html">
-        Über Tami
-      </a>
-
-      <a href="speaking.html">
-        Speaking
-      </a>
-
-      <a href="international.html">
-        International
-      </a>
-
-      <a
-        href="astrologie.html"
-        class="active"
-      >
-        Astrologie × Finanzen
-      </a>
-
-      <a
-        href="https://www.krypto-steuern.net/"
-        target="_blank"
-        rel="noopener"
-      >
-        Krypto-Steuern ↗
-      </a>
-
+      <a href="index.html">Übersicht</a>
+      <a href="about.html">Über Tami</a>
+      <a href="speaking.html">Speaking</a>
+      <a href="international.html">International</a>
+      <a href="astrologie.html" class="active" aria-current="page">Astrologie × Finanzen</a>
+      <a href="https://www.krypto-steuern.net/" target="_blank" rel="noopener noreferrer">Krypto-Steuern ↗</a>
     </div>
-
   </nav>
 
-
   <main>
-
 
     <!-- HERO -->
 
     <section class="hero">
-
       <div>
-
-        <p class="meta">
-          Astrologie × Finanzen — 04
-        </p>
+        <p class="meta">Astrologie × Finanzen — 04</p>
 
         <h1>
           Was, wenn gute Entscheidungen<br>
           damit beginnen,<br>
           <em>dich selbst zu verstehen?</em>
         </h1>
-
       </div>
 
-
       <div class="hero-copy">
-
         <p>
           Astrologie als zusätzliche,
           ehrliche Perspektive auf Karriere,
@@ -1015,338 +882,434 @@
           ohne Hokuspokus,
           ohne Heilsversprechen.
         </p>
-
       </div>
-
     </section>
 
+    <!-- PERSPEKTIVE -->
 
-    <!-- ANGLE -->
-
-    <section
-      class="
-        feature
-        depth-section
-        depth-violet
-      "
-    >
-
+    <section class="feature depth-section depth-violet">
       <div
-        class="
-          visual
-          astrology-portrait
-        "
-        aria-label="Portrait Tami Mönnig"
+        class="visual astrology-portrait"
+        role="img"
+        aria-label="Porträt von Tami Mönnig"
       ></div>
 
-
       <div class="copy">
-
-        <p class="meta">
-          01 — Perspektive
-        </p>
+        <p class="meta">01 — Perspektive</p>
 
         <h2>
-          Geld. Karriere. Business.<br>
+          Geld. Karriere. Unternehmertum.<br>
           <em>Aus einer anderen Perspektive.</em>
         </h2>
 
         <p>
-          Astrologie begleitet mich
-          seit Tag eins meiner Selbstständigkeit.
-
-          Nicht als Ersatz für Zahlen,
-          Paragrafen oder kaufmännische Planung –
-          sondern als Werkzeug,
-          um mich selbst,
-          meine Muster
-          und meine Entscheidungen
-          besser zu verstehen.
+          Astrologie begleitet mich seit Tag eins meiner Selbstständigkeit.
+          Nicht als Ersatz für Zahlen, Paragrafen oder kaufmännische Planung –
+          sondern als Werkzeug, um mich selbst, meine Muster und meine
+          Entscheidungen besser zu verstehen.
         </p>
 
         <p>
-          Gerade wenn reine Logik allein
-          keine eindeutige Antwort liefert,
-          öffnet ein Blick ins Horoskop
-          eine andere Perspektive
-          auf Entscheidungsmuster
-          und blinde Flecken.
+          Gerade wenn reine Logik allein keine eindeutige Antwort liefert,
+          öffnet ein Blick ins Horoskop eine andere Perspektive auf
+          Entscheidungsmuster und blinde Flecken.
         </p>
-
       </div>
-
     </section>
-
 
     <!-- BREAK -->
 
-    <section
-      class="
-        break
-        depth-section
-        depth-warm
-      "
-    >
-
+    <section class="break depth-section depth-warm">
       <div>
-        GELD.
-        <em>KARRIERE.</em>
-        BUSINESS.
+        GELD. <em>KARRIERE.</em> UNTERNEHMERTUM.
       </div>
-
     </section>
-
 
     <!-- READING -->
 
-    <section
-      class="
-        section
-        depth-section
-        depth-violet
-      "
-    >
-
+    <section class="section depth-section depth-violet">
       <div class="grid2">
-
         <div>
-
-          <p class="meta">
-            02 — Reading
-          </p>
+          <p class="meta">02 — Horoskop-Reading</p>
 
           <h2>
             Worauf schauen wir
             <em>wirklich?</em>
           </h2>
-
         </div>
-
 
         <div class="copy">
-
           <p>
-            Mein Fokus liegt genau
-            auf dem Bereich,
+            Mein Fokus liegt genau auf dem Bereich,
             aus dem ich komme:
-
-            Finanzen,
-            Business
-            und strategische Lebensentscheidungen.
+            Finanzen, Unternehmertum und strategische Lebensentscheidungen.
           </p>
-
         </div>
-
       </div>
-
 
       <div class="cards">
-
-
         <article class="card">
-
-          <span class="num">
-            01
-          </span>
-
-          <h3>
-            Geld
-          </h3>
-
+          <span class="num">01</span>
+          <h3>Geld</h3>
           <p>
-            Wie stehst du zu Sicherheit,
-            Risiko
-            und materiellen Entscheidungen?
+            Wie stehst du zu Sicherheit, Risiko und materiellen Entscheidungen?
           </p>
-
         </article>
 
-
         <article class="card">
-
-          <span class="num">
-            02
-          </span>
-
-          <h3>
-            Karriere
-          </h3>
-
+          <span class="num">02</span>
+          <h3>Karriere</h3>
           <p>
-            Welche Rollen,
-            Arbeitsweisen
-            und Umfelder
-            entsprechen deiner
+            Welche Rollen, Arbeitsweisen und Umfelder entsprechen deiner
             echten Persönlichkeit?
           </p>
-
         </article>
-
 
         <article class="card">
-
-          <span class="num">
-            03
-          </span>
-
-          <h3>
-            Business
-          </h3>
-
+          <span class="num">03</span>
+          <h3>Unternehmertum</h3>
           <p>
-            Welche Muster zeigen sich
-            bei Selbstständigkeit,
-            Führung,
-            Sichtbarkeit
-            und Mut zu Entscheidungen?
+            Welche Muster zeigen sich bei Selbstständigkeit, Führung,
+            Sichtbarkeit und Mut zu Entscheidungen?
           </p>
-
         </article>
-
-
       </div>
-
     </section>
 
+    <!-- FALLBEISPIEL: ASTROLOGIE UND KRYPTO -->
+
+    <section class="case-section depth-section depth-warm">
+      <div class="case-intro">
+        <p class="meta">03 — Astrologie × Krypto-Vermögen</p>
+
+        <h2>
+          Was tun, wenn Vermögen wächst,
+          aber die innere <em>Unsicherheit</em>
+          mit ihm mitkommt?
+        </h2>
+
+        <p class="case-subtitle">
+          So verbinde ich Astrologie mit Unternehmertum
+          und Finanz-Entscheidungen:
+        </p>
+      </div>
+
+      <div class="case-story">
+        <div class="case-aside">
+          <span class="case-aside-label">Ein beispielhaftes Szenario</span>
+
+          <h3>
+            Siebenstellige Werte.<br>
+            <em>Offene Fragen.</em>
+          </h3>
+        </div>
+
+        <div class="case-text">
+          <p>
+            Stell dir einen Unternehmer vor, der über mehrere Jahre
+            ein beträchtliches Krypto-Vermögen aufgebaut hat.
+            Heute geht es um 7-stellige Beträge, komplexe Transaktionen
+            und Entscheidungen mit langfristigen Konsequenzen.
+          </p>
+
+          <p>
+            Nicht jede Entscheidung der Vergangenheit wurde ausreichend
+            dokumentiert. Die meisten Fragen wurden aufgeschoben.
+            Und irgendwann kommt der Punkt, an dem die bisherige
+            Strategie nicht mehr trägt. Weil sie schlicht keine war.
+          </p>
+
+          <p>
+            Aus steuerlicher Sicht geht es darum, die Vergangenheit
+            sorgfältig aufzuarbeiten, Risiken zu verstehen und
+            eine rechtssichere Struktur für die Zukunft zu schaffen.
+          </p>
+
+          <div class="case-questions">
+            <p>
+              Doch parallel stellen sich andere Fragen:
+              Ist jetzt der Moment, alte Muster hinter sich zu lassen?
+              Warum fällt es schwer, Kontrolle abzugeben?
+              Und welche Veränderungen braucht es, um künftig
+              bewusster mit Vermögen und Verantwortung umzugehen?
+            </p>
+
+            <p>
+              Oder in diesem konkreten Beispiel:
+              Wie lange hält dieses Kartenhaus der Grauzone noch?
+            </p>
+          </div>
+
+          <p>
+            Hier kommt die Astrologie als zusätzliche Perspektive ins Spiel.
+            Ein Horoskop kann keine steuerlichen Risiken berechnen und
+            nicht vorhersagen, ob Behörden bestimmte Sachverhalte aufdecken.
+            Es kann aber als Reflexionsinstrument dienen, um persönliche
+            Muster, Unsicherheiten und Veränderungsphasen zu betrachten.
+          </p>
+
+          <div class="case-conclusion">
+            <p>
+              Zwei Perspektiven. Zwei unterschiedliche Methoden.
+              Ein gemeinsames Ziel:<br>
+              <strong>bewusstere Entscheidungen.</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+
+    <section class="testimonials depth-section depth-violet">
+      <div class="testimonials-head">
+        <p class="meta">04 — Erfahrungen</p>
+
+        <h2>
+          Was andere aus ihrem
+          <em>Reading mitnehmen.</em>
+        </h2>
+      </div>
+
+      <div class="testimonial-grid">
+
+        <!-- TOBIAS -->
+
+        <article class="testimonial">
+          <div class="testimonial-mark" aria-hidden="true">“</div>
+
+          <p>
+            <strong>Astrologie ist doch Hokuspokus.</strong>
+            Diesen Satz hat wahrscheinlich jeder schon mal gehört.
+            Oder gedacht. Oder beides. Und ich verstehe das. Wirklich.
+            In einer Welt, die Zahlen, Fakten und Beweise liebt,
+            hat Astrologie einen schweren Stand.
+          </p>
+
+          <p>
+            Und trotzdem – oder vielleicht genau deshalb – finde ich es
+            spannend, Themen zu begegnen, die sich nicht so einfach
+            einordnen lassen.
+          </p>
+
+          <p>
+            Angefangen hat alles mit einem LinkedIn Post.
+            Den ich „zufällig“ gesehen habe. Von Tami Mönnig.
+            Ich habe kommentiert. Sie hat geantwortet.
+            Und irgendwie – wie das bei solchen „Zufällen“ so ist –
+            ergab sich daraus ein Gespräch.
+            Wer jetzt an Zufälle glaubt – wunderbar.
+            Wer nicht – auch wunderbar.
+          </p>
+
+          <p>
+            Also habe ich mich auf ein Reading eingelassen.
+            Was mich zuerst überrascht hat, war nicht das Reading selbst.
+            Es war die Atmosphäre, die Tami vom ersten Moment an
+            geschaffen hat. Dieses seltsam vertraute Gefühl –
+            als würden sich zwei Menschen unterhalten,
+            die sich schon lange kennen.
+            Dabei haben wir uns gerade erst kennengelernt.
+            Das ist kein kleines Talent.
+          </p>
+
+          <p>
+            Und dann das Reading selbst.
+            Es gab einen Moment, der mich wirklich getroffen hat.
+            Die Geschichte, eigene Wege zu gehen.
+            Ja – gehen zu müssen.
+          </p>
+
+          <p>
+            Dieses Gefühl, das viele kennen:
+            Ich passe hier nicht rein. Was stimmt nicht mit mir?
+            Tami hat das nicht nur gesehen.
+            Sie hat es eingeordnet.
+            Mit einer Klarheit und einer Wärme,
+            die sich gleichzeitig wie ein Spiegel,
+            wie ein Gespräch und wie etwas angefühlt hat,
+            das man vielleicht schon lange wusste –
+            aber noch nie so gehört hatte.
+          </p>
+
+          <p>
+            Was ich mitnehme:
+            Nicht nur den Inhalt des Readings.
+            Sondern das Gefühl danach.
+            Klarer. Leichter. Stimmiger.
+          </p>
+
+          <p>
+            Und die Frage, die am Ende bleibt:
+            Wer sagt eigentlich, dass unser Leben
+            nicht ein bisschen Hokuspokus haben darf?
+          </p>
+
+          <footer>
+            Tobias D.
+            <span>Rückmeldung zum Horoskop-Reading</span>
+          </footer>
+        </article>
+
+        <!-- DANIEL -->
+
+        <article class="testimonial">
+          <div class="testimonial-mark" aria-hidden="true">“</div>
+
+          <p>
+            Vielen Dank noch einmal für den heutigen Einblick
+            in mein Horoskop.
+            Ich fand es wirklich beeindruckend, wie detailliert
+            und intensiv du dich im Vorfeld damit beschäftigt hast.
+          </p>
+
+          <p>
+            Gerade weil ich mich bislang überhaupt nicht
+            mit Astrologie auseinandergesetzt habe,
+            war es für mich besonders hilfreich,
+            wie verständlich, strukturiert und anschaulich
+            du die verschiedenen Zusammenhänge erklärt hast.
+            Ich konnte dir jederzeit gut folgen,
+            ohne das Gefühl zu haben, mich erst mit
+            den ganzen astrologischen Begriffen
+            auskennen zu müssen.
+          </p>
+
+          <p>
+            Besonders interessant fand ich, dass es bei einigen Punkten
+            sehr deutliche Schnittmengen zu meiner eigenen Wahrnehmung
+            und zu bestimmten Erfahrungen in meinem Leben gab.
+            Bei manchen Aussagen dachte ich direkt:
+            Ja, das passt wirklich erstaunlich gut.
+          </p>
+
+          <p>
+            Andere Themen konnte ich im ersten Moment noch nicht
+            ganz so klar für mich einordnen.
+            Aber gerade diese Punkte fand ich ebenfalls spannend,
+            weil sie mir neue Perspektiven gegeben haben
+            und sicherlich eine gute Gelegenheit sind,
+            noch einmal genauer hinzuschauen.
+          </p>
+
+          <p>
+            Auch die von dir angesprochenen Zeitfenster
+            und Entwicklungen werde ich in nächster Zeit
+            bewusst im Blick behalten.
+            Ich bin gespannt, ob und in welcher Form sich
+            bestimmte Themen zeigen oder deutlicher werden.
+          </p>
+
+          <p>
+            Unabhängig davon war das Gespräch für mich
+            sehr interessant, aufschlussreich und deutlich konkreter,
+            als ich es im Vorfeld vielleicht erwartet hätte.
+          </p>
+
+          <p>
+            Man hat auf jeden Fall gemerkt, wie viel Arbeit,
+            Erfahrung und persönliche Vorbereitung
+            in deiner Auswertung stecken.
+            Vielen Dank dafür und auch für die angenehme Art,
+            in der du mich durch die verschiedenen Themen geführt hast.
+            Es war ein wirklich spannender und bereichernder Einblick.
+          </p>
+
+          <footer>
+            Daniel G.
+            <span>Rückmeldung vom 24. Juni 2026</span>
+          </footer>
+        </article>
+
+      </div>
+    </section>
 
     <!-- PERSPEKTIVE STATT VORHERSAGE -->
 
-    <section class="section">
-
+    <section class="disclaimer-section">
       <div class="grid2">
-
         <div>
-
-          <p class="meta">
-            03 — Wichtig
-          </p>
+          <p class="meta">05 — Wichtig</p>
 
           <h2>
             Perspektive.<br>
             <em>Keine Vorhersage.</em>
           </h2>
-
         </div>
 
-
         <div class="copy">
-
           <p>
-            Ein Reading ist keine Finanz-,
-            Anlage-, Rechts-
-            oder Steuerberatung
-            und ersetzt keine fachliche Prüfung.
-
-            Es sagt dir nicht,
-            welche Aktie du kaufen
-            oder welche Firma
-            du morgen gründen sollst.
+            Ein Reading ist keine Finanz-, Anlage-, Rechts-
+            oder Steuerberatung und ersetzt keine fachliche Prüfung.
+            Es sagt dir nicht, welche Aktie du kaufen
+            oder welche Firma du morgen gründen sollst.
           </p>
 
           <p>
             Der Wert liegt woanders:
-
             Sich selbst besser kennenzulernen,
-            eigene Entscheidungen
-            klarer zu reflektieren
+            eigene Entscheidungen klarer zu reflektieren
             und Worte für Dinge zu finden,
-            die man im Bauch
-            vielleicht längst gespürt hat.
+            die man im Bauch vielleicht längst gespürt hat.
           </p>
-
         </div>
-
       </div>
-
     </section>
 
+    <!-- CTA -->
 
-    <!-- QUOTE -->
-
-    <section
-      class="
-        quote
-        depth-section
-        depth-warm
-      "
-    >
+    <section class="quote depth-section depth-warm">
+      <p class="meta">06 — Dein Horoskop-Reading</p>
 
       <blockquote>
-
         Es geht nicht darum,
-        dass die Astrologie
-        Entscheidungen für dich trifft.
+        dass die Astrologie Entscheidungen für dich trifft.
 
         Es geht darum,
         die Person besser zu verstehen,
         die sie trifft.
 
-        <cite>
-          — Tami Mönnig
-        </cite>
-
+        <cite>— Tami Mönnig</cite>
       </blockquote>
-
 
       <a
         class="button"
-        href="mailto:astrologie@tami-joan.net?subject=Astrology%20Reading"
+        href="https://calendly.com/krypto-steuern-info/anfrage-horoskop-reading"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        Reading anfragen →
+        Horoskop-Reading anfragen →
       </a>
 
+      <div class="contact-secondary">
+        Du möchtest lieber per E-Mail Kontakt aufnehmen?<br>
+        Schreib mir an
+        <a href="mailto:astrologie@tami-joan.net">
+          astrologie@tami-joan.net
+        </a>
+      </div>
     </section>
-
 
     <!-- WORDMARK -->
 
     <section class="wordmark">
-
-      <span>
-        TAMI JOAN
-      </span>
-
+      <span>TAMI JOAN</span>
     </section>
-
 
   </main>
 
-
   <!-- FOOTER -->
 
-  <footer>
-
-    <div>
-      © 2026 Tami Mönnig
-    </div>
-
+  <footer class="site-footer">
+    <div>© 2026 Tami Mönnig</div>
 
     <div class="links">
-
-      <a
-        href="https://www.linkedin.com/in/tami-moennig/"
-      >
-        LinkedIn
-      </a>
-
-      <a
-        href="https://www.instagram.com/tami.moennig/"
-      >
-        Instagram
-      </a>
-
-      <a href="impressum.html">
-        Impressum
-      </a>
-
-      <a href="datenschutz.html">
-        Datenschutz
-      </a>
-
+      <a href="https://www.linkedin.com/in/tami-moennig/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://www.instagram.com/tami.moennig/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
     </div>
-
   </footer>
-
 
 </body>
 </html>

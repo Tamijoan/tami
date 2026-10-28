@@ -300,6 +300,24 @@
       margin: 1.2rem 0 2rem;
     }
 
+    /* READING BACKGROUND */
+
+    .reading-section {
+      background:
+        linear-gradient(
+          rgba(3, 27, 43, .80),
+          rgba(3, 27, 43, .88)
+        ),
+        url('astrology-reading-bg.jpg')
+        center center / cover no-repeat;
+    }
+
+    .reading-section .card {
+      background: rgba(3, 27, 43, .35);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+    }
+
     /* READING CARDS */
 
     .cards {
@@ -403,8 +421,8 @@
 
     .case-story {
       display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 5vw;
+      grid-template-columns: 1fr;
+      gap: 0;
       border-top: 1px solid var(--line);
       padding-top: 3rem;
     }
@@ -927,7 +945,7 @@
 
     <!-- READING -->
 
-    <section class="section depth-section depth-violet">
+    <section class="section reading-section depth-section depth-violet">
       <div class="grid2">
         <div>
           <p class="meta">02 — Horoskop-Reading</p>
@@ -994,15 +1012,6 @@
       </div>
 
       <div class="case-story">
-        <div class="case-aside">
-          <span class="case-aside-label">Ein beispielhaftes Szenario</span>
-
-          <h3>
-            Siebenstellige Werte.<br>
-            <em>Offene Fragen.</em>
-          </h3>
-        </div>
-
         <div class="case-text">
           <p>
             Stell dir einen Unternehmer vor, der über mehrere Jahre

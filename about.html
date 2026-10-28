@@ -265,21 +265,29 @@
       padding-top: 1.1rem;
     }
 
+    /* STORY + GALLERY: GEMEINSAMER HINTERGRUND */
+
+    .story-gallery-background {
+      position: relative;
+      isolation: isolate;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(3, 27, 43, .88) 0%,
+          rgba(3, 27, 43, .82) 45%,
+          rgba(3, 27, 43, .88) 100%
+        ),
+        url('about-story-bg.jpg')
+        center center / cover no-repeat;
+    }
+
     /* STORY */
 
     .story {
       padding: 8rem 0 6rem;
       position: relative;
       isolation: isolate;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(3, 27, 43, .88) 0%,
-          rgba(3, 27, 43, .82) 48%,
-          rgba(3, 27, 43, .88) 100%
-        ),
-        url('about-story-bg.jpg')
-        center center / cover no-repeat;
+      background: transparent;
     }
 
     .story::before {
@@ -868,105 +876,111 @@
       </div>
     </section>
 
-    <!-- STORY -->
+    <!-- GEMEINSAMER HINTERGRUND: STORY + REISEFOTOS -->
 
-    <section class="story">
-      <div class="container story-grid">
+    <div class="story-gallery-background">
 
-        <div>
-          <p class="meta">02 / Mein Weg</p>
+      <!-- STORY -->
 
-          <h2>
-            Vom durchgeplanten Job<br>
-            in die <em>Freiheit.</em>
-          </h2>
+      <section class="story">
+        <div class="container story-grid">
+
+          <div>
+            <p class="meta">02 / Mein Weg</p>
+
+            <h2>
+              Vom durchgeplanten Job<br>
+              in die <em>Freiheit.</em>
+            </h2>
+          </div>
+
+          <div class="story-copy">
+            <p>
+              Ich komme aus dem klassischen deutschen
+              Steuerrecht. Meine Karriere war vorgezeichnet,
+              sicher und absolut berechenbar.
+              Aber genau da lag das Problem:
+              Ich wollte mein Leben nicht einfach
+              nur bis zur Rente verwalten.
+            </p>
+
+            <p>
+              2023 habe ich den Schnitt gemacht,
+              gekündigt und bin nach Brasilien geflogen.
+              Ohne fertigen Masterplan, aber mit dem
+              festen Entschluss, es selbst anzupacken.
+            </p>
+
+            <p>
+              Meinen allerersten bezahlten Auftrag
+              in der Selbstständigkeit habe ich
+              in Peru erledigt – in einem einfachen
+              Café, weil es dort Internet gab.
+            </p>
+
+            <p>
+              Zwei Jahre später arbeitete ich einen Monat
+              lang aus einer Suite auf einem Schiff
+              von den USA nach Australien.
+              Heute arbeite ich bereits seit drei Jahren
+              von unterwegs für Mandanten weltweit.
+            </p>
+
+            <p>
+              Zwischen den Anfängen in Peru und
+              meinen mittlerweile fünfstelligen
+              Monatsumsätzen liegen hunderte
+              Krypto-Fälle, Vorträge, Veröffentlichungen
+              in Fachverlagen und verdammt viel
+              harte Arbeit.
+            </p>
+
+            <p>
+              Das ist mir nicht einfach so zugeflogen –
+              ich habe es mir Schritt für Schritt
+              aufgebaut.
+            </p>
+          </div>
+
         </div>
+      </section>
 
-        <div class="story-copy">
-          <p>
-            Ich komme aus dem klassischen deutschen
-            Steuerrecht. Meine Karriere war vorgezeichnet,
-            sicher und absolut berechenbar.
-            Aber genau da lag das Problem:
-            Ich wollte mein Leben nicht einfach
-            nur bis zur Rente verwalten.
-          </p>
+      <!-- TRAVEL GALLERY -->
 
-          <p>
-            2023 habe ich den Schnitt gemacht,
-            gekündigt und bin nach Brasilien geflogen.
-            Ohne fertigen Masterplan, aber mit dem
-            festen Entschluss, es selbst anzupacken.
-          </p>
+      <section class="gallery">
+        <div class="container gallery-grid">
 
-          <p>
-            Meinen allerersten bezahlten Auftrag
-            in der Selbstständigkeit habe ich
-            in Peru erledigt – in einem einfachen
-            Café, weil es dort Internet gab.
-          </p>
+          <figure class="travel-photo">
+            <img
+              src="Tami_about_brazil.png"
+              alt="Tami auf ihrer Reise nach Brasilien"
+              loading="lazy"
+            >
+            <figcaption class="photo-number">01</figcaption>
+          </figure>
 
-          <p>
-            Zwei Jahre später arbeitete ich einen Monat
-            lang aus einer Suite auf einem Schiff
-            von den USA nach Australien.
-            Heute arbeite ich bereits seit drei Jahren
-            von unterwegs für Mandanten weltweit.
-          </p>
+          <figure class="travel-photo">
+            <img
+              src="Tami_about_peru.png"
+              alt="Tamis Arbeitsalltag in Peru"
+              loading="lazy"
+            >
+            <figcaption class="photo-number">02</figcaption>
+          </figure>
 
-          <p>
-            Zwischen den Anfängen in Peru und
-            meinen mittlerweile fünfstelligen
-            Monatsumsätzen liegen hunderte
-            Krypto-Fälle, Vorträge, Veröffentlichungen
-            in Fachverlagen und verdammt viel
-            harte Arbeit.
-          </p>
+          <figure class="travel-photo">
+            <img
+              src="Tami_about_cruise.png"
+              alt="Tamis Reise von den USA nach Australien"
+              loading="lazy"
+            >
+            <figcaption class="photo-number">03</figcaption>
+          </figure>
 
-          <p>
-            Das ist mir nicht einfach so zugeflogen –
-            ich habe es mir Schritt für Schritt
-            aufgebaut.
-          </p>
         </div>
+      </section>
 
-      </div>
-    </section>
-
-    <!-- TRAVEL GALLERY -->
-
-    <section class="gallery">
-      <div class="container gallery-grid">
-
-        <figure class="travel-photo">
-          <img
-            src="Tami_about_brazil.png"
-            alt="Tami auf ihrer Reise nach Brasilien"
-            loading="lazy"
-          >
-          <figcaption class="photo-number">01</figcaption>
-        </figure>
-
-        <figure class="travel-photo">
-          <img
-            src="Tami_about_peru.png"
-            alt="Tamis Arbeitsalltag in Peru"
-            loading="lazy"
-          >
-          <figcaption class="photo-number">02</figcaption>
-        </figure>
-
-        <figure class="travel-photo">
-          <img
-            src="Tami_about_cruise.png"
-            alt="Tamis Reise von den USA nach Australien"
-            loading="lazy"
-          >
-          <figcaption class="photo-number">03</figcaption>
-        </figure>
-
-      </div>
-    </section>
+    </div>
 
     <!-- EDITORIAL BREAK -->
 

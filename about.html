@@ -270,6 +270,16 @@
     .story {
       padding: 8rem 0 6rem;
       position: relative;
+      isolation: isolate;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(3, 27, 43, .88) 0%,
+          rgba(3, 27, 43, .82) 48%,
+          rgba(3, 27, 43, .88) 100%
+        ),
+        url('about-story-bg.jpg')
+        center center / cover no-repeat;
     }
 
     .story::before {

@@ -144,6 +144,52 @@
       color: var(--white);
     }
 
+    /* MOBILER MENÜ-BUTTON */
+
+    .nav-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: .8rem;
+      padding: .75rem 1rem;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: .7rem;
+      font-weight: 400;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .nav-toggle-icon {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 18px;
+      height: 18px;
+    }
+
+    .nav-toggle-icon span {
+      display: block;
+      width: 18px;
+      height: 1px;
+      background: var(--sea-glass);
+      transition: transform .25s ease, opacity .25s ease;
+    }
+
+    .nav-toggle[aria-expanded="true"]
+    .nav-toggle-icon span:first-child {
+      transform: translateY(3px) rotate(45deg);
+    }
+
+    .nav-toggle[aria-expanded="true"]
+    .nav-toggle-icon span:last-child {
+      transform: translateY(-3px) rotate(-45deg);
+    }
+
     /* TYPOGRAPHY */
 
     h1, h2, h3,
@@ -757,17 +803,66 @@
       }
 
       nav {
-        padding: 1.5rem 1.2rem;
-        min-height: 94px;
+        min-height: 76px;
+        padding: 1rem 1.2rem;
+        gap: 1rem;
       }
 
       nav .brand-main {
         font-size: 1.5rem;
       }
 
+      /* MOBILE DROPDOWN-NAVIGATION */
+
+      .nav-toggle {
+        display: inline-flex;
+        flex-shrink: 0;
+      }
+
       nav .links {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        padding: .7rem 1.2rem 1.6rem;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: #031b2b;
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 22px 45px rgba(0,0,0,.3);
+        z-index: 50;
       }
+
+      nav .links.open {
+        display: flex;
+      }
+
+      nav .links a {
+        display: flex;
+        align-items: center;
+        min-height: 58px;
+        padding: 1rem .3rem;
+        border-bottom: 1px solid rgba(185,229,235,.15);
+        font-size: .75rem;
+        line-height: 1.5;
+        letter-spacing: .14em;
+        color: rgba(247,246,244,.78);
+      }
+
+      nav .links a:last-child {
+        border-bottom: 0;
+      }
+
+      nav .links a.active,
+      nav .links a[aria-current="page"],
+      nav .links a:hover {
+        color: var(--sea-glass);
+      }
+
+      /* BESTEHENDES MOBILES LAYOUT */
 
       .hero,
       .grid2,
@@ -854,6 +949,16 @@
         padding: 1.5rem;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .nav-toggle-icon span {
+        transition: none;
+      }
+    }
   </style>
 </head>
 
@@ -861,19 +966,35 @@
 
   <!-- NAVIGATION -->
 
-  <nav>
+  <nav aria-label="Hauptnavigation">
     <a class="brand" href="index.html" aria-label="Tami Joan Mönnig – Startseite">
       <span class="brand-main">TAMI JOAN</span>
       <span class="brand-sub">MÖNNIG</span>
     </a>
 
-    <div class="links">
+    <!-- MOBILER MENÜ-BUTTON -->
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="main-navigation"
+      aria-label="Menü öffnen"
+    >
+      <span class="nav-toggle-label">Menü</span>
+      <span class="nav-toggle-icon" aria-hidden="true">
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+
+    <div class="links" id="main-navigation">
       <a href="index.html">Übersicht</a>
       <a href="about.html">Über Tami</a>
       <a href="speaking.html">Speaking</a>
       <a href="international.html">International</a>
       <a href="astrologie.html" class="active" aria-current="page">Astrologie × Finanzen</a>
-      <a href="https://www.krypto-steuern.net/" target="_blank" rel="noopener noreferrer">Krypto-Steuern ↗</a>
+      <a href="https://www.krypto-steuern.net/" target="_blank" rel="noopener noreferrer">Krypto-Steuern &#8599;&#65038;</a>
     </div>
   </nav>
 
@@ -1318,6 +1439,69 @@
       <a href="datenschutz.html">Datenschutz</a>
     </div>
   </footer>
+
+  <!-- MOBILE NAVIGATION SCRIPT -->
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const nav = document.querySelector('nav');
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('#main-navigation');
+      const navLabel = document.querySelector('.nav-toggle-label');
+
+      if (!nav || !navToggle || !navLinks || !navLabel) {
+        return;
+      }
+
+      function setMenuOpen(isOpen) {
+        navLinks.classList.toggle('open', isOpen);
+
+        navToggle.setAttribute(
+          'aria-expanded',
+          String(isOpen)
+        );
+
+        navToggle.setAttribute(
+          'aria-label',
+          isOpen ? 'Menü schließen' : 'Menü öffnen'
+        );
+
+        navLabel.textContent = isOpen ? 'Schließen' : 'Menü';
+      }
+
+      navToggle.addEventListener('click', () => {
+        const isOpen =
+          navToggle.getAttribute('aria-expanded') === 'true';
+
+        setMenuOpen(!isOpen);
+      });
+
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          setMenuOpen(false);
+        });
+      });
+
+      document.addEventListener('click', event => {
+        if (!nav.contains(event.target)) {
+          setMenuOpen(false);
+        }
+      });
+
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') {
+          setMenuOpen(false);
+          navToggle.focus();
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 850) {
+          setMenuOpen(false);
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>

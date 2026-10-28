@@ -389,7 +389,6 @@
       letter-spacing: .2em;
     }
 
-
     /* TODAY */
 
     .today {
@@ -770,6 +769,55 @@
       }
     }
 
+    /* MOBILE FIXES – NUR SMARTPHONES */
+
+    @media (max-width: 520px) {
+
+      /* Horizontales Scrollen verhindern */
+
+      html,
+      body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: clip;
+      }
+
+      .story-gallery-background,
+      .story,
+      .today {
+        max-width: 100%;
+        overflow-x: clip;
+      }
+
+      .container,
+      .story-grid,
+      .today-header,
+      .journey-grid {
+        min-width: 0;
+      }
+
+      .story-grid > *,
+      .today-header > * {
+        min-width: 0;
+        max-width: 100%;
+      }
+
+      /* Mein Weg: harmonischer Zeilenumbruch */
+
+      .story h2 {
+        font-size: clamp(2.8rem, 10.5vw, 3.8rem);
+        line-height: 1.02;
+        letter-spacing: -.035em;
+        overflow-wrap: normal;
+        text-wrap: balance;
+      }
+
+      .story h2 br {
+        display: none;
+      }
+
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
@@ -815,7 +863,7 @@
         href="https://www.krypto-steuern.net/"
         target="_blank"
         rel="noopener noreferrer"
-      >Krypto-Steuern ↗</a>
+      >Krypto-Steuern &#8599;&#65038;</a>
     </div>
   </nav>
 
@@ -1056,7 +1104,7 @@
           >
             <div class="journey-top">
               <span>03</span>
-              <span>Extern ↗</span>
+              <span>Extern &#8599;&#65038;</span>
             </div>
 
             <div>
@@ -1072,7 +1120,7 @@
 
               <span class="journey-link">
                 Zur Website
-                <span class="journey-arrow">↗</span>
+                <span class="journey-arrow">&#8599;&#65038;</span>
               </span>
             </div>
           </a>
@@ -1117,13 +1165,13 @@
         href="https://www.linkedin.com/in/tami-moennig/"
         target="_blank"
         rel="noopener noreferrer"
-      >LinkedIn ↗</a>
+      >LinkedIn &#8599;&#65038;</a>
 
       <a
         href="https://www.instagram.com/tami.moennig/"
         target="_blank"
         rel="noopener noreferrer"
-      >Instagram ↗</a>
+      >Instagram &#8599;&#65038;</a>
 
       <a href="impressum.html">Impressum</a>
       <a href="datenschutz.html">Datenschutz</a>

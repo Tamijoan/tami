@@ -61,6 +61,9 @@
     }
 
     .card {
+      display: block;
+      color: inherit;
+      text-decoration: none;
       position: relative;
       flex: 1;
       border-radius: 4.5rem;
@@ -525,7 +528,8 @@
       .card,
       .cards:has(.card:hover) .card {
         flex: none !important;
-        height: 65vh;
+        height: auto;
+        min-height: 680px;
         border-radius: 2.5rem;
       }
 
@@ -533,25 +537,37 @@
         opacity: 1 !important;
       }
 
+      .card-content {
+        position: relative;
+        inset: auto;
+        min-height: 680px;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+      }
+
       .card-title {
-        left: 2rem;
-        right: 2rem;
-        bottom: 18rem;
+        position: static;
+        order: 1;
+        margin: 0 0 1.5rem;
       }
 
       .card-number {
-        left: 2rem;
-        bottom: 15.5rem;
+        position: static;
+        order: 0;
+        margin: 0 0 1rem;
       }
 
       .card-expanded {
-        left: 2rem;
-        right: 2rem;
-        bottom: 2rem;
-        height: 11.8rem;
-        max-height: 11.8rem;
+        position: static;
+        order: 2;
+        width: 100%;
+        height: auto;
+        max-height: none;
+        margin-top: auto;
         opacity: 1;
         transform: none;
+        overflow: visible;
         pointer-events: auto;
       }
 
@@ -580,6 +596,8 @@
       .logo-item img {
         max-width: 130px;
         max-height: 60px;
+        filter: none !important;
+        opacity: 1 !important;
       }
 
       .resources-section {
@@ -635,7 +653,7 @@
     <div class="cards">
 
       <!-- 01 ÜBER TAMI -->
-      <div class="card" id="card-about">
+      <a class="card" id="card-about" href="about.html">
         <div class="card-bg"></div>
         <div class="card-content">
           <p class="card-number">01</p>
@@ -659,15 +677,15 @@
               <span class="tag">Unternehmertum</span>
             </div>
 
-            <a href="about.html" class="card-cta">
+            <span class="card-cta">
               Meine Geschichte →
-            </a>
+            </span>
           </div>
         </div>
-      </div>
+      </a>
 
       <!-- 02 KRYPTO -->
-      <div class="card" id="card-crypto">
+      <a class="card" id="card-crypto" href="https://www.krypto-steuern.net/" target="_blank" rel="noopener noreferrer">
         <div class="card-bg"></div>
         <div class="card-content">
           <p class="card-number">02</p>
@@ -692,15 +710,15 @@
               <span class="tag">Regulierung</span>
             </div>
 
-            <a href="https://www.krypto-steuern.net/" class="card-cta">
+            <span class="card-cta">
               Zur Website →
-            </a>
+            </span>
           </div>
         </div>
-      </div>
+      </a>
 
       <!-- 03 VORTRÄGE -->
-      <div class="card" id="card-speaking">
+      <a class="card" id="card-speaking" href="speaking.html">
         <div class="card-bg"></div>
         <div class="card-content">
           <p class="card-number">03</p>
@@ -723,15 +741,15 @@
               <span class="tag">Panelistin</span>
             </div>
 
-            <a href="speaking.html" class="card-cta">
+            <span class="card-cta">
               Vorträge ansehen →
-            </a>
+            </span>
           </div>
         </div>
-      </div>
+      </a>
 
       <!-- 04 INTERNATIONAL -->
-      <div class="card" id="card-international">
+      <a class="card" id="card-international" href="international.html">
         <div class="card-bg"></div>
         <div class="card-content">
           <p class="card-number">04</p>
@@ -755,15 +773,15 @@
               <span class="tag">Strategie</span>
             </div>
 
-            <a href="international.html" class="card-cta">
+            <span class="card-cta">
               Mehr erfahren →
-            </a>
+            </span>
           </div>
         </div>
-      </div>
+      </a>
 
       <!-- 05 ASTROLOGIE -->
-      <div class="card" id="card-astrology">
+      <a class="card" id="card-astrology" href="astrologie.html">
         <div class="card-bg"></div>
         <div class="card-content">
           <p class="card-number">05</p>
@@ -787,12 +805,12 @@
               <span class="tag">Unternehmertum</span>
             </div>
 
-            <a href="astrologie.html" class="card-cta">
+            <span class="card-cta">
               Andere Perspektive →
-            </a>
+            </span>
           </div>
         </div>
-      </div>
+      </a>
 
     </div>
   </div>
